@@ -65,8 +65,8 @@ function Navbar() {
             About
           </NavLink>
 
-            <NavLink to="/speakers" className="hover:text-red-700 duration-300">
-            KeyStone Speakers
+          <NavLink to="/speakers" className="hover:text-red-700 duration-300">
+            Keynote Speakers
           </NavLink>
 
           <NavLink to="/committees" className="hover:text-red-700 duration-300">
@@ -249,16 +249,10 @@ function Navbar() {
             to="/speakers"
             onClick={() => setMobileOpen(false)}
           >
-            Speakers
+            Keynote Speakers
           </NavLink>
 
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/paper-status"
-            onClick={() => setMobileOpen(false)}
-          >
-            Paper Status
-          </NavLink>
+
         </div>
       )}
     </header>

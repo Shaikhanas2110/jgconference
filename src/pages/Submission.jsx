@@ -8,7 +8,12 @@ import {
 
 function Submission() {
     const guidelines = [
-        "Strictly follow the Springer manuscript preparation guidelines",
+        {
+            text: "Strictly follow the Springer manuscript preparation guidelines",
+            linkText: "(view guidelines)",
+            url:
+                "https://www.springer.com/gp/authors-editors/book-authors-editors/your-publication-journey/manuscript-preparation",
+        },
         "Camera-ready papers: 6-8 pages for short papers, 10-12 pages for long papers",
         "Maximum of 5 authors per paper",
         "The manuscript must fall under the scope and allied tracks of the conference; the TPC has full right to determine scope before recommending a paper for review",
@@ -110,14 +115,14 @@ function Submission() {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <a
-                                href="#"
+                                href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICSSCC2026"
                                 className="bg-red-700 text-white px-6 py-3 rounded-lg hover:bg-red-800 transition flex items-center gap-2"
                             >
                                 <FaFileUpload />
                                 Submit via Microsoft CMT
                             </a>
                             <a
-                                href="#"
+                                href="https://icsscc.in.net/resource/upload/splnproc1703.docm"
                                 className="bg-yellow-400 text-red-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition flex items-center gap-2"
                             >
                                 <FaDownload />
@@ -140,7 +145,21 @@ function Submission() {
                             {guidelines.map((item, index) => (
                                 <li key={index} className="flex items-start gap-3 text-gray-700">
                                     <FaCheckCircle className="text-yellow-500 mt-1 flex-shrink-0" />
-                                    <span>{item}</span>
+                                    {typeof item === "string" ? (
+                                        <span>{item}</span>
+                                    ) : (
+                                        <span>
+                                            {item.text}{" "}
+                                            <a
+                                                href={item.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-red-700 font-semibold underline hover:text-red-900 transition"
+                                            >
+                                                {item.linkText}
+                                            </a>
+                                        </span>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -341,7 +360,7 @@ function Submission() {
                         Submit your manuscript electronically through the Microsoft CMT service.
                     </p>
                     <a
-                        href="#"
+                        href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICSSCC2026"
                         className="inline-block bg-yellow-400 text-red-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition"
                     >
                         Submit via Microsoft CMT
