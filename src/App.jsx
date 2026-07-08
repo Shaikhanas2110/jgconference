@@ -24,7 +24,7 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/jgconference'>
       <>
         <ScrollToTop />
         <Navbar />
