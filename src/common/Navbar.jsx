@@ -34,7 +34,6 @@ function Navbar() {
     <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-yellow-300">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-5">
         {/* Logo */}
-
         <Link
           to="/"
           className="flex items-center"
@@ -48,7 +47,6 @@ function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-
         <ul className="hidden lg:flex items-center gap-10 text-gray-800 font-medium">
           <NavLink
             to="/"
@@ -74,7 +72,6 @@ function Navbar() {
           </NavLink>
 
           {/* Dropdown - Click Based */}
-
           <li className="relative list-none" ref={dropdownRef}>
             <button
               className="flex items-center gap-1 hover:text-red-700 transition-colors duration-300 text-gray-800 font-medium hover:font-semibold"
@@ -87,14 +84,13 @@ function Navbar() {
               />
             </button>
 
-            {/* Smooth Dropdown Menu - Click Based */}
+            {/* Smooth Dropdown Menu */}
             <div
               className={`absolute top-12 left-0 bg-white rounded-xl shadow-2xl w-72 overflow-hidden z-40 transition-all duration-300 ease-in-out transform origin-top-left ${dropdown
                 ? "opacity-100 visible scale-100 translate-y-0"
                 : "opacity-0 invisible scale-95 -translate-y-3 pointer-events-none"
                 }`}
             >
-              {/* Header */}
               <div className="bg-gradient-to-r from-red-700 to-red-600 text-white px-5 py-3">
                 <p className="font-bold text-sm">Submission & Publication</p>
               </div>
@@ -102,51 +98,42 @@ function Navbar() {
               <NavLink
                 to="/call-for-paper"
                 className="block px-5 py-3 hover:bg-yellow-50 transition-colors duration-200 border-b border-gray-100 text-gray-800"
-                onClick={() => {
-                  setDropdown(false);
-                }}
+                onClick={() => setDropdown(false)}
               >
-                📄 Call For Papers
+                Call For Papers
               </NavLink>
 
               <NavLink
                 to="/guidelines"
                 className="block px-5 py-3 hover:bg-yellow-50 transition-colors duration-200 border-b border-gray-100 text-gray-800"
-                onClick={() => {
-                  setDropdown(false);
-                }}
+                onClick={() => setDropdown(false)}
               >
-                📋 Guidelines
+                Guidelines
               </NavLink>
 
               <NavLink
                 to="/submission"
                 className="block px-5 py-3 hover:bg-yellow-50 transition-colors duration-200 border-b border-gray-100 text-gray-800"
-                onClick={() => {
-                  setDropdown(false);
-                }}
+                onClick={() => setDropdown(false)}
               >
-                📋 Submission
+                Submission
               </NavLink>
 
+              {/* Fixed path capitalization mapping to match App.jsx routing */}
               <NavLink
-                to="/impDates"
+                to="/impdates"
                 className="block px-5 py-3 hover:bg-yellow-50 transition-colors duration-200 border-b border-gray-100 text-gray-800"
-                onClick={() => {
-                  setDropdown(false);
-                }}
+                onClick={() => setDropdown(false)}
               >
-                📚 Important Dates
+                Important Dates
               </NavLink>
 
               <NavLink
                 to="/publication"
                 className="block px-5 py-3 hover:bg-yellow-50 transition-colors duration-200 border-b border-gray-100 text-gray-800"
-                onClick={() => {
-                  setDropdown(false);
-                }}
+                onClick={() => setDropdown(false)}
               >
-                📚 Publication
+                Publication
               </NavLink>
             </div>
           </li>
@@ -156,8 +143,7 @@ function Navbar() {
           </NavLink>
         </ul>
 
-        {/* Button */}
-
+        {/* Register Button */}
         <Link
           to="/registration"
           className="hidden lg:block bg-red-700 text-white px-7 py-3 rounded-lg hover:bg-yellow-500 hover:text-black duration-300"
@@ -165,19 +151,17 @@ function Navbar() {
           Register Now
         </Link>
 
-        {/* Mobile */}
-
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden"
+          className="lg:hidden text-xl p-2"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-
+      {/* Mobile Menu Container */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t max-h-[70vh] overflow-y-auto">
           <NavLink
