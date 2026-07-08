@@ -3,8 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/jgconference/',
-  plugins: [react(), tailwindcss()],
+  base: './', // 👈 Changed from '/jgconference/' to './'  plugins: [react(), tailwindcss()],
   build: {
     outDir: 'dist',
   }
