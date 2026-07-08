@@ -230,6 +230,16 @@ function Navbar() {
 
           <NavLink
             className="block px-6 py-4 border-b"
+            to="/submission"
+            onClick={() => setMobileOpen(false)}
+          >
+            Submission
+          </NavLink>
+
+
+
+          <NavLink
+            className="block px-6 py-4 border-b"
             to="/publication"
             onClick={() => setMobileOpen(false)}
           >
@@ -250,6 +260,13 @@ function Navbar() {
             onClick={() => setMobileOpen(false)}
           >
             Keynote Speakers
+          </NavLink>
+          <NavLink
+            className="block px-6 py-4 border-b"
+            to="/registration"
+            onClick={() => setMobileOpen(false)}
+          >
+            Registration
           </NavLink>
 
 
