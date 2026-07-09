@@ -1,17 +1,70 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import { MdArrowDropDown } from "react-icons/md";
 import logo from "../assets/logo.png";
+
+const CALL_FOR_PAPER_ROUTES = [
+  "/call-for-paper",
+  "/guidelines",
+  "/submission",
+  "/impDates",
+  "/publication",
+];
+
+// shared classes for desktop links: red text + underline when active
+const navLinkClasses = ({ isActive }) =>
+  `pb-1 border-b-2 duration-300 ${isActive
+    ? "text-red-700 font-semibold border-red-700"
+    : "text-gray-800 border-transparent hover:text-red-700"
+  }`;
+
+// shared classes for mobile links
+const mobileLinkClasses = ({ isActive }) =>
+  `block px-6 py-4 border-b ${isActive
+    ? "text-red-700 font-semibold bg-yellow-50 border-l-4 border-l-red-700"
+    : "text-gray-800 border-gray-50"
+  }`;
+
+// shared classes for mobile submenu (Call For Paper accordion) links
+const mobileSubLinkClasses = ({ isActive }) =>
+  `block pl-11 pr-6 py-3 text-sm duration-300 ${isActive
+    ? "text-red-700 font-semibold"
+    : "text-gray-600 hover:text-red-700"
+  }`;
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [mobileCFPOpen, setMobileCFPOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const location = useLocation();
+  const isCallForPaperActive = CALL_FOR_PAPER_ROUTES.includes(
+    location.pathname
+  );
 
   const toggleDropdown = () => {
     setDropdown(!dropdown);
   };
+
+  // Close the mobile drawer whenever the route changes
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  // Lock body scroll while the mobile drawer is open, and auto-expand
+  // the Call For Paper accordion if the user is already on one of those pages
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+      setMobileCFPOpen(isCallForPaperActive);
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -32,7 +85,7 @@ function Navbar() {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-yellow-300">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
 
         <Link
@@ -50,26 +103,19 @@ function Navbar() {
         {/* Desktop Menu */}
 
         <ul className="hidden lg:flex items-center gap-10 text-gray-800 font-medium">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive
-                ? "text-red-700 font-semibold"
-                : "hover:text-red-700 duration-300"
-            }
-          >
+          <NavLink to="/" className={navLinkClasses}>
             Home
           </NavLink>
 
-          <NavLink to="/about" className="hover:text-red-700 duration-300">
+          <NavLink to="/about" className={navLinkClasses}>
             About
           </NavLink>
 
-          <NavLink to="/speakers" className="hover:text-red-700 duration-300">
-            Keynote Speakers
+          <NavLink to="/speakers" className={navLinkClasses}>
+            Speakers
           </NavLink>
 
-          <NavLink to="/committees" className="hover:text-red-700 duration-300">
+          <NavLink to="/committees" className={navLinkClasses}>
             Committees
           </NavLink>
 
@@ -77,7 +123,10 @@ function Navbar() {
 
           <li className="relative list-none" ref={dropdownRef}>
             <button
-              className="flex items-center gap-1 hover:text-red-700 transition-colors duration-300 text-gray-800 font-medium hover:font-semibold"
+              className={`flex items-center gap-1 pb-1 border-b-2 duration-300 font-medium ${isCallForPaperActive
+                ? "text-red-700 font-semibold border-red-700"
+                : "text-gray-800 border-transparent hover:text-red-700"
+                }`}
               onClick={toggleDropdown}
             >
               Call For Paper
@@ -106,7 +155,7 @@ function Navbar() {
                   setDropdown(false);
                 }}
               >
-                📄 Call For Papers
+                Call For Papers
               </NavLink>
 
               <NavLink
@@ -116,7 +165,7 @@ function Navbar() {
                   setDropdown(false);
                 }}
               >
-                📋 Guidelines
+                Guidelines
               </NavLink>
 
               <NavLink
@@ -126,7 +175,7 @@ function Navbar() {
                   setDropdown(false);
                 }}
               >
-                📋 Submission
+                Submission
               </NavLink>
 
               <NavLink
@@ -136,7 +185,7 @@ function Navbar() {
                   setDropdown(false);
                 }}
               >
-                📚 Important Dates
+                Important Dates
               </NavLink>
 
               <NavLink
@@ -146,12 +195,12 @@ function Navbar() {
                   setDropdown(false);
                 }}
               >
-                📚 Publication
+                Publication
               </NavLink>
             </div>
           </li>
 
-          <NavLink to="/tracks" className="hover:text-red-700 duration-300">
+          <NavLink to="/tracks" className={navLinkClasses}>
             Tracks
           </NavLink>
         </ul>
@@ -169,109 +218,116 @@ function Navbar() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden"
+          className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-full text-gray-700 hover:bg-red-50 hover:text-red-700 transition-colors duration-300"
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
-          {mobileOpen ? <FaTimes /> : <FaBars />}
+          {mobileOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Backdrop */}
+      <div
+        onClick={() => setMobileOpen(false)}
+        aria-hidden="true"
+        className={`lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
+      />
 
-      {mobileOpen && (
-        <div className="lg:hidden bg-white border-t max-h-[70vh] overflow-y-auto">
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/"
+      {/* Mobile Menu Drawer */}
+      <div
+        className={`lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-50 shadow-2xl flex flex-col transform transition-transform duration-300 ease-in-out ${mobileOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+      >
+        {/* Drawer Header */}
+        <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 flex-shrink-0">
+          <img src={logo} alt="JG University" className="h-12 w-auto" />
+          <button
             onClick={() => setMobileOpen(false)}
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-700 transition-colors duration-300"
+            aria-label="Close menu"
           >
+            <FaTimes size={16} />
+          </button>
+        </div>
+
+        {/* Drawer Links */}
+        <nav className="flex-1 overflow-y-auto">
+          <NavLink className={mobileLinkClasses} to="/">
             Home
           </NavLink>
 
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/about"
-            onClick={() => setMobileOpen(false)}
-          >
+          <NavLink className={mobileLinkClasses} to="/about">
             About
           </NavLink>
 
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/committees"
-            onClick={() => setMobileOpen(false)}
-          >
+          <NavLink className={mobileLinkClasses} to="/speakers">
+            Speakers
+          </NavLink>
+
+          <NavLink className={mobileLinkClasses} to="/committees">
             Committees
           </NavLink>
 
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/call-for-paper"
-            onClick={() => setMobileOpen(false)}
-          >
-            Call For Paper
-          </NavLink>
+          {/* Call For Paper accordion */}
+          <div className="border-b border-gray-50">
+            <button
+              onClick={() => setMobileCFPOpen(!mobileCFPOpen)}
+              className={`w-full flex items-center justify-between px-6 py-4 text-base duration-300 ${isCallForPaperActive
+                  ? "text-red-700 font-semibold bg-yellow-50"
+                  : "text-gray-800 font-medium hover:bg-gray-50"
+                }`}
+              aria-expanded={mobileCFPOpen}
+            >
+              Call For Paper
+              <FaChevronDown
+                size={12}
+                className={`text-gray-400 transition-transform duration-300 ${mobileCFPOpen ? "rotate-180 text-red-700" : ""
+                  }`}
+              />
+            </button>
 
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/impdates"
-            onClick={() => setMobileOpen(false)}
-          >
-            Important Dates
-          </NavLink>
+            <div
+              className={`overflow-hidden bg-gray-50/70 transition-all duration-300 ease-in-out ${mobileCFPOpen ? "max-h-96" : "max-h-0"
+                }`}
+            >
+              <NavLink className={mobileSubLinkClasses} to="/call-for-paper">
+                Call For Papers
+              </NavLink>
+              <NavLink className={mobileSubLinkClasses} to="/guidelines">
+                Guidelines
+              </NavLink>
+              <NavLink className={mobileSubLinkClasses} to="/submission">
+                Submission
+              </NavLink>
+              <NavLink className={mobileSubLinkClasses} to="/impDates">
+                Important Dates
+              </NavLink>
+              <NavLink className={mobileSubLinkClasses} to="/publication">
+                Publication
+              </NavLink>
+            </div>
+          </div>
 
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/guidelines"
-            onClick={() => setMobileOpen(false)}
-          >
-            Guidelines
-          </NavLink>
-
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/submission"
-            onClick={() => setMobileOpen(false)}
-          >
-            Submission
-          </NavLink>
-
-
-
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/publication"
-            onClick={() => setMobileOpen(false)}
-          >
-            Publication
-          </NavLink>
-
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/tracks"
-            onClick={() => setMobileOpen(false)}
-          >
+          <NavLink className={mobileLinkClasses} to="/tracks">
             Tracks
           </NavLink>
+        </nav>
 
-          <NavLink
-            className="block px-6 py-4 border-b"
-            to="/speakers"
-            onClick={() => setMobileOpen(false)}
-          >
-            Keynote Speakers
-          </NavLink>
-          <NavLink
-            className="block px-6 py-4 border-b"
+        {/* Drawer Footer CTA */}
+        <div className="p-6 border-t border-gray-100 flex-shrink-0">
+          <Link
             to="/registration"
             onClick={() => setMobileOpen(false)}
+            className="block w-full text-center bg-red-700 text-white font-semibold py-3.5 rounded-lg hover:bg-yellow-500 hover:text-black transition-colors duration-300"
           >
-            Registration
-          </NavLink>
-
-
+            Register Now
+          </Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }

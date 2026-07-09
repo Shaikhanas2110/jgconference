@@ -15,7 +15,7 @@ function Publication() {
       </section>
 
       {/* Publication & Indexing */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-6 items-start">
             <div className="w-14 h-14 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-yellow-400 text-2xl">
@@ -56,7 +56,7 @@ function Publication() {
       </section>
 
       {/* About Conference */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-red-800 mb-6 text-center">
             About Conference

@@ -1,5 +1,26 @@
-import React, { useState } from "react";
-import { FaCheck, FaArrowRight } from "react-icons/fa";
+import React, { useState, useEffect, useCallback } from "react";
+import { FaCheck, FaArrowRight, FaLock, FaSpinner } from "react-icons/fa";
+
+// Base URL of your backend API. Set VITE_API_BASE_URL in your frontend
+// .env file (e.g. VITE_API_BASE_URL=https://api.yourdomain.com).
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
+const RAZORPAY_CHECKOUT_SRC = "https://checkout.razorpay.com/v1/checkout.js";
+
+// Loads the Razorpay checkout script once and reuses it on subsequent opens.
+function loadRazorpayScript() {
+  return new Promise((resolve) => {
+    if (window.Razorpay) {
+      resolve(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = RAZORPAY_CHECKOUT_SRC;
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+}
 
 function Registration() {
   const [formData, setFormData] = useState({
@@ -7,8 +28,16 @@ function Registration() {
     email: "",
     affiliation: "",
     country: "",
-    category: "student",
+    category: "ugpg",
   });
+
+  // "idle" | "creatingOrder" | "awaitingPayment" | "verifying" | "success" | "error"
+  const [paymentState, setPaymentState] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    loadRazorpayScript();
+  }, []);
 
   const feeTable = [
     {
@@ -22,6 +51,46 @@ function Registration() {
     {
       category: "Regular (Faculty / Researchers / Industry)",
       india: "₹ 5,000 /-",
+    },
+  ];
+
+  const packages = [
+    {
+      category: "UG - PG Students",
+      subtitle: "Undergraduate & postgraduate authors",
+      price: "₹ 3,000",
+      features: [
+        "Access to all technical sessions",
+        "Conference e-proceedings",
+        "Certificate of participation",
+        "Tea/coffee, high tea & working lunch",
+      ],
+    },
+    {
+      category: "Research Scholars",
+      subtitle: "PhD & doctoral researchers",
+      price: "₹ 4,000",
+      highlighted: true,
+      features: [
+        "Access to all technical sessions",
+        "Conference e-proceedings",
+        "Certificate of participation",
+        "Tea/coffee, high tea & working lunch",
+        "Priority seating at technical sessions",
+      ],
+    },
+    {
+      category: "Regular",
+      subtitle: "Faculty / Researchers / Industry",
+      price: "₹ 5,000",
+      features: [
+        "Access to all technical sessions",
+        "Conference e-proceedings",
+        "Certificate of participation",
+        "Tea/coffee, high tea & working lunch",
+        "Priority seating at technical sessions",
+        "Networking with industry delegates",
+      ],
     },
   ];
 
@@ -64,11 +133,94 @@ function Registration() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Registration submitted:", formData);
-    alert("Registration submitted successfully! You will receive a confirmation email shortly.");
-  };
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      setErrorMessage("");
+      setPaymentState("creatingOrder");
+
+      try {
+        // Step 1: ask the backend to create a Razorpay order.
+        // Note: we never send an amount from the client — the backend
+        // looks up the real price for `category` itself.
+        const orderRes = await fetch(`${API_BASE_URL}/api/payment/create-order`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+
+        const orderData = await orderRes.json();
+
+        if (!orderRes.ok) {
+          throw new Error(orderData.error || "Could not start payment. Please try again.");
+        }
+
+        const scriptLoaded = await loadRazorpayScript();
+        if (!scriptLoaded || !window.Razorpay) {
+          throw new Error("Could not load payment gateway. Check your connection and try again.");
+        }
+
+        setPaymentState("awaitingPayment");
+
+        // Step 2: open Razorpay Checkout with the server-generated order.
+        const rzp = new window.Razorpay({
+          key: orderData.keyId,
+          amount: orderData.amount,
+          currency: orderData.currency,
+          name: "ICSISDG 2026",
+          description: `Registration - ${orderData.planLabel}`,
+          order_id: orderData.orderId,
+          prefill: {
+            name: formData.name,
+            email: formData.email,
+          },
+          theme: { color: "#991b1b" },
+          handler: async (response) => {
+            // Step 3: verify the payment server-side before treating it as successful.
+            setPaymentState("verifying");
+            try {
+              const verifyRes = await fetch(`${API_BASE_URL}/api/payment/verify`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  razorpay_order_id: response.razorpay_order_id,
+                  razorpay_payment_id: response.razorpay_payment_id,
+                  razorpay_signature: response.razorpay_signature,
+                }),
+              });
+              const verifyData = await verifyRes.json();
+
+              if (!verifyRes.ok || !verifyData.success) {
+                throw new Error(verifyData.error || "Payment could not be verified.");
+              }
+
+              setPaymentState("success");
+            } catch (err) {
+              setErrorMessage(err.message);
+              setPaymentState("error");
+            }
+          },
+          modal: {
+            ondismiss: () => {
+              // User closed the checkout without paying.
+              setPaymentState("idle");
+            },
+          },
+        });
+
+        rzp.on("payment.failed", (response) => {
+          setErrorMessage(response.error?.description || "Payment failed. Please try again.");
+          setPaymentState("error");
+        });
+
+        rzp.open();
+      } catch (err) {
+        setErrorMessage(err.message);
+        setPaymentState("error");
+      }
+    },
+    [formData]
+  );
 
   const scrollToRegisterForm = (e) => {
     e.preventDefault();
@@ -92,7 +244,7 @@ function Registration() {
 
       {/* Registration Category and Fees */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="bg-white rounded-xl shadow-lg p-8 mb-10">
             <h2 className="text-2xl font-bold text-red-800 mb-4">
               Registration Category and Fees
@@ -110,55 +262,53 @@ function Registration() {
             </p>
           </div>
 
-          {/* Fee Table - Desktop */}
-          <div className="hidden md:block bg-white rounded-xl shadow-lg overflow-hidden">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-red-800 text-white">
-                  <th className="text-left px-6 py-4 font-bold">Author Category</th>
-                  <th className="text-left px-6 py-4 font-bold">India</th>
-                  <th className="text-left px-6 py-4 font-bold">Register</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {feeTable.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                    <td className="px-6 py-5 text-gray-700 font-semibold">{row.category}</td>
-                    <td className="px-6 py-5 text-red-700 font-bold">{row.india}</td>
-                    <td className="px-6 py-5">
-                      <a
-                        href="#register-form"
-                        onClick={scrollToRegisterForm}
-                        className="inline-flex items-center gap-2 bg-yellow-400 text-red-900 px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 transition text-sm"
-                      >
-                        Register <FaArrowRight className="text-xs" />
-                      </a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Fee Table - Mobile Cards */}
-          <div className="md:hidden space-y-4">
-            {feeTable.map((row, index) => (
+          {/* Registration Packages - Pricing Cards */}
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-start">
+            {packages.map((pkg, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"
+                className={`group relative flex flex-col rounded-2xl overflow-hidden bg-white transition-all duration-300 ease-out hover:-translate-y-2 ${pkg.highlighted
+                    ? "shadow-2xl ring-2 ring-yellow-400 md:scale-105 md:hover:scale-[1.07]"
+                    : "shadow-lg hover:shadow-2xl border border-gray-100"
+                  }`}
               >
-                <div className="bg-red-800 text-white px-5 py-3">
-                  <p className="font-bold">{row.category}</p>
-                </div>
-                <div className="p-5 space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-500 text-sm font-semibold">India</span>
-                    <span className="text-red-700 font-bold">{row.india}</span>
+                {pkg.highlighted && (
+                  <div className="absolute top-0 right-0 bg-yellow-400 text-red-900 text-xs font-bold px-4 py-1.5 rounded-bl-xl tracking-wide">
+                    MOST CHOSEN
                   </div>
+                )}
+
+                <div
+                  className={`p-8 ${pkg.highlighted
+                      ? "bg-gradient-to-br from-red-800 to-red-900"
+                      : "bg-red-800"
+                    } text-white`}
+                >
+                  <h3 className="text-xl font-bold">{pkg.category}</h3>
+                  <p className="text-red-200 text-sm mt-1">{pkg.subtitle}</p>
+                  <div className="mt-6 flex items-baseline gap-1">
+                    <span className="text-4xl font-extrabold">{pkg.price}</span>
+                    <span className="text-red-200 text-sm font-medium">/ India</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col flex-1 p-8">
+                  <ul className="space-y-4 flex-1">
+                    {pkg.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-gray-600 text-sm">
+                        <FaCheck className="text-green-600 mt-0.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
                   <a
                     href="#register-form"
                     onClick={scrollToRegisterForm}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 text-red-900 px-4 py-2.5 rounded-lg font-bold hover:bg-yellow-300 transition text-sm mt-2"
+                    className={`mt-8 inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg font-bold text-sm transition-all duration-300 ${pkg.highlighted
+                        ? "bg-yellow-400 text-red-900 hover:bg-yellow-300 hover:shadow-lg hover:shadow-yellow-400/40"
+                        : "bg-red-50 text-red-800 hover:bg-red-700 hover:text-white"
+                      }`}
                   >
                     Register <FaArrowRight className="text-xs" />
                   </a>
@@ -184,81 +334,10 @@ function Registration() {
 
 
 
-      {/* Registration Packages (visual summary) */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-red-800 mb-16">
-            What's Included
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                category: "Student",
-                price: "₹ 3,000",
-                features: ["Conference Access", "Proceedings", "Certificate", "Networking Events"],
-              },
-              {
-                category: "Researchers",
-                price: "₹ 5,000",
-                features: ["Conference Access", "Proceedings", "Certificate", "Networking Events", "Lunch & Refreshments"],
-                highlighted: true,
-              },
-              {
-                category: "Co-Author",
-                price: "₹ 2,000",
-                features: ["Conference Access", "Proceedings", "Certificate"],
-              },
-            ].map((pkg, index) => (
-              <div
-                key={index}
-                className={`group rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-out hover:-translate-y-3 hover:shadow-2xl ${pkg.highlighted
-                    ? "ring-2 ring-yellow-400 transform md:scale-105 hover:md:scale-[1.08]"
-                    : "hover:ring-2 hover:ring-red-300"
-                  }`}
-              >
-                <div className="bg-red-700 text-white p-6 transition-colors duration-300 group-hover:bg-red-800 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/0 via-yellow-400/0 to-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <h3 className="text-2xl font-bold relative">{pkg.category}</h3>
-                  <p className="text-3xl font-bold mt-4 relative transition-transform duration-300 group-hover:scale-110 origin-left">
-                    {pkg.price}
-                  </p>
-                </div>
-                <div className="bg-white p-6">
-                  <ul className="space-y-4">
-                    {pkg.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center gap-3 text-gray-600 transition-transform duration-300"
-                        style={{ transitionDelay: `${idx * 40}ms` }}
-                      >
-                        <FaCheck className="text-green-500 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6" />
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href="#register-form"
-                    onClick={scrollToRegisterForm}
-                    className={`relative overflow-hidden block text-center w-full mt-6 py-3 rounded-lg font-bold transition-all duration-300 ${pkg.highlighted
-                        ? "bg-yellow-400 text-red-900 hover:bg-yellow-300 hover:shadow-lg hover:shadow-yellow-400/50"
-                        : "bg-red-700 text-white hover:bg-red-800 hover:shadow-lg hover:shadow-red-700/50"
-                      } hover:tracking-wide`}
-                  >
-                    Select Plan
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Registration Form */}
-      <section id="register-form" className="py-20 bg-white scroll-mt-20">
+      <section id="register-form" className="py-10 bg-white scroll-mt-20">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-red-800 mb-10">
+          <h2 className="text-3xl font-bold text-center text-red-800 mb-10">
             Registration Form
           </h2>
           <form onSubmit={handleSubmit} className="bg-gray-50 rounded-xl p-8 shadow-lg">
@@ -324,9 +403,9 @@ function Registration() {
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 outline-none"
               >
-                <option value="student">Research Scholars / UG - PG Students</option>
-                <option value="regular">Regular (Faculty / Researchers / Industry)</option>
-                <option value="coauthor">Co-Author Registration</option>
+                <option value="ugpg">UG - PG Students (₹3,000)</option>
+                <option value="scholar">Research Scholars (₹4,000)</option>
+                <option value="regular">Regular (Faculty / Researchers / Industry) (₹5,000)</option>
               </select>
             </div>
 
@@ -336,12 +415,49 @@ function Registration() {
               </p>
             </div>
 
+            {paymentState === "success" && (
+              <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-6">
+                <p className="text-green-800 font-semibold">
+                  Payment successful! Your registration is confirmed. A confirmation email will follow shortly.
+                </p>
+              </div>
+            )}
+
+            {paymentState === "error" && errorMessage && (
+              <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                <p className="text-red-800 font-semibold">{errorMessage}</p>
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full bg-red-700 text-white py-3 rounded-lg font-bold hover:bg-red-800 transition"
+              disabled={["creatingOrder", "awaitingPayment", "verifying"].includes(paymentState)}
+              className="w-full bg-red-700 text-white py-3 rounded-lg font-bold hover:bg-red-800 transition disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              Complete Registration
+              {paymentState === "creatingOrder" && (
+                <>
+                  <FaSpinner className="animate-spin" /> Preparing payment...
+                </>
+              )}
+              {paymentState === "awaitingPayment" && (
+                <>
+                  <FaSpinner className="animate-spin" /> Waiting for payment...
+                </>
+              )}
+              {paymentState === "verifying" && (
+                <>
+                  <FaSpinner className="animate-spin" /> Verifying payment...
+                </>
+              )}
+              {["idle", "success", "error"].includes(paymentState) && (
+                <>
+                  <FaLock className="text-sm" /> Proceed to Secure Payment
+                </>
+              )}
             </button>
+            <p className="text-center text-xs text-gray-500 mt-3">
+              Payments are processed securely by Razorpay. We never see or store your card details.
+            </p>
           </form>
         </div>
       </section>
@@ -371,7 +487,7 @@ function Registration() {
       </section>
 
       {/* About Conference */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-red-800 mb-6 text-center">
             About Conference
@@ -390,7 +506,7 @@ function Registration() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

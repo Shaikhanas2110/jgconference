@@ -1,0 +1,23 @@
+{
+    "name": "icsisdg-registration-backend",
+    "version": "1.0.0",
+    "description": "Secure registration + payment backend for ICSISDG 2026 (Razorpay + MongoDB)",
+    "main": "server.js",
+    "type": "commonjs",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "mongoose": "^8.5.1",
+        "razorpay": "^2.9.4",
+        "dotenv": "^16.4.5",
+        "cors": "^2.8.5",
+        "helmet": "^7.1.0",
+        "express-rate-limit": "^7.3.1",
+        "express-validator": "^7.1.0",
+        "express-mongo-sanitize": "^2.2.0",
+        "morgan": "^1.10.0"
+    }
+}

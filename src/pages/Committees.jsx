@@ -115,7 +115,7 @@ function Committees() {
       </section>
 
       {/* Committees Section - Sidebar + Content Layout */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             {/* Sidebar Navigation */}
@@ -196,7 +196,7 @@ function Committees() {
       </section>
 
       {/* International Advisory Board */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-red-800 mb-16">
             International Advisory Board

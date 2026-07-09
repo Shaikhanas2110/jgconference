@@ -18,7 +18,7 @@ function CallForPaper() {
       id: 1,
       title: "Track I",
       subtitle:
-        "Artificial Intelligence and Machine Learning for Sustainable Development",
+        "Track I :- Artificial Intelligence and Machine Learning for Sustainable Development",
       icon: <FaRobot />,
       topics: [
         "Explainable AI (XAI) for Sustainable Decision Making",
@@ -37,7 +37,7 @@ function CallForPaper() {
     {
       id: 2,
       title: "Track II",
-      subtitle: "Internet of Things, Smart Systems, and Emerging Technologies",
+      subtitle: "Track II :- Internet of Things, Smart Systems, and Emerging Technologies",
       icon: <FaNetworkWired />,
       topics: [
         "IoT and AI for Environmental Sensing and Data Collection",
@@ -55,7 +55,7 @@ function CallForPaper() {
     {
       id: 3,
       title: "Track III",
-      subtitle: "Smart Finance, FinTech and Economic Sustainability",
+      subtitle: "Track III :- Smart Finance, FinTech and Economic Sustainability",
       icon: <FaCloud />,
       topics: [
         "Green FinTech & Sustainable Investment Analytics",
@@ -70,7 +70,7 @@ function CallForPaper() {
       id: 4,
       title: "Track IV",
       subtitle:
-        "Business Intelligence and Data Analytics for Responsible Decision-Making",
+        "Track IV :- Business Intelligence and Data Analytics for Responsible Decision-Making",
       icon: <FaDatabase />,
       topics: [
         "Big Data Analytics and Processing",
@@ -87,7 +87,7 @@ function CallForPaper() {
     {
       id: 5,
       title: "Track V",
-      subtitle: "Entrepreneurship, Innovation, and Sustainable Startup Ecosystems",
+      subtitle: "Track V :- Entrepreneurship, Innovation, and Sustainable Startup Ecosystems",
       icon: <FaLeaf />,
       topics: [
         "Green Innovation & Tech-enabled Sustainable Startups",
@@ -126,7 +126,7 @@ function CallForPaper() {
       </section>
 
       {/* Overview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-3xl font-bold text-red-800 mb-6">About This Conference</h2>
@@ -141,7 +141,7 @@ function CallForPaper() {
       </section>
 
       {/* Important Dates - Timeline style */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-red-800 mb-12 text-center">Important Dates</h2>
           <div className="relative pl-8 border-l-4 border-yellow-400 space-y-10">
@@ -157,7 +157,7 @@ function CallForPaper() {
       </section>
 
       {/* Research Tracks - Accordion using real track content */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-red-800 mb-4 text-center">Research Tracks</h2>
           <p className="text-gray-600 text-center mb-12">
@@ -175,11 +175,8 @@ function CallForPaper() {
                     onClick={() => setOpenTrack(isOpen ? null : track.id)}
                     className="w-full flex items-center gap-4 p-6 text-left"
                   >
-                    <span className="text-3xl text-red-700 flex-shrink-0">{track.icon}</span>
                     <div className="flex-1">
-                      <span className="inline-block bg-yellow-400 text-red-900 text-xs font-bold px-3 py-1 rounded-full mb-2">
-                        {track.title}
-                      </span>
+
                       <h3 className="text-lg font-bold text-red-800 leading-snug">
                         {track.subtitle}
                       </h3>
@@ -192,7 +189,6 @@ function CallForPaper() {
 
                   {isOpen && (
                     <div className="px-6 pb-6">
-                      <h4 className="font-bold text-red-800 mb-4">Research Areas</h4>
                       <ul className="grid md:grid-cols-2 gap-3">
                         {track.topics.map((topic, idx) => (
                           <li
@@ -214,7 +210,7 @@ function CallForPaper() {
       </section>
 
       {/* Submission Requirements */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-red-800 mb-12 text-center">Submission Requirements</h2>
           <div className="space-y-6">
@@ -282,7 +278,7 @@ function CallForPaper() {
       </section>
 
       {/* Downloads & Resources */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-red-800 mb-12 text-center">Downloads & Resources</h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -305,7 +301,7 @@ function CallForPaper() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-red-800 text-white">
+      <section className="py-10 bg-red-800 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Submit?</h2>
           <p className="text-xl text-gray-200 mb-8">
@@ -321,7 +317,7 @@ function CallForPaper() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-red-800 mb-12 text-center">Frequently Asked Questions</h2>
           <div className="space-y-4">

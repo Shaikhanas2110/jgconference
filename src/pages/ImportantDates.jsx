@@ -26,7 +26,7 @@ function ImportantDates() {
             </section>
 
             {/* Intro + Dates Table */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-10 bg-gray-50">
                 <div className="max-w-4xl mx-auto px-6">
                     <div className="bg-white rounded-xl shadow-lg p-8 mb-10">
                         <p className="text-gray-600 leading-8">
@@ -83,7 +83,7 @@ function ImportantDates() {
             </section>
 
             {/* About Conference */}
-            <section className="py-20 bg-white">
+            <section className="py-10 bg-white">
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-red-800 mb-6 text-center">
                         About Conference
@@ -103,21 +103,6 @@ function ImportantDates() {
                 </div>
             </section>
 
-            {/* CTA */}
-            <section className="py-16 bg-red-800 text-white">
-                <div className="max-w-4xl mx-auto px-6 text-center">
-                    <h2 className="text-3xl font-bold mb-4">Don't Miss the Deadline</h2>
-                    <p className="text-lg text-gray-200 mb-8">
-                        Prepare your manuscript and submit before the paper submission deadline.
-                    </p>
-                    <Link
-                        to="/call-for-paper"
-                        className="inline-block bg-yellow-400 text-red-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition"
-                    >
-                        View Call For Papers
-                    </Link>
-                </div>
-            </section>
         </>
     );
 }

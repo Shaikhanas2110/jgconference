@@ -15,11 +15,11 @@ function About() {
       </section>
 
       {/* About Content */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-red-800 mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-red-800 mb-6">Our Mission</h2>
               <p className="text-gray-600 leading-8 mb-6">
                 The International Conference on Smart Innovation for Sustainable Development Goals (ICSISDG 2026) is dedicated to bringing together researchers, academicians, students, and industry professionals from around the globe to present innovative research and exchange ideas on emerging technologies and their applications.
               </p>
@@ -50,9 +50,9 @@ function About() {
       </section>
 
       {/* Conference Details */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-red-800 mb-16">
+          <h2 className="text-3xl font-bold text-center text-red-800 mb-16">
             Conference Highlights
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -71,7 +71,7 @@ function About() {
               },
             ].map((section, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-2xl font-bold text-red-700 mb-6">{section.title}</h3>
+                <h3 className="text-xl font-bold text-red-700 mb-6">{section.title}</h3>
                 <ul className="space-y-3">
                   {section.items.map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-600">
@@ -87,7 +87,7 @@ function About() {
       </section>
 
       {/* Vision & Objectives */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             <div>

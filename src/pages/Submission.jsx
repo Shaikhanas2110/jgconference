@@ -103,34 +103,35 @@ function Submission() {
             </section>
 
             {/* Paper Submission Intro */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-10 bg-gray-50">
                 <div className="max-w-4xl mx-auto px-6">
                     <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
                         <h2 className="text-2xl font-bold text-red-800 mb-4">Paper Submission</h2>
                         <p className="text-gray-600 leading-8 mb-6">
                             Authors are invited to submit papers through the{" "}
-                            <span className="font-bold text-red-800">Microsoft CMT service</span>{" "}
+                            <span className="font-bold text-red-800">official Email</span>{" "}
                             before the submission deadline. For any inquiry about the conference,
                             please feel free to contact us.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a
+                            {/* <a
                                 href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICSSCC2026"
                                 className="bg-red-700 text-white px-6 py-3 rounded-lg hover:bg-red-800 transition flex items-center gap-2"
                             >
                                 <FaFileUpload />
                                 Submit via Microsoft CMT
-                            </a>
-                            <a
+                            </a> */}
+                            {/* <a
                                 href="https://icsscc.in.net/resource/upload/splnproc1703.docm"
                                 className="bg-yellow-400 text-red-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition flex items-center gap-2"
                             >
                                 <FaDownload />
                                 Download Springer Template
-                            </a>
+                            </a> */}
                             <a
                                 href="mailto:icsisdg2026@gmail.com"
-                                className="border-2 border-red-700 text-red-700 px-6 py-3 rounded-lg hover:bg-red-50 transition flex items-center gap-2"
+                                className="bg-yellow-400 text-red-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition flex items-center gap-2"
+
                             >
                                 <FaEnvelope />
                                 icsisdg2026@gmail.com
@@ -168,7 +169,7 @@ function Submission() {
             </section>
 
             {/* Policy for Plagiarism */}
-            <section className="py-20 bg-white">
+            <section className="py-10 bg-white">
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-red-800 mb-8 text-center">
                         Policy for Plagiarism
@@ -194,7 +195,7 @@ function Submission() {
             </section>
 
             {/* AI-Generated Text Policy */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-10 bg-gray-50">
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-red-800 mb-8 text-center">
                         Important Instructions for AI-Generated Text
@@ -216,7 +217,7 @@ function Submission() {
             </section>
 
             {/* Peer Review Policy */}
-            <section className="py-20 bg-white">
+            <section className="py-10 bg-white">
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-red-800 mb-8 text-center">
                         Peer Review Policy
@@ -253,7 +254,7 @@ function Submission() {
             </section>
 
             {/* Acceptance Criteria */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-10 bg-gray-50">
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-red-800 mb-4 text-center">
                         Acceptance Criteria for Papers
@@ -280,7 +281,7 @@ function Submission() {
             </section>
 
             {/* Ethical Quality Criteria */}
-            <section className="py-20 bg-white">
+            <section className="py-10 bg-white">
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-red-800 mb-4 text-center">
                         Ethical Quality Criteria for Reviewers
@@ -304,7 +305,7 @@ function Submission() {
             </section>
 
             {/* Reviewer Suggestions & Role */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-10 bg-gray-50">
                 <div className="max-w-4xl mx-auto px-6">
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="bg-white rounded-xl shadow-lg p-8">
@@ -353,7 +354,7 @@ function Submission() {
             </section>
 
             {/* CTA */}
-            <section className="py-16 bg-red-800 text-white">
+            {/* <section className="py-10 bg-red-800 text-white">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <h2 className="text-3xl font-bold mb-4">Ready to Submit Your Paper?</h2>
                     <p className="text-lg text-gray-200 mb-8">
@@ -366,7 +367,7 @@ function Submission() {
                         Submit via Microsoft CMT
                     </a>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 }

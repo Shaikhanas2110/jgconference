@@ -16,7 +16,7 @@ function Guidelines() {
       </section>
 
       {/* Guidelines Content */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
           {/* General Guidelines */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">

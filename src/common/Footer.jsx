@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 function Footer() {
   return (
-    <footer className="bg-red-900 text-white mt-20">
+    <footer className="bg-red-900 text-white">
       {/* Top Footer */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-4 md:grid-cols-2 gap-12">
         {/* Logo */}

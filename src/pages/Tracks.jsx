@@ -13,10 +13,8 @@ function Tracks() {
       id: 1,
       title: "Track I",
       subtitle:
-        "Artificial Intelligence and Machine Learning for Sustainable Development",
+        "Track 1 :- Artificial Intelligence and Machine Learning for Sustainable Development",
       icon: <FaRobot />,
-      description:
-        "Research focusing on Artificial Intelligence, Machine Learning and intelligent technologies for achieving Sustainable Development Goals (SDGs).",
       topics: [
         "Explainable AI (XAI) for Sustainable Decision Making",
         "AI for Sustainable Innovation",
@@ -35,7 +33,7 @@ function Tracks() {
       id: 2,
       title: "Track II",
       subtitle:
-        "Internet of Things, Smart Systems, and Emerging Technologies",
+        "Track 2 :- Internet of Things, Smart Systems, and Emerging Technologies",
       icon: <FaNetworkWired />,
       description:
         "Innovative research in IoT, smart systems, embedded technologies and intelligent communication.",
@@ -55,7 +53,7 @@ function Tracks() {
     {
       id: 3,
       title: "Track III",
-      subtitle: "Smart Finance, FinTech and Economic Sustainability",
+      subtitle: "Track 3 :- Smart Finance, FinTech and Economic Sustainability",
       icon: <FaCloud />,
       description:
         "Emerging financial technologies and intelligent economic systems.",
@@ -72,7 +70,7 @@ function Tracks() {
       id: 4,
       title: "Track IV",
       subtitle:
-        "Business Intelligence and Data Analytics for Responsible Decision-Making",
+        "Track 4 :- Business Intelligence and Data Analytics for Responsible Decision-Making",
       icon: <FaDatabase />,
       description:
         "Advanced analytics and business intelligence for sustainable organizations.",
@@ -92,7 +90,7 @@ function Tracks() {
       id: 5,
       title: "Track V",
       subtitle:
-        "Entrepreneurship, Innovation, and Sustainable Startup Ecosystems",
+        "Track 5 :- Entrepreneurship, Innovation, and Sustainable Startup Ecosystems",
       icon: <FaLeaf />,
       description:
         "Research on entrepreneurship, innovation ecosystems and sustainable startups.",
@@ -120,35 +118,22 @@ function Tracks() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-8">
             {tracks.map((track) => (
               <div
                 key={track.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col"
+                className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col ${track.id === 5 ? "lg:col-span-2 lg:max-w-[calc(50%-1rem)] lg:mx-auto lg:w-full" : ""
+                  }`}
               >
                 <div className="bg-gradient-to-r from-red-700 to-red-600 p-6 text-white">
-                  <div className="text-4xl mb-4">{track.icon}</div>
-
-                  <span className="inline-block bg-yellow-400 text-red-900 text-xs font-bold px-3 py-1 rounded-full mb-3">
-                    {track.title}
-                  </span>
-
                   <h3 className="text-xl font-bold leading-snug">
                     {track.subtitle}
                   </h3>
                 </div>
 
                 <div className="p-6 flex-1">
-                  <p className="text-gray-600 leading-7 mb-6">
-                    {track.description}
-                  </p>
-
-                  <h4 className="font-bold text-red-800 mb-4">
-                    Research Areas
-                  </h4>
-
                   <ul className="space-y-3">
                     {track.topics.map((topic, idx) => (
                       <li
@@ -167,7 +152,7 @@ function Tracks() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-red-800 mb-12">
             Paper Submission
@@ -210,7 +195,7 @@ function Tracks() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

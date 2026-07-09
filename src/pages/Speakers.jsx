@@ -34,10 +34,10 @@ function Speakers() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-gray-50 rounded-2xl shadow-lg border-l-4 border-yellow-400 p-10">
-            <h2 className="text-4xl font-bold text-red-800 mb-6">Speaker Sessions</h2>
+            <h2 className="text-3xl font-bold text-red-800 mb-6">Speaker Sessions</h2>
             <p className="text-gray-700 leading-8 mb-5">
               The conference will feature keynote and invited talks by renowned experts across the globe,
               along with pre-conference tutorials, panel discussions, and refereed technical paper presentations.
@@ -54,7 +54,7 @@ function Speakers() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             {speakerCategories.map((item, index) => (
@@ -88,9 +88,9 @@ function Speakers() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-red-800 mb-12">
+          <h2 className="text-3xl font-bold text-center text-red-800 mb-12">
             Conference Highlights
           </h2>
 
