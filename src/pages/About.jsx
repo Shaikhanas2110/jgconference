@@ -91,13 +91,13 @@ function About() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-3xl font-bold text-red-800 mb-6">Our Vision</h3>
+              <h3 className="text-3xl font-bold text-red-800 mb-6 text-center">Our Vision</h3>
               <p className="text-gray-600 leading-8 mb-4">
                 To create a global platform where innovative research and practical applications converge to address the world's most pressing challenges through technology and sustainable development.
               </p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-red-800 mb-6">Our Objectives</h3>
+              <h3 className="text-3xl font-bold text-red-800 mb-6 text-center">Our Objectives</h3>
               <ul className="space-y-4 text-gray-600">
                 <li className="flex gap-3">
                   <span className="text-yellow-500 font-bold">•</span>

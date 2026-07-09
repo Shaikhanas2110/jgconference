@@ -5,7 +5,7 @@ function ReviewProcess() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-red-900 via-red-700 to-red-800 text-white py-20">
+      <section className="bg-gradient-to-r from-red-900 via-red-700 to-red-800 text-white py-10">
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="text-5xl font-bold">Review Process</h1>
           <p className="mt-4 text-xl text-gray-200">

@@ -150,17 +150,20 @@ function Home() {
 
         {/* stats strip */}
         <div className="relative mt-14 border-t border-white/10 bg-black/20">
-          <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:divide-x sm:divide-white/10">
+          {/* Keeps 3 equal columns with dividing lines */}
+          <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x sm:divide-white/10">
             {[
               [FaFileAlt, "500+", "Research Papers"],
               [FaMicrophoneAlt, "80+", "Speakers"],
               [FaThLarge, "10+", "Tracks"],
             ].map(([Icon, num, label], i) => (
-              <div key={i} className="flex items-center gap-3 sm:pl-6 first:sm:pl-0">
+              /* justify-center centers the item inside its grid column */
+              <div key={i} className="flex items-center justify-center gap-3 py-2 sm:py-0">
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-red-700/60 text-yellow-400 shrink-0">
                   <Icon size={16} />
                 </span>
-                <div>
+                {/* left-aligned text looks best next to a left-aligned icon, but the whole block is centered */}
+                <div className="text-left">
                   <p className="text-2xl font-bold text-yellow-400 leading-none">{num}</p>
                   <p className="text-xs text-gray-300 mt-1">{label}</p>
                 </div>

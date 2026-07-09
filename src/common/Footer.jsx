@@ -47,8 +47,7 @@ function Footer() {
             <li><Link to="/guidelines">Guidelines</Link></li>
             <li><Link to="/review-process">Review Process</Link></li>
             <li><Link to="/publication">Publication</Link></li>
-            <li><Link to="/downloads">Downloads</Link></li>
-            <li><Link to="/paper-status">Paper Status</Link></li>
+            <li><Link to="/submission">Submission</Link></li>
           </ul>
         </div>
         {/* Contact */}

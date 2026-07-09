@@ -143,7 +143,7 @@ function Committees() {
             {/* Content Area */}
             <div className="md:col-span-3">
               <div className="bg-white rounded-xl shadow-lg p-8">
-                <h2 className="text-3xl font-bold text-red-800 mb-8 flex items-center gap-3">
+                <h2 className="text-2xl font-bold text-red-800 mb-8 flex items-center gap-3">
                   <span className="w-2 h-8 bg-yellow-400 rounded-full"></span>
                   {active.title}
                 </h2>

@@ -10,6 +10,7 @@ import {
   FaNetworkWired,
   FaLeaf,
 } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 function CallForPaper() {
   // Real tracks pulled from Tracks.jsx
@@ -307,12 +308,13 @@ function CallForPaper() {
           <p className="text-xl text-gray-200 mb-8">
             Join us in this exciting international conference by submitting your research paper.
           </p>
-          <a
-            href="/guidelines"
-            className="inline-block bg-yellow-400 text-red-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition"
-          >
-            View Guidelines & Submit
-          </a>
+          <NavLink to="/guidelines">
+            <button
+              className="inline-block bg-yellow-400 text-red-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition"
+            >
+              View Guidelines & Submit
+            </button></NavLink>
+
         </div>
       </section>
 
