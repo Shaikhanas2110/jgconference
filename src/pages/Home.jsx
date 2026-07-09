@@ -125,7 +125,6 @@ function Home() {
         </div>
 
         {/* countdown card, mobile version */}
-        {/* ADJUSTED: Changed bg-red-950/80 to bg-red-900/80 */}
         <div className="md:hidden relative px-6 pb-8 -mt-6">
           <div className="inline-flex flex-wrap items-center gap-5 bg-red-900/80 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
             <span className="text-sm font-medium text-gray-200">
@@ -150,12 +149,10 @@ function Home() {
         </div>
 
         {/* stats strip */}
-        {/* ADJUSTED: Swapped bg-red-800/60 for bg-red-700/60 to keep the icons popping */}
         <div className="relative mt-14 border-t border-white/10 bg-black/20">
-          <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:divide-x sm:divide-white/10">
+          <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:divide-x sm:divide-white/10">
             {[
               [FaFileAlt, "500+", "Research Papers"],
-              [FaGlobeAmericas, "30+", "Countries"],
               [FaMicrophoneAlt, "80+", "Speakers"],
               [FaThLarge, "10+", "Tracks"],
             ].map(([Icon, num, label], i) => (
