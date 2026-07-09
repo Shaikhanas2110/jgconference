@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import image from '../assets/image.jpeg';
 
 function Home() {
   return (
@@ -44,7 +45,7 @@ function Home() {
 
         {/* campus photo as full banner background */}
         <img
-          src="public\image.jpeg"
+          src={image}
           alt="JG University campus"
           className="absolute inset-0 h-full w-full object-cover"
         />
