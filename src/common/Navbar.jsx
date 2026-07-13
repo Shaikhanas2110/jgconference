@@ -33,6 +33,7 @@ const mobileSubLinkClasses = ({ isActive }) =>
     : "text-gray-600 hover:text-red-700"
   }`;
 
+
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -51,6 +52,11 @@ function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname]);
+  const isHomeActive =
+    location.pathname === "/" && location.hash !== "#about";
+
+  const isAboutActive =
+    location.pathname === "/" && location.hash === "#about";
 
   // Lock body scroll while the mobile drawer is open, and auto-expand
   // the Call For Paper accordion if the user is already on one of those pages
@@ -103,13 +109,25 @@ function Navbar() {
         {/* Desktop Menu */}
 
         <ul className="hidden lg:flex items-center gap-10 text-gray-800 font-medium">
-          <NavLink to="/" className={navLinkClasses}>
+          <Link
+            to="/"
+            className={`pb-1 border-b-2 duration-300 ${isHomeActive
+              ? "text-red-700 font-semibold border-red-700"
+              : "text-gray-800 border-transparent hover:text-red-700"
+              }`}
+          >
             Home
-          </NavLink>
+          </Link>
 
-          <NavLink to="/about" className={navLinkClasses}>
+          <Link
+            to="/#about"
+            className={`pb-1 border-b-2 duration-300 ${isAboutActive
+              ? "text-red-700 font-semibold border-red-700"
+              : "text-gray-800 border-transparent hover:text-red-700"
+              }`}
+          >
             About
-          </NavLink>
+          </Link>
 
           <NavLink to="/speakers" className={navLinkClasses}>
             Speakers
@@ -256,14 +274,27 @@ function Navbar() {
 
         {/* Drawer Links */}
         <nav className="flex-1 overflow-y-auto">
-          <NavLink className={mobileLinkClasses} to="/">
+          <Link
+            to="/"
+            onClick={() => setMobileOpen(false)}
+            className={`block px-6 py-4 border-b ${isHomeActive
+              ? "text-red-700 font-semibold bg-yellow-50 border-l-4 border-l-red-700"
+              : "text-gray-800 border-gray-50"
+              }`}
+          >
             Home
-          </NavLink>
+          </Link>
 
-          <NavLink className={mobileLinkClasses} to="/about">
+          <Link
+            to="/#about"
+            onClick={() => setMobileOpen(false)}
+            className={`block px-6 py-4 border-b ${isAboutActive
+                ? "text-red-700 font-semibold bg-yellow-50 border-l-4 border-l-red-700"
+                : "text-gray-800 border-gray-50"
+              }`}
+          >
             About
-          </NavLink>
-
+          </Link>
           <NavLink className={mobileLinkClasses} to="/speakers">
             Speakers
           </NavLink>
@@ -277,8 +308,8 @@ function Navbar() {
             <button
               onClick={() => setMobileCFPOpen(!mobileCFPOpen)}
               className={`w-full flex items-center justify-between px-6 py-4 text-base duration-300 ${isCallForPaperActive
-                  ? "text-red-700 font-semibold bg-yellow-50"
-                  : "text-gray-800 font-medium hover:bg-gray-50"
+                ? "text-red-700 font-semibold bg-yellow-50"
+                : "text-gray-800 font-medium hover:bg-gray-50"
                 }`}
               aria-expanded={mobileCFPOpen}
             >

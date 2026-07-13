@@ -59,21 +59,22 @@ function Footer() {
             <div className="flex gap-3">
               <MdLocationOn className="text-yellow-400 text-xl" />
               <p>
-                JG University,
-                Ahmedabad,
+                Main Campus,<br />
+                Drive In Rd, Thaltej,
+                Ahmedabad-380054,<br />
                 Gujarat,
                 India
               </p>
             </div>
             <div className="flex gap-3">
               <MdPhone className="text-yellow-400 text-xl" />
-              <p>+91 9876543210</p>
+              <p>+91 7567 7567 58/59</p>
             </div>
             <div className="flex gap-3">
 
               <MdMailOutline className="text-yellow-400 text-xl" />
 
-              <p>conference@jgu.edu.in</p>
+              <p>connect@jguni.in</p>
 
             </div>
           </div>

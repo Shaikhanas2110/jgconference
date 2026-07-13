@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FaCheck, FaArrowRight, FaLock, FaSpinner } from "react-icons/fa";
 
-// Base URL of your backend API. Set VITE_API_BASE_URL in your frontend
-// .env file (e.g. VITE_API_BASE_URL=https://api.yourdomain.com).
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
 const RAZORPAY_CHECKOUT_SRC = "https://checkout.razorpay.com/v1/checkout.js";
@@ -268,8 +266,8 @@ function Registration() {
               <div
                 key={index}
                 className={`group relative flex flex-col rounded-2xl overflow-hidden bg-white transition-all duration-300 ease-out hover:-translate-y-2 ${pkg.highlighted
-                    ? "shadow-2xl ring-2 ring-yellow-400 md:scale-105 md:hover:scale-[1.07]"
-                    : "shadow-lg hover:shadow-2xl border border-gray-100"
+                  ? "shadow-2xl ring-2 ring-yellow-400 md:scale-105 md:hover:scale-[1.07]"
+                  : "shadow-lg hover:shadow-2xl border border-gray-100"
                   }`}
               >
                 {pkg.highlighted && (
@@ -280,8 +278,8 @@ function Registration() {
 
                 <div
                   className={`p-8 ${pkg.highlighted
-                      ? "bg-gradient-to-br from-red-800 to-red-900"
-                      : "bg-red-800"
+                    ? "bg-gradient-to-br from-red-800 to-red-900"
+                    : "bg-red-800"
                     } text-white`}
                 >
                   <h3 className="text-xl font-bold">{pkg.category}</h3>
@@ -306,8 +304,8 @@ function Registration() {
                     href="#register-form"
                     onClick={scrollToRegisterForm}
                     className={`mt-8 inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg font-bold text-sm transition-all duration-300 ${pkg.highlighted
-                        ? "bg-yellow-400 text-red-900 hover:bg-yellow-300 hover:shadow-lg hover:shadow-yellow-400/40"
-                        : "bg-red-50 text-red-800 hover:bg-red-700 hover:text-white"
+                      ? "bg-yellow-400 text-red-900 hover:bg-yellow-300 hover:shadow-lg hover:shadow-yellow-400/40"
+                      : "bg-red-50 text-red-800 hover:bg-red-700 hover:text-white"
                       }`}
                   >
                     Register <FaArrowRight className="text-xs" />

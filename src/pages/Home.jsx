@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FaCalendar,
   FaFileAlt,
@@ -7,10 +7,33 @@ import {
   FaThLarge,
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import image from '../assets/image.jpeg';
 
 function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+      }
+    } else {
+      // No hash means we're on Home, so scroll to the top
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [location.pathname, location.hash]);
+
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-700 text-white">
@@ -55,7 +78,7 @@ function Home() {
 
         <div className="relative max-w-7xl mx-auto px-6 min-h-[560px] flex items-center">
           <div className="max-w-2xl py-14 mt-10 flex flex-col items-center">
-            <h1 className="text-6xl font-bold leading-tight text-center">
+            <h1 className="text-6xl font-bold leading-tight text-center text-yellow-400">
               ICSISDG 2026
             </h1>
             <p className="mt-4 text-3xl text-white-200 max-w-xl text-center">
@@ -125,21 +148,25 @@ function Home() {
         </div>
 
         {/* countdown card, mobile version */}
+        {/* countdown card, mobile version */}
         <div className="md:hidden relative px-6 pb-8 -mt-6">
-          <div className="inline-flex flex-wrap items-center gap-5 bg-red-900/80 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
-            <span className="text-sm font-medium text-gray-200">
+          <div className="bg-red-900/80 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-5">
+            <span className="block text-sm font-medium text-gray-200 text-center mb-5">
               Conference Starts In
             </span>
-            <div className="flex gap-5">
+
+            <div className="grid grid-cols-4 gap-2 text-center">
               {[
                 ["120", "Days"],
                 ["14", "Hours"],
                 ["32", "Minutes"],
                 ["10", "Seconds"],
               ].map(([num, label], i) => (
-                <div key={i} className="text-center">
-                  <p className="text-xl font-bold text-yellow-400">{num}</p>
-                  <p className="text-[11px] uppercase tracking-wide text-gray-300">
+                <div key={i} className="flex flex-col items-center justify-center">
+                  <p className="text-2xl font-bold text-yellow-400 leading-none">
+                    {num}
+                  </p>
+                  <p className="mt-2 text-[11px] uppercase tracking-wide text-gray-300">
                     {label}
                   </p>
                 </div>
@@ -150,29 +177,36 @@ function Home() {
 
         {/* stats strip */}
         <div className="relative mt-14 border-t border-white/10 bg-black/20">
-          {/* Keeps 3 equal columns with dividing lines */}
           <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x sm:divide-white/10">
             {[
               [FaFileAlt, "500+", "Research Papers"],
               [FaMicrophoneAlt, "80+", "Speakers"],
-              [FaThLarge, "10+", "Tracks"],
+              [FaThLarge, "5", "Tracks"],
             ].map(([Icon, num, label], i) => (
-              /* justify-center centers the item inside its grid column */
-              <div key={i} className="flex items-center justify-center gap-3 py-2 sm:py-0">
+              <div
+                key={i}
+                className="flex items-start sm:items-center justify-center gap-3 py-2 sm:py-0"
+              >
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-red-700/60 text-yellow-400 shrink-0">
                   <Icon size={16} />
                 </span>
-                {/* left-aligned text looks best next to a left-aligned icon, but the whole block is centered */}
-                <div className="text-left">
-                  <p className="text-2xl font-bold text-yellow-400 leading-none">{num}</p>
-                  <p className="text-xs text-gray-300 mt-1">{label}</p>
+
+                <div className="flex flex-col justify-start min-h-[42px] text-center sm:text-left">
+                  <p className="text-2xl font-bold text-yellow-400 leading-none">
+                    {num}
+                  </p>
+
+                  <p className="text-xs text-gray-300 mt-1 leading-4">
+                    {label}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="py-10 bg-white">
+
+      <section id="about" className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <img
@@ -181,10 +215,6 @@ function Home() {
               className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
             />
             <div>
-              <p className="text-red-700 font-semibold uppercase tracking-wide mb-2">
-                International Conference on Smart Innovation for Sustainable
-                Development Goals (ICSISDG 2026)
-              </p>
               <h2 className="text-4xl font-bold text-red-800 mb-6">
                 About ICSISDG 2026
               </h2>
@@ -234,7 +264,7 @@ function Home() {
                 ["30 September 2026", "Submission Deadline"],
                 ["24 October 2026", "Acceptance Notification"],
                 ["31 October 2026", "Registration Deadline"],
-                ["6 November 2026", "Camera Ready Submission"],
+                ["6 November 2026", "Camera Submission"],
                 ["14 November 2026", "Conference Schedule"],
                 ["27 November 2026", "Conference Starts"],
               ].map((d, i) => (
@@ -256,20 +286,14 @@ function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             <div>
-              <h2 className="text-4xl font-bold text-red-800 mb-3 py-3">
+              {/* <h2 className="text-4xl font-bold text-red-800 mb-3 py-3">
                 Contact Us
               </h2>
               <div className="space-y-1 text-gray-700 mb-6">
                 <p className="font-semibold text-red-700">JG University</p>
-                <p>Drive in road, Ahmedabad, India</p>
-                <p>Email: [email protected]</p>
-                <p>Phone: [phone number]</p>
-              </div>
-              <h2 className="text-4xl font-bold text-red-800 mb-6">
-                About JG University
-              </h2>
+              </div> */}
               <p className="text-gray-700 leading-8 mb-4">
-                JG University is a new-age, technology-driven university
+                <b>JG University</b> is a new-age, technology-driven university
                 committed to delivering future-focused education aligned with
                 evolving industry needs and global academic standards. It
                 offers undergraduate, postgraduate, doctoral and professional
@@ -279,7 +303,7 @@ function Home() {
               </p>
               <p className="text-gray-700 leading-8">
                 Sponsored by the ASIA Charitable Trust (established in 1965),
-                JG University builds on more than six decades of educational
+                <b> JG University</b> builds on more than six decades of educational
                 excellence, preparing globally competent professionals
                 committed to sustainable development.
               </p>

@@ -107,6 +107,9 @@ function Committees() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-red-900 via-red-700 to-red-800 text-white py-10">
         <div className="max-w-7xl mx-auto px-6">
+          <span className="inline-block text-s font-semibold tracking-widest text-yellow-400 uppercase mb-3">
+            ICSISDG 2026
+          </span>
           <h1 className="text-5xl font-bold">Committees</h1>
           <p className="mt-4 text-xl text-gray-200">
             Meet the organizing committees driving ICSISDG 2026
@@ -126,8 +129,8 @@ function Committees() {
                     key={index}
                     onClick={() => setActiveIndex(index)}
                     className={`w-full text-left px-5 py-4 flex items-center justify-between gap-2 border-b border-gray-100 last:border-b-0 transition-colors ${activeIndex === index
-                        ? "bg-red-800 text-white font-semibold"
-                        : "text-gray-700 hover:bg-red-50"
+                      ? "bg-red-800 text-white font-semibold"
+                      : "text-gray-700 hover:bg-red-50"
                       }`}
                   >
                     <span>{section.title}</span>
@@ -198,9 +201,6 @@ function Committees() {
       {/* International Advisory Board */}
       <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-red-800 mb-16">
-            International Advisory Board
-          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               "Placeholder Name 1, Institution",

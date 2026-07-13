@@ -8,6 +8,9 @@ function Guidelines() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-red-900 via-red-700 to-red-800 text-white py-10">
         <div className="max-w-7xl mx-auto px-6">
+          <span className="inline-block text-s font-semibold tracking-widest text-yellow-400 uppercase mb-3">
+            ICSISDG 2026
+          </span>
           <h1 className="text-5xl font-bold">Submission Guidelines</h1>
           <p className="mt-4 text-xl text-gray-200">
             Instructions for preparing and submitting your research papers

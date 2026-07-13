@@ -5,6 +5,11 @@ import {
   FaCloud,
   FaNetworkWired,
   FaLeaf,
+  FaLayerGroup,
+  FaUsers,
+  FaMicrophone,
+  FaGlobeAmericas,
+  FaArrowRight,
 } from "react-icons/fa";
 
 function Tracks() {
@@ -12,9 +17,19 @@ function Tracks() {
     {
       id: 1,
       title: "Track I",
+      label: "TRACK 1",
       subtitle:
-        "Track 1 :- Artificial Intelligence and Machine Learning for Sustainable Development",
+        "Artificial Intelligence and Machine Learning for Sustainable Development",
       icon: <FaRobot />,
+      theme: {
+        badge: "bg-red-600",
+        iconBg: "bg-red-50",
+        iconText: "text-red-600",
+        titleText: "text-red-800",
+        dot: "bg-red-500",
+        link: "text-red-700 hover:text-red-800",
+        ring: "ring-red-100",
+      },
       topics: [
         "Explainable AI (XAI) for Sustainable Decision Making",
         "AI for Sustainable Innovation",
@@ -32,11 +47,18 @@ function Tracks() {
     {
       id: 2,
       title: "Track II",
-      subtitle:
-        "Track 2 :- Internet of Things, Smart Systems, and Emerging Technologies",
+      label: "TRACK 2",
+      subtitle: "Internet of Things, Smart Systems, and Emerging Technologies",
       icon: <FaNetworkWired />,
-      description:
-        "Innovative research in IoT, smart systems, embedded technologies and intelligent communication.",
+      theme: {
+        badge: "bg-orange-500",
+        iconBg: "bg-orange-50",
+        iconText: "text-orange-600",
+        titleText: "text-orange-700",
+        dot: "bg-orange-400",
+        link: "text-orange-700 hover:text-orange-800",
+        ring: "ring-orange-100",
+      },
       topics: [
         "IoT and AI for Environmental Sensing and Data Collection",
         "IoT and AI for Sustainable Logistics and Waste Reduction",
@@ -53,10 +75,18 @@ function Tracks() {
     {
       id: 3,
       title: "Track III",
-      subtitle: "Track 3 :- Smart Finance, FinTech and Economic Sustainability",
+      label: "TRACK 3",
+      subtitle: "Smart Finance, FinTech and Economic Sustainability",
       icon: <FaCloud />,
-      description:
-        "Emerging financial technologies and intelligent economic systems.",
+      theme: {
+        badge: "bg-emerald-600",
+        iconBg: "bg-emerald-50",
+        iconText: "text-emerald-600",
+        titleText: "text-emerald-700",
+        dot: "bg-emerald-500",
+        link: "text-emerald-700 hover:text-emerald-800",
+        ring: "ring-emerald-100",
+      },
       topics: [
         "Green FinTech & Sustainable Investment Analytics",
         "Robo-Advisory Systems and Algorithmic Trading Ethics",
@@ -69,11 +99,19 @@ function Tracks() {
     {
       id: 4,
       title: "Track IV",
+      label: "TRACK 4",
       subtitle:
-        "Track 4 :- Business Intelligence and Data Analytics for Responsible Decision-Making",
+        "Business Intelligence and Data Analytics for Responsible Decision-Making",
       icon: <FaDatabase />,
-      description:
-        "Advanced analytics and business intelligence for sustainable organizations.",
+      theme: {
+        badge: "bg-blue-600",
+        iconBg: "bg-blue-50",
+        iconText: "text-blue-600",
+        titleText: "text-blue-700",
+        dot: "bg-blue-500",
+        link: "text-blue-700 hover:text-blue-800",
+        ring: "ring-blue-100",
+      },
       topics: [
         "Big Data Analytics and Processing",
         "Business Intelligence and Analytics for Responsible Decision-Making",
@@ -89,11 +127,18 @@ function Tracks() {
     {
       id: 5,
       title: "Track V",
-      subtitle:
-        "Track 5 :- Entrepreneurship, Innovation, and Sustainable Startup Ecosystems",
+      label: "TRACK 5",
+      subtitle: "Entrepreneurship, Innovation, and Sustainable Startup Ecosystems",
       icon: <FaLeaf />,
-      description:
-        "Research on entrepreneurship, innovation ecosystems and sustainable startups.",
+      theme: {
+        badge: "bg-purple-600",
+        iconBg: "bg-purple-50",
+        iconText: "text-purple-600",
+        titleText: "text-purple-700",
+        dot: "bg-purple-500",
+        link: "text-purple-700 hover:text-purple-800",
+        ring: "ring-purple-100",
+      },
       topics: [
         "Green Innovation & Tech-enabled Sustainable Startups",
         "Smart Incubators and Accelerators for Green Ventures",
@@ -107,40 +152,66 @@ function Tracks() {
     },
   ];
 
+  const stats = [
+    { icon: <FaLayerGroup />, value: "5", label: "Technical Tracks" },
+    { icon: <FaUsers />, value: "200+", label: "Expected Papers" },
+    { icon: <FaMicrophone />, value: "40+", label: "Speakers" },
+    { icon: <FaGlobeAmericas />, value: "15+", label: "Countries" },
+  ];
+
   return (
     <>
-      <section className="bg-gradient-to-r from-red-900 via-red-700 to-red-800 text-white py-10">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-red-900 via-red-700 to-red-800 text-white py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-5xl font-bold">Technical Tracks</h1>
-          <p className="mt-4 text-xl text-gray-200">
+          <span className="inline-block text-s font-semibold tracking-widest text-yellow-400 uppercase mb-3">
+            ICSISDG 2026
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold">Technical Tracks</h1>
+          <p className="mt-4 text-lg md:text-xl text-red-100 max-w-2xl">
             Explore the official research tracks of ICSISDG 2026.
           </p>
         </div>
       </section>
 
-      <section className="py-5 bg-gray-50">
+      {/* Track cards */}
+      <section className="pt-10 pb-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {tracks.map((track) => (
               <div
                 key={track.id}
-                className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col ${track.id === 5 ? "lg:col-span-2 lg:max-w-[calc(50%-1rem)] lg:mx-auto lg:w-full" : ""
-                  }`}
+                className="relative bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col"
               >
-                <div className="bg-gradient-to-r from-red-700 to-red-600 p-6 text-white">
-                  <h3 className="text-xl font-bold leading-snug">
+                {/* Badge */}
+                <span
+                  className={`absolute -top-3 left-5 ${track.theme.badge} text-white text-[11px] font-bold tracking-wide px-3 py-1 rounded-full shadow-md`}
+                >
+                  {track.label}
+                </span>
+
+                <div className="p-6 pt-8 flex-1 flex flex-col">
+                  <div
+                    className={`w-12 h-12 rounded-full flex items-center justify-center ${track.theme.iconBg} ${track.theme.iconText} text-xl mb-4 ring-4 ${track.theme.ring}`}
+                  >
+                    {track.icon}
+                  </div>
+
+                  <h3
+                    className={`text-base font-bold leading-snug mb-4 ${track.theme.titleText}`}
+                  >
                     {track.subtitle}
                   </h3>
-                </div>
 
-                <div className="p-6 flex-1">
-                  <ul className="space-y-3">
-                    {track.topics.map((topic, idx) => (
+                  <ul className="space-y-2.5 flex-1">
+                    {track.topics.slice(0, 6).map((topic, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-3 text-sm text-gray-700 leading-6"
+                        className="flex items-start gap-2.5 text-xs text-gray-600 leading-5"
                       >
-                        <span className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></span>
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${track.theme.dot}`}
+                        ></span>
                         <span>{topic}</span>
                       </li>
                     ))}
@@ -151,51 +222,6 @@ function Tracks() {
           </div>
         </div>
       </section>
-
-      {/* <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-red-800 mb-12">
-            Paper Submission
-          </h2>
-
-          <div className="bg-yellow-50 border-l-4 border-yellow-400 rounded-xl p-10">
-            <p className="text-gray-700 leading-8 mb-8">
-              Authors are invited to submit original and unpublished research
-              papers related to any of the conference tracks. All submissions
-              will undergo a rigorous peer-review process and should follow the
-              prescribed IEEE conference format.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="font-bold text-red-800 mb-2">
-                  Submission Deadline
-                </h3>
-                <p>20 January 2026</p>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-red-800 mb-2">
-                  Acceptance Notification
-                </h3>
-                <p>10 February 2026</p>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-red-800 mb-2">
-                  Paper Format
-                </h3>
-                <p>IEEE Conference Template (6–8 Pages)</p>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-red-800 mb-2">Publication</h3>
-                <p>Scopus / Web of Science (Subject to Approval)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 }

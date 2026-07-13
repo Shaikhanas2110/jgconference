@@ -27,6 +27,9 @@ function Speakers() {
     <>
       <section className="bg-gradient-to-r from-red-900 via-red-700 to-red-800 text-white py-10">
         <div className="max-w-7xl mx-auto px-6">
+          <span className="inline-block text-s font-semibold tracking-widest text-yellow-400 uppercase mb-3">
+            ICSISDG 2026
+          </span>
           <h1 className="text-5xl font-bold">Keynote & Invited Speakers</h1>
           <p className="mt-4 text-xl text-gray-200">
             Distinguished experts from academia, industry and research organizations.
@@ -96,25 +99,25 @@ function Speakers() {
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="bg-yellow-50 rounded-xl shadow p-8 text-center">
-              <FaMicrophoneAlt className="mx-auto text-5xl text-red-700 mb-4"/>
+              <FaMicrophoneAlt className="mx-auto text-5xl text-red-700 mb-4" />
               <h3 className="font-bold text-red-800 mb-2">Keynote Talks</h3>
               <p className="text-gray-600 text-sm">Visionary talks by globally renowned experts.</p>
             </div>
 
             <div className="bg-yellow-50 rounded-xl shadow p-8 text-center">
-              <FaChalkboardTeacher className="mx-auto text-5xl text-red-700 mb-4"/>
+              <FaChalkboardTeacher className="mx-auto text-5xl text-red-700 mb-4" />
               <h3 className="font-bold text-red-800 mb-2">Tutorials</h3>
               <p className="text-gray-600 text-sm">Pre-conference tutorials by domain specialists.</p>
             </div>
 
             <div className="bg-yellow-50 rounded-xl shadow p-8 text-center">
-              <FaUsers className="mx-auto text-5xl text-red-700 mb-4"/>
+              <FaUsers className="mx-auto text-5xl text-red-700 mb-4" />
               <h3 className="font-bold text-red-800 mb-2">Panel Discussions</h3>
               <p className="text-gray-600 text-sm">Interactive discussions on emerging trends.</p>
             </div>
 
             <div className="bg-yellow-50 rounded-xl shadow p-8 text-center">
-              <FaStar className="mx-auto text-5xl text-red-700 mb-4"/>
+              <FaStar className="mx-auto text-5xl text-red-700 mb-4" />
               <h3 className="font-bold text-red-800 mb-2">Paper Presentations</h3>
               <p className="text-gray-600 text-sm">Peer-reviewed technical paper presentation sessions.</p>
             </div>
