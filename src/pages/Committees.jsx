@@ -128,7 +128,55 @@ function Committees() {
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [openMobileIndex, setOpenMobileIndex] = useState(0);
   const active = sections[activeIndex];
+
+  const renderSectionBody = (section) =>
+    !section.isGrouped ? (
+      <div className="space-y-3 sm:space-y-4">
+        {section.members.map((member, idx) => (
+          <div
+            key={idx}
+            className="flex items-center gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors"
+          >
+            <span className="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white">
+              <FaUser className="text-xs sm:text-sm" />
+            </span>
+            <p className="text-gray-700 text-sm sm:text-base break-words">
+              {member}
+            </p>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div className="space-y-6 sm:space-y-8">
+        {section.groups.map((group, gIdx) => (
+          <div key={gIdx}>
+            <h3 className="text-base sm:text-lg font-bold text-red-700 mb-3 flex items-center gap-2">
+              <span className="w-6 h-6 flex-shrink-0 bg-yellow-400 rounded-full flex items-center justify-center text-red-900 text-xs font-bold">
+                {gIdx + 1}
+              </span>
+              <span className="break-words">{group.groupTitle}</span>
+            </h3>
+            <div className="space-y-2.5 sm:space-y-3 pl-4 sm:pl-8">
+              {group.members.map((member, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors"
+                >
+                  <span className="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white">
+                    <FaUser className="text-xs" />
+                  </span>
+                  <p className="text-gray-700 text-sm break-words">
+                    {member}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
 
   return (
     <>
@@ -837,21 +885,57 @@ function Committees() {
           <circle cx="317.6" cy="305.2" r="1.2" fill="white" opacity="0.5" />
         </svg>
 
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <span className="inline-block text-s font-semibold tracking-widest text-yellow-400 uppercase mb-3">
             ICSISDG 2026
           </span>
-          <h1 className="text-5xl font-bold">Committees</h1>
-          <p className="mt-4 text-xl text-red-100">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">Committees</h1>
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-red-100">
             Meet the organizing committees driving ICSISDG 2026
           </p>
         </div>
       </section>
 
-      {/* Committees Section - Sidebar + Content Layout */}
-      <section className="py-10 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
+      {/* Committees Section */}
+      <section className="py-6 sm:py-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Mobile: accordion — every committee name is visible up front, tap to expand its members in place */}
+          <div className="md:hidden space-y-3">
+            {sections.map((section, index) => {
+              const isOpen = openMobileIndex === index;
+              return (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenMobileIndex(isOpen ? -1 : index)}
+                    className={`w-full text-left px-4 py-4 flex items-center justify-between gap-2 transition-colors ${
+                      isOpen ? "bg-red-800 text-white" : "text-gray-800"
+                    }`}
+                  >
+                    <span className="font-semibold flex items-center gap-3">
+                      <span className="w-1.5 h-6 bg-yellow-400 rounded-full flex-shrink-0"></span>
+                      {section.title}
+                    </span>
+                    <FaChevronRight
+                      className={`text-xs flex-shrink-0 transition-transform ${
+                        isOpen ? "rotate-90 text-yellow-400" : "text-gray-300"
+                      }`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div className="p-4 border-t border-gray-100">
+                      {renderSectionBody(section)}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Desktop: Sidebar + Content Layout */}
+          <div className="hidden md:grid md:grid-cols-4 gap-8">
             {/* Sidebar Navigation */}
             <div className="md:col-span-1">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden sticky top-6">
@@ -885,48 +969,7 @@ function Committees() {
                   <span className="w-2 h-8 bg-yellow-400 rounded-full"></span>
                   {active.title}
                 </h2>
-
-                {!active.isGrouped ? (
-                  <div className="space-y-4">
-                    {active.members.map((member, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors"
-                      >
-                        <span className="w-9 h-9 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white">
-                          <FaUser className="text-sm" />
-                        </span>
-                        <p className="text-gray-700">{member}</p>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="space-y-8">
-                    {active.groups.map((group, gIdx) => (
-                      <div key={gIdx}>
-                        <h3 className="text-lg font-bold text-red-700 mb-3 flex items-center gap-2">
-                          <span className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-red-900 text-xs font-bold">
-                            {gIdx + 1}
-                          </span>
-                          {group.groupTitle}
-                        </h3>
-                        <div className="space-y-3 pl-8">
-                          {group.members.map((member, idx) => (
-                            <div
-                              key={idx}
-                              className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors"
-                            >
-                              <span className="w-8 h-8 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white">
-                                <FaUser className="text-xs" />
-                              </span>
-                              <p className="text-gray-700 text-sm">{member}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                {renderSectionBody(active)}
               </div>
             </div>
           </div>
@@ -934,9 +977,9 @@ function Committees() {
       </section>
 
       {/* International Advisory Board */}
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="py-8 sm:py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               "Placeholder Name 1, Institution",
               "Placeholder Name 2, Institution",
@@ -947,10 +990,12 @@ function Committees() {
             ].map((member, index) => (
               <div
                 key={index}
-                className="bg-red-50 rounded-xl p-6 text-center shadow-lg"
+                className="bg-red-50 rounded-xl p-5 sm:p-6 text-center shadow-lg"
               >
-                <FaUser className="text-red-700 text-3xl mx-auto mb-4" />
-                <p className="text-gray-700 font-semibold">{member}</p>
+                <FaUser className="text-red-700 text-2xl sm:text-3xl mx-auto mb-3 sm:mb-4" />
+                <p className="text-gray-700 font-semibold text-sm sm:text-base break-words">
+                  {member}
+                </p>
               </div>
             ))}
           </div>
