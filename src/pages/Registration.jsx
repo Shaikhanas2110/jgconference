@@ -943,7 +943,7 @@ function Registration() {
           </span>
           <h1 className="text-5xl font-bold">Registration</h1>
           <p className="mt-4 text-xl text-red-100">
-            Join us for ICSISDG 2026 - 22 November 2026
+            Join us for ICSISDG 2026 - 27 November 2026
           </p>
         </div>
       </section>
@@ -964,7 +964,7 @@ function Registration() {
                 Development Goals
               </span>
               , to be held on{" "}
-              <span className="font-bold text-red-800">22 November 2026</span>.
+              <span className="font-bold text-red-800">27 November 2026</span>.
             </p>
           </div>
 
@@ -1007,35 +1007,34 @@ function Registration() {
           </div>
 
           {/* Deadline notice */}
-          {/* <div className="bg-red-50 border border-red-100 rounded-xl px-8 py-5 mt-10 text-center">
+          <div className="bg-red-50 border border-red-100 rounded-xl px-8 py-5 mt-10 text-center">
             <p className="text-red-800">
-              <span className="mr-2">⏳</span>
               <span className="font-bold">Important:</span> Registration window
-              closes on{" "}
-              <a
+              opening soon!
+              {/* <a
                 href="#register-form"
                 onClick={scrollToRegisterForm}
                 className="font-bold underline decoration-red-300 hover:text-red-900"
               >
                 {registrationDeadline}
-              </a>
+              </a> */}
               .
             </p>
-          </div> */}
+          </div>
 
           {/* Proceed to Registration */}
-          {/* <div className="flex justify-center mt-10">
+          <div className="flex justify-center mt-10">
             <a
               href="#register-form"
               onClick={scrollToRegisterForm}
               className="inline-flex items-center gap-2 bg-yellow-400 text-red-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-yellow-300 hover:shadow-yellow-400/40 transition-all duration-300"
             >
-              Proceed to Registration <FaArrowRight />
+              Registration Opening Soon <FaArrowRight />
             </a>
-          </div> */}
+          </div>
 
           {/* Notes */}
-          {/* <div className="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-8 mt-10">
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-8 mt-10">
             <h3 className="text-xl font-bold text-red-800 mb-4">Note</h3>
             <ul className="space-y-3">
               {notes.map((note, index) => (
@@ -1048,7 +1047,7 @@ function Registration() {
                 </li>
               ))}
             </ul>
-          </div> */}
+          </div>
         </div>
       </section>
 

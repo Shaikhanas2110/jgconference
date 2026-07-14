@@ -112,7 +112,7 @@ function CallForPaper() {
     ["Registration deadline", "31 October 2026"],
     ["Camera-ready paper submission due", "6 November 2026"],
     ["Conference schedule", "14 November 2026"],
-    ["Conference starts on", "22 November 2026"],
+    ["Conference starts on", "27 November 2026"],
   ];
 
   const [openTrack, setOpenTrack] = useState(1);

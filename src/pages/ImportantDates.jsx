@@ -5,12 +5,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 function ImportantDates() {
   const dates = [
     {
-      title: "Full Paper Submission Open",
-      date: "1 August 2026",
-      highlight: false,
-    },
-    {
-      title: "Paper Submission Deadline",
+      title: "Due Date For Submission",
       date: "30 September 2026",
       highlight: true,
     },
@@ -22,7 +17,7 @@ function ImportantDates() {
     {
       title: "Registration Deadline",
       date: "31 October 2026",
-      highlight: false,
+      highlight: true,
     },
     {
       title: "Camera-Ready Paper Submission Due",
@@ -32,9 +27,9 @@ function ImportantDates() {
     {
       title: "Conference Schedule Release",
       date: "14 November 2026",
-      highlight: false,
+      highlight: true,
     },
-    { title: "Conference Dates", date: "22 November 2026", highlight: true },
+    { title: "Conference Dates", date: "27 November 2026", highlight: false },
   ];
 
   return (

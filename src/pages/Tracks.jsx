@@ -907,17 +907,17 @@ function Tracks() {
                     {track.icon}
                   </div>
 
-                  <h3
+                  <h2
                     className={`text-base font-bold leading-snug mb-4 ${track.theme.titleText}`}
                   >
                     {track.subtitle}
-                  </h3>
+                  </h2>
 
                   <ul className="space-y-2.5 flex-1">
                     {track.topics.slice(0, 6).map((topic, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2.5 text-xs text-gray-600 leading-5"
+                        className="flex items-start gap-2.5 text-m text-gray-600 leading-5 text-base"
                       >
                         <span
                           className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${track.theme.dot}`}
