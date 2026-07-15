@@ -916,7 +916,7 @@ function Tracks() {
                   </h2>
 
                   <ul className="space-y-2.5 flex-1">
-                    {track.topics.slice(0, 6).map((topic, idx) => (
+                    {track.topics.map((topic, idx) => (
                       <li
                         key={idx}
                         className="flex items-start gap-2.5 text-m text-gray-600 leading-5 text-base"
