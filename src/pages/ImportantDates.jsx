@@ -763,7 +763,7 @@ function ImportantDates() {
                 Development Goals
               </span>
               , to be held on{" "}
-              <span className="font-bold text-red-800">22 November 2026</span>.
+              <span className="font-bold text-red-800">27 November 2026</span>.
             </p>
           </div>
 
@@ -822,14 +822,14 @@ function ImportantDates() {
           </h2>
           <div className="bg-red-50 border-l-4 border-yellow-400 rounded-lg p-8">
             <p className="text-gray-700 leading-8">
-              The International Conference on Smart Innovation for Sustainable
-              Development Goals (ICSISDG 2026) aims to bring together
-              researchers, academicians, industry professionals, and students
-              from around the globe to discuss advancements, challenges, and
-              opportunities in emerging technologies. The conference provides a
-              platform for interdisciplinary dialogue and collaboration,
-              fostering innovative solutions that integrate smart innovation
-              with sustainable development.
+              The Conference on Smart Innovation for Sustainable Development
+              Goals (ICSISDG 2026) aims to bring together researchers,
+              academicians, industry professionals, and students from around the
+              globe to discuss advancements, challenges, and opportunities in
+              emerging technologies. The conference provides a platform for
+              interdisciplinary dialogue and collaboration, fostering innovative
+              solutions that integrate smart innovation with sustainable
+              development.
             </p>
           </div>
         </div>

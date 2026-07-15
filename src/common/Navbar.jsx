@@ -166,7 +166,7 @@ function Navbar() {
                 <p className="font-bold text-sm">Submission & Publication</p>
               </div>
 
-              <NavLink
+              {/* <NavLink
                 to="/call-for-paper"
                 className="block px-5 py-3 hover:bg-yellow-50 transition-colors duration-200 border-b border-gray-100 text-gray-800"
                 onClick={() => {
@@ -174,7 +174,7 @@ function Navbar() {
                 }}
               >
                 Call For Papers
-              </NavLink>
+              </NavLink> */}
 
               <NavLink
                 to="/guidelines"
@@ -220,6 +220,9 @@ function Navbar() {
 
           <NavLink to="/tracks" className={navLinkClasses}>
             Tracks
+          </NavLink>
+          <NavLink to="/contact" className={navLinkClasses}>
+            Contact Us
           </NavLink>
         </ul>
 
@@ -325,9 +328,9 @@ function Navbar() {
               className={`overflow-hidden bg-gray-50/70 transition-all duration-300 ease-in-out ${mobileCFPOpen ? "max-h-96" : "max-h-0"
                 }`}
             >
-              <NavLink className={mobileSubLinkClasses} to="/call-for-paper">
+              {/* <NavLink className={mobileSubLinkClasses} to="/call-for-paper">
                 Call For Papers
-              </NavLink>
+              </NavLink> */}
               <NavLink className={mobileSubLinkClasses} to="/guidelines">
                 Guidelines
               </NavLink>

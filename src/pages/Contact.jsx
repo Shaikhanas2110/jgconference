@@ -1,9 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import logo from "../assets/logo.png";
 import { MdLocationOn, MdPhone, MdMailOutline } from "react-icons/md";
 import { FaClock } from "react-icons/fa";
 
+// EmailJS configuration — sign up free at https://www.emailjs.com,
+// then replace these with your Service ID, Template ID, and Public Key.
+// In your EmailJS template, set the "To email" field to icsisdg2026@gmail.com
+// (the address shown on this page) so submissions land there.
+const EMAILJS_SERVICE_ID = "service_8olcohq";
+const EMAILJS_TEMPLATE_ID = "template_wxnd15n";
+const EMAILJS_PUBLIC_KEY = "mK_6LUEsFh6IHyMT3";
+// const CONTACT_EMAIL = "icsisdg2026@gmail.com";
+const CONTACT_EMAIL = "shaikhanas2354@gmail.com";
+
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: CONTACT_EMAIL,
+        },
+        EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        setStatus("sent");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        alert(
+          "Thank you for reaching out! Our team will get back to you shortly.",
+        );
+      })
+      .catch((err) => {
+        console.error("Email send failed:", err);
+        setStatus("error");
+        alert(
+          "Sorry, something went wrong sending your message. Please try again or email us directly.",
+        );
+      });
+  };
   return (
     <>
       {/* Hero Section */}
@@ -754,7 +810,7 @@ function Contact() {
                   <MdPhone className="text-red-700 text-2xl flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-gray-800">Phone</p>
-                    <p className="text-gray-600">+91 9876543210</p>
+                    <p className="text-gray-600">+91 9999999999</p>
                   </div>
                 </div>
 
@@ -762,7 +818,7 @@ function Contact() {
                   <MdMailOutline className="text-red-700 text-2xl flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-gray-800">Email</p>
-                    <p className="text-gray-600">conference@jgu.edu.in</p>
+                    <p className="text-gray-600">icsisdg2026@gmail.com</p>
                   </div>
                 </div>
 
@@ -930,15 +986,7 @@ function Contact() {
             <h3 className="text-2xl font-bold text-red-800 mb-6 text-center">
               Send Us a Message
             </h3>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert(
-                  "Thank you for reaching out! Our team will get back to you shortly.",
-                );
-              }}
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">
@@ -946,7 +994,10 @@ function Contact() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 outline-none"
                     placeholder="Your full name"
                   />
@@ -957,7 +1008,10 @@ function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 outline-none"
                     placeholder="Your email"
                   />
@@ -969,6 +1023,9 @@ function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 outline-none"
                   placeholder="Subject"
                 />
@@ -978,17 +1035,21 @@ function Contact() {
                   Message *
                 </label>
                 <textarea
+                  name="message"
                   required
                   rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-700 outline-none"
                   placeholder="Your message"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-red-700 text-white py-3 rounded-lg font-bold hover:bg-red-800 transition"
+                disabled={status === "sending"}
+                className="w-full bg-red-700 text-white py-3 rounded-lg font-bold hover:bg-red-800 transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status === "sending" ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>

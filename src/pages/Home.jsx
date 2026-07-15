@@ -8,10 +8,41 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
-import image from '../assets/image.jpeg';
+import image from "../assets/image.jpeg";
 
 function Home() {
   const location = useLocation();
+
+  const CONFERENCE_START_DATE = new Date("2026-11-27T00:00:00");
+
+  const getTimeLeft = () => {
+    const diff = CONFERENCE_START_DATE.getTime() - new Date().getTime();
+    if (diff <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+    return {
+      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((diff / (1000 * 60)) % 60),
+      seconds: Math.floor((diff / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = React.useState(getTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeLeft());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const countdownItems = [
+    [String(timeLeft.days), "Days"],
+    [String(timeLeft.hours).padStart(2, "0"), "Hours"],
+    [String(timeLeft.minutes).padStart(2, "0"), "Minutes"],
+    [String(timeLeft.seconds).padStart(2, "0"), "Seconds"],
+  ];
 
   useEffect(() => {
     if (location.hash) {
@@ -53,13 +84,62 @@ function Home() {
           preserveAspectRatio="none"
           viewBox="0 0 660 500"
         >
-          <line x1="60" y1="0" x2="500" y2="500" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-          <line x1="150" y1="0" x2="600" y2="500" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
-          <line x1="300" y1="0" x2="660" y2="380" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-          <line x1="0" y1="120" x2="660" y2="330" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
-          <line x1="0" y1="300" x2="450" y2="0" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
-          <line x1="200" y1="0" x2="660" y2="260" stroke="rgba(250,204,21,0.18)" strokeWidth="1.5" />
-          <line x1="380" y1="0" x2="660" y2="180" stroke="rgba(250,204,21,0.12)" strokeWidth="1" />
+          <line
+            x1="60"
+            y1="0"
+            x2="500"
+            y2="500"
+            stroke="rgba(255,255,255,0.12)"
+            strokeWidth="1"
+          />
+          <line
+            x1="150"
+            y1="0"
+            x2="600"
+            y2="500"
+            stroke="rgba(255,255,255,0.1)"
+            strokeWidth="1"
+          />
+          <line
+            x1="300"
+            y1="0"
+            x2="660"
+            y2="380"
+            stroke="rgba(255,255,255,0.08)"
+            strokeWidth="1"
+          />
+          <line
+            x1="0"
+            y1="120"
+            x2="660"
+            y2="330"
+            stroke="rgba(255,255,255,0.07)"
+            strokeWidth="1"
+          />
+          <line
+            x1="0"
+            y1="300"
+            x2="450"
+            y2="0"
+            stroke="rgba(255,255,255,0.1)"
+            strokeWidth="1"
+          />
+          <line
+            x1="200"
+            y1="0"
+            x2="660"
+            y2="260"
+            stroke="rgba(250,204,21,0.18)"
+            strokeWidth="1.5"
+          />
+          <line
+            x1="380"
+            y1="0"
+            x2="660"
+            y2="180"
+            stroke="rgba(250,204,21,0.12)"
+            strokeWidth="1"
+          />
           <circle cx="500" cy="500" r="2.5" fill="rgba(250,204,21,0.6)" />
           <circle cx="600" cy="500" r="2" fill="rgba(255,255,255,0.5)" />
           <circle cx="450" cy="0" r="2" fill="rgba(255,255,255,0.5)" />
@@ -85,7 +165,7 @@ function Home() {
               International Conference on Smart Innovation for Sustainable
               Development Goals
             </p>
-            <p className="mt-3 text-lg text-gray-300 text-center">
+            <p className="mt-3 text-lg text-white text-center">
               Organized In-person and Online (Hybrid Mode) by{" "}
             </p>
             <p className="font-semibold text-lg text-yellow-400 text-center">
@@ -110,7 +190,7 @@ function Home() {
 
             {/* Buttons container */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <NavLink to="/registration">
+              <NavLink to="/submission">
                 <button className="bg-yellow-400 text-red-900 px-6 py-3 rounded-lg font-semibold text-sm hover:bg-yellow-300 transition-colors">
                   Submit Paper
                 </button>
@@ -124,18 +204,12 @@ function Home() {
           </div>
 
           {/* countdown card, floating on the right side of the banner */}
-          {/* ADJUSTED: Changed bg-red-950/80 to bg-red-900/80 */}
           <div className="hidden md:block absolute bottom-8 right-6 w-[420px] bg-red-900/80 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4 shadow-xl">
             <span className="block text-sm font-medium text-gray-200 mb-3">
               Conference Starts In
             </span>
             <div className="flex gap-10">
-              {[
-                ["120", "Days"],
-                ["14", "Hours"],
-                ["32", "Minutes"],
-                ["10", "Seconds"],
-              ].map(([num, label], i) => (
+              {countdownItems.map(([num, label], i) => (
                 <div key={i} className="text-center pl-6 first:pl-0">
                   <p className="text-2xl font-bold text-yellow-400">{num}</p>
                   <p className="text-[11px] uppercase tracking-wide text-white-300">
@@ -148,7 +222,6 @@ function Home() {
         </div>
 
         {/* countdown card, mobile version */}
-        {/* countdown card, mobile version */}
         <div className="md:hidden relative px-6 pb-8 -mt-6">
           <div className="bg-red-900/80 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-5">
             <span className="block text-sm font-medium text-gray-200 text-center mb-5">
@@ -156,13 +229,11 @@ function Home() {
             </span>
 
             <div className="grid grid-cols-4 gap-2 text-center">
-              {[
-                ["120", "Days"],
-                ["14", "Hours"],
-                ["32", "Minutes"],
-                ["10", "Seconds"],
-              ].map(([num, label], i) => (
-                <div key={i} className="flex flex-col items-center justify-center">
+              {countdownItems.map(([num, label], i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center justify-center"
+                >
                   <p className="text-2xl font-bold text-yellow-400 leading-none">
                     {num}
                   </p>
@@ -219,7 +290,7 @@ function Home() {
                 About ICSISDG 2026
               </h2>
               <p className="text-gray-700 leading-8 mb-4">
-                The International Conference on Smart Innovation for Sustainable
+                The Conference on Smart Innovation for Sustainable
                 Development Goals (ICSISDG 2026) offers a global platform for
                 academics, researchers, industry professionals, scientists, and
                 scholars to present innovative research, exchange ideas, and
@@ -239,10 +310,10 @@ function Home() {
               </p>
               <p className="text-gray-700 leading-8">
                 ICSISDG 2026 will feature keynote lectures, invited talks,
-                technical paper presentations, panel discussions, tutorials,
-                and workshops, providing an excellent forum for knowledge
-                sharing, networking, and the promotion of research excellence
-                toward a smarter and more sustainable future.
+                technical paper presentations, panel discussions, tutorials, and
+                workshops, providing an excellent forum for knowledge sharing,
+                networking, and the promotion of research excellence toward a
+                smarter and more sustainable future.
               </p>
             </div>
           </div>
@@ -284,7 +355,6 @@ function Home() {
       <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-
             <div>
               {/* <h2 className="text-4xl font-bold text-red-800 mb-3 py-3">
                 Contact Us
@@ -295,17 +365,17 @@ function Home() {
               <p className="text-gray-700 leading-8 mb-4">
                 <b>JG University</b> is a new-age, technology-driven university
                 committed to delivering future-focused education aligned with
-                evolving industry needs and global academic standards. It
-                offers undergraduate, postgraduate, doctoral and professional
+                evolving industry needs and global academic standards. It offers
+                undergraduate, postgraduate, doctoral and professional
                 programmes across Engineering, Computer Science, Management,
-                Commerce, Law, Science & Technology, and Investigative &
-                Applied Sciences.
+                Commerce, Law, Science & Technology, and Investigative & Applied
+                Sciences.
               </p>
               <p className="text-gray-700 leading-8">
                 Sponsored by the ASIA Charitable Trust (established in 1965),
-                <b> JG University</b> builds on more than six decades of educational
-                excellence, preparing globally competent professionals
-                committed to sustainable development.
+                <b> JG University</b> builds on more than six decades of
+                educational excellence, preparing globally competent
+                professionals committed to sustainable development.
               </p>
             </div>
 
@@ -324,11 +394,9 @@ function Home() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
-
     </>
   );
 }

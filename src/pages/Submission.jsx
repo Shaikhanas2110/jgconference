@@ -5,6 +5,7 @@ import {
   FaDownload,
   FaCheckCircle,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Submission() {
   const guidelines = [
@@ -12,6 +13,11 @@ function Submission() {
       text: "Strictly follow the Springer manuscript preparation guidelines",
       linkText: "(view guidelines)",
       url: "https://www.springer.com/gp/authors-editors/book-authors-editors/your-publication-journey/manuscript-preparation",
+    },
+    {
+      text: "To download Springer templates",
+      linkText: "(Click here)",
+      url: "https://www.springernature.com/gp/authors/publish-a-book/manuscript-guidelines",
     },
     "Camera-ready papers: 6-8 pages for short papers, 10-12 pages for long papers",
     "Maximum of 5 authors per paper",
@@ -91,7 +97,7 @@ function Submission() {
 
   return (
     <>
-     {/*Hero Sectino */}
+      {/*Hero Sectino */}
       <section className="relative overflow-hidden bg-gradient-to-br from-red-950 via-red-800 to-red-900 text-white py-10">
         {/* Plexus network line pattern overlay */}
         <svg
@@ -816,9 +822,18 @@ function Submission() {
             </h2>
             <p className="text-gray-600 leading-8 mb-6">
               Authors are invited to submit papers through the{" "}
-              <span className="font-bold text-red-800">official Email</span>{" "}
+              <span className="font-bold text-red-800">
+                icsisdg2026@gmail.com
+              </span>{" "}
               before the submission deadline. For any inquiry about the
-              conference, please feel free to contact us.
+              conference, please feel free to{" "}
+              <Link
+                to="/contact"
+                className="font-semibold text-red-800 hover:underline"
+              >
+                contact us
+              </Link>
+              .
             </p>
             <div className="flex flex-wrap gap-4">
               {/* <a
@@ -1031,9 +1046,7 @@ function Submission() {
                     key={index}
                     className="flex items-start gap-3 text-gray-700"
                   >
-                    <span className="w-7 h-7 flex-shrink-0 bg-yellow-400 rounded-full flex items-center justify-center text-red-900 font-bold text-sm">
-                      {String.fromCharCode(97 + index)}
-                    </span>
+                    <span className="w-7 h-7 flex-shrink-0 bg-yellow-400 rounded-full flex items-center justify-center text-red-900 font-bold text-sm"></span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -1056,9 +1069,7 @@ function Submission() {
                     key={index}
                     className="flex items-start gap-3 text-gray-700"
                   >
-                    <span className="w-7 h-7 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                      {index + 1}
-                    </span>
+                    <span className="w-7 h-7 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white font-bold text-sm"></span>
                     <span>{item}</span>
                   </li>
                 ))}

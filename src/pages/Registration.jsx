@@ -48,7 +48,7 @@ function Registration() {
       india: "₹ 4,000 /-",
     },
     {
-      category: "Regular (Faculty / Researchers / Industry)",
+      category: "Regular (Faculty)",
       india: "₹ 5,000 /-",
     },
   ];
@@ -57,7 +57,7 @@ function Registration() {
     { category: "UG - PG Students", fee: "INR 3,000" },
     { category: "Research Scholars", fee: "INR 4,000" },
     {
-      category: "Regular (Faculty / Researchers / Industry)",
+      category: "Regular (Faculty)",
       fee: "INR 5,000",
     },
   ];
@@ -84,9 +84,8 @@ function Registration() {
     {
       title: "Payment Policy",
       points: [
-        "Payments must be made in INR or USD.",
+        "Payments must be made in INR.",
         "No registration will be confirmed without full payment.",
-        "Only online payments (Visa/MasterCard) are accepted.",
       ],
     },
     {
@@ -960,8 +959,8 @@ function Registration() {
               <span className="font-bold text-red-800">ICSISDG 2026</span>, we
               take pleasure in inviting you to the{" "}
               <span className="font-bold text-red-800">
-                International Conference on Smart Innovation for Sustainable
-                Development Goals
+                The Conference on Smart Innovation for Sustainable Development
+                Goals
               </span>
               , to be held on{" "}
               <span className="font-bold text-red-800">27 November 2026</span>.
@@ -1136,7 +1135,7 @@ function Registration() {
                 <option value="ugpg">UG - PG Students (₹3,000)</option>
                 <option value="scholar">Research Scholars (₹4,000)</option>
                 <option value="regular">
-                  Regular (Faculty / Researchers / Industry) (₹5,000)
+                  Regular (Faculty) (₹5,000)
                 </option>
               </select>
             </div>

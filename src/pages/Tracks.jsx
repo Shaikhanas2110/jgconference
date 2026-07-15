@@ -887,11 +887,13 @@ function Tracks() {
       {/* Track cards */}
       <section className="pt-10 pb-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {tracks.map((track) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+            {tracks.map((track, index) => (
               <div
                 key={track.id}
-                className="relative bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col"
+                className={`relative bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col lg:col-span-2 ${
+                  index === 3 ? "lg:col-start-2" : ""
+                }`}
               >
                 {/* Badge */}
                 <span

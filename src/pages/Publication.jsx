@@ -769,11 +769,11 @@ function Publication() {
           </h2>
           <div className="bg-red-50 border-l-4 border-yellow-400 rounded-lg p-8">
             <p className="text-gray-700 leading-8">
-              The International Conference on Smart Innovation for Sustainable
-              Development Goals (ICSISDG 2026) aims to bring together
-              researchers, academicians, industry professionals, and thought
-              leaders from around the globe to discuss advancements, challenges,
-              and opportunities in the rapidly evolving domains of smart
+              The Conference on Smart Innovation for Sustainable Development
+              Goals (ICSISDG 2026) aims to bring together researchers,
+              academicians, industry professionals, and thought leaders from
+              around the globe to discuss advancements, challenges, and
+              opportunities in the rapidly evolving domains of smart
               technologies and sustainability. The conference provides a
               platform for interdisciplinary dialogue and collaboration,
               fostering innovative solutions that integrate smart innovation

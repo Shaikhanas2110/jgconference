@@ -15,11 +15,9 @@ function Footer() {
             className="w-56 bg-white rounded-lg p-2"
           />
           <p className="mt-6 text-gray-200 leading-7">
-            International Conference on Smart Innovation for
-            Sustainable Development Goals (ICSISDG 2026).
-            Bringing together researchers,
-            academicians and industry professionals from
-            around the globe.
+            ICSISDG Conference on Smart Innovation for Sustainable
+            Development Goals (ICSISDG 2026). Bringing together researchers,
+            academicians and industry professionals from around the globe.
           </p>
         </div>
         {/* Quick Links */}
@@ -28,13 +26,27 @@ function Footer() {
             Quick Links
           </h2>
           <ul className="space-y-3">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/committees">Committees</Link></li>
-            <li><Link to="/tracks">Core Tracks</Link></li>
-            <li><Link to="/speakers">Speakers</Link></li>
-            <li><Link to="/registration">Registration</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/committees">Committees</Link>
+            </li>
+            <li>
+              <Link to="/tracks">Tracks</Link>
+            </li>
+            <li>
+              <Link to="/speakers">Speakers</Link>
+            </li>
+            <li>
+              <Link to="/registration">Registration</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
           </ul>
         </div>
         {/* Conference */}
@@ -44,10 +56,18 @@ function Footer() {
             Conference
           </h2>
           <ul className="space-y-3">
-            <li><Link to="/guidelines">Guidelines</Link></li>
-            <li><Link to="/review-process">Review Process</Link></li>
-            <li><Link to="/publication">Publication</Link></li>
-            <li><Link to="/submission">Submission</Link></li>
+            <li>
+              <Link to="/guidelines">Guidelines</Link>
+            </li>
+            <li>
+              <Link to="/review-process">Review Process</Link>
+            </li>
+            <li>
+              <Link to="/publication">Publication</Link>
+            </li>
+            <li>
+              <Link to="/submission">Submission</Link>
+            </li>
           </ul>
         </div>
         {/* Contact */}
@@ -59,11 +79,11 @@ function Footer() {
             <div className="flex gap-3">
               <MdLocationOn className="text-yellow-400 text-xl" />
               <p>
-                Main Campus,<br />
-                Drive In Rd, Thaltej,
-                Ahmedabad-380054,<br />
-                Gujarat,
-                India
+                Main Campus,
+                <br />
+                Drive In Rd, Thaltej, Ahmedabad-380054,
+                <br />
+                Gujarat, India
               </p>
             </div>
             <div className="flex gap-3">
@@ -71,11 +91,9 @@ function Footer() {
               <p>+91 7567 7567 58/59</p>
             </div>
             <div className="flex gap-3">
-
               <MdMailOutline className="text-yellow-400 text-xl" />
 
-              <p>connect@jguni.in</p>
-
+              <p>icsisdg2026@gmail.com</p>
             </div>
           </div>
         </div>
@@ -88,9 +106,7 @@ function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
         <p className="text-gray-300 text-center">
-          © 2026 JG University |
-          International Conference |
-          All Rights Reserved.
+          © 2026 JG University | All Rights Reserved.
         </p>
         {/* Social */}
         <div className="flex gap-4 mt-5 md:mt-0">

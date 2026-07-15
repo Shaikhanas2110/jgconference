@@ -878,7 +878,7 @@ function Guidelines() {
               <li className="flex gap-3">
                 <span className="font-bold text-yellow-600">4.</span>
                 <span>
-                  Submit before the deadline: <strong>20 January 2026</strong>
+                  Submit before the deadline: <strong>30 September 2026</strong>
                 </span>
               </li>
               <li className="flex gap-3">
@@ -892,7 +892,7 @@ function Guidelines() {
             </ol>
           </div>
           <div className="mt-8 text-center">
-            <NavLink to="/registration">
+            <NavLink to="/submission">
               <button className="bg-yellow-400 text-red-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300">
                 Submit Paper
               </button>

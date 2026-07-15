@@ -843,11 +843,11 @@ function CallForPaper() {
               About This Conference
             </h2>
             <p className="text-gray-600 leading-8 mb-4">
-              The International Conference on Smart Innovation for Sustainable
-              Development Goals (ICSISDG 2026) invites authors to submit
-              original, unpublished research papers on topics related to
-              emerging technologies and their applications toward achieving
-              sustainable development.
+              This Conference on Smart Innovation for Sustainable Development
+              Goals (ICSISDG 2026) invites authors to submit original,
+              unpublished research papers on topics related to emerging
+              technologies and their applications toward achieving sustainable
+              development.
             </p>
             <p className="text-gray-600 leading-8">
               We welcome papers from researchers, academicians, industry
@@ -1053,7 +1053,7 @@ function CallForPaper() {
       </section>
 
       {/* Downloads & Resources */}
-      <section className="py-10 bg-white">
+      {/* <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-red-800 mb-12 text-center">
             Downloads & Resources
@@ -1080,15 +1080,15 @@ function CallForPaper() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="py-10 bg-red-800 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Submit?</h2>
           <p className="text-xl text-gray-200 mb-8">
-            Join us in this exciting international conference by submitting your
-            research paper.
+            Join us in this exciting conference by submitting your research
+            paper.
           </p>
           <NavLink to="/guidelines">
             <button className="inline-block bg-yellow-400 text-red-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition">

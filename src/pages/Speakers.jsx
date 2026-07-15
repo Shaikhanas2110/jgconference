@@ -755,8 +755,8 @@ function Speakers() {
             </h2>
             <p className="text-gray-700 leading-8 mb-5">
               The conference will feature keynote and invited talks by renowned
-              experts across the globe, along with pre-conference tutorials,
-              panel discussions, and refereed technical paper presentations.
+              experts across the India, along with pre-conference tutorials,
+              panel discussions, and referred technical paper presentations.
             </p>
             <p className="text-gray-700 leading-8 mb-5">
               These sessions are designed to provide participants with valuable
