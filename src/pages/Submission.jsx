@@ -6,6 +6,7 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import springerTemplate from "../assets/springer-template.pdf";
 
 function Submission() {
   const guidelines = [
@@ -17,7 +18,7 @@ function Submission() {
     {
       text: "To download Springer templates",
       linkText: "(Click here)",
-      url: "https://www.springernature.com/gp/authors/publish-a-book/manuscript-guidelines",
+      url: springerTemplate,
     },
     "Camera-ready papers: 6-8 pages for short papers, 10-12 pages for long papers",
     "Maximum of 5 authors per paper",

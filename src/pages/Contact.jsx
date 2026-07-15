@@ -11,8 +11,8 @@ import { FaClock } from "react-icons/fa";
 const EMAILJS_SERVICE_ID = "service_8olcohq";
 const EMAILJS_TEMPLATE_ID = "template_wxnd15n";
 const EMAILJS_PUBLIC_KEY = "mK_6LUEsFh6IHyMT3";
-// const CONTACT_EMAIL = "icsisdg2026@gmail.com";
-const CONTACT_EMAIL = "shaikhanas2354@gmail.com";
+const CONTACT_EMAIL = "icsisdg2026@gmail.com";
+// const CONTACT_EMAIL = "shaikhanas2354@gmail.com";
 
 function Contact() {
   const [formData, setFormData] = useState({
