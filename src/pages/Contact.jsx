@@ -8,9 +8,9 @@ import { FaClock } from "react-icons/fa";
 // then replace these with your Service ID, Template ID, and Public Key.
 // In your EmailJS template, set the "To email" field to icsisdg2026@gmail.com
 // (the address shown on this page) so submissions land there.
-const EMAILJS_SERVICE_ID = "service_8olcohq";
-const EMAILJS_TEMPLATE_ID = "template_wxnd15n";
-const EMAILJS_PUBLIC_KEY = "mK_6LUEsFh6IHyMT3";
+const EMAILJS_SERVICE_ID = "service_htdbj57";
+const EMAILJS_TEMPLATE_ID = "template_slik62j";
+const EMAILJS_PUBLIC_KEY = "P1wJjg9L6ptpR65d4";
 const CONTACT_EMAIL = "icsisdg2026@gmail.com";
 // const CONTACT_EMAIL = "shaikhanas2354@gmail.com";
 
