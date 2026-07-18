@@ -6,11 +6,11 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import wordTemplate from "../assets/splnproc1703.docm";
+import wordTemplate from "../assets/splnproc1703.doc";
 
 function Submission() {
   const downloadTemplates = () => {
-    const files = [{ url: wordTemplate, name: "splnproc1703.docm" }];
+    const files = [{ url: wordTemplate, name: "splnproc1703.doc" }];
 
     files.forEach((file, index) => {
       setTimeout(() => {
@@ -20,7 +20,7 @@ function Submission() {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-      }, index * 600); // stagger slightly so browsers don't block multiple downloads
+      }, index * 600);
     });
   };
 

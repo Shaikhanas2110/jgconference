@@ -168,7 +168,7 @@ function Home() {
             <p className="mt-3 text-lg text-white text-center">
               Organized In-person and Online (Hybrid Mode) by{" "}
             </p>
-            <p className="font-semibold text-lg text-yellow-400 text-center">
+            <p className="font-semibold text-m text-yellow-400 text-center">
               School of Computing
             </p>
 

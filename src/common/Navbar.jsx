@@ -91,7 +91,7 @@ function Navbar() {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-yellow-300">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-6">
         {/* Logo */}
 
         <Link
@@ -102,7 +102,7 @@ function Navbar() {
           <img
             src={logo}
             alt="JG University"
-            className="h-18 sm:h-20 lg:h-22 w-auto"
+            className="h-18 sm:h-20 lg:h-18 w-auto"
           />
         </Link>
 
