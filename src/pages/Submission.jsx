@@ -6,9 +6,24 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import springerTemplate from "../assets/springer-template.pdf";
+import wordTemplate from "../assets/splnproc1703.docm";
 
 function Submission() {
+  const downloadTemplates = () => {
+    const files = [{ url: wordTemplate, name: "splnproc1703.docm" }];
+
+    files.forEach((file, index) => {
+      setTimeout(() => {
+        const link = document.createElement("a");
+        link.href = file.url;
+        link.download = file.name;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, index * 600); // stagger slightly so browsers don't block multiple downloads
+    });
+  };
+
   const guidelines = [
     {
       text: "Strictly follow the Springer manuscript preparation guidelines",
@@ -16,9 +31,9 @@ function Submission() {
       url: "https://www.springer.com/gp/authors-editors/book-authors-editors/your-publication-journey/manuscript-preparation",
     },
     {
-      text: "To download Springer templates",
+      text: "To download Springer templates (LaTeX + Word)",
       linkText: "(Click here)",
-      url: springerTemplate,
+      action: downloadTemplates,
     },
     "Camera-ready papers: 6-8 pages for short papers, 10-12 pages for long papers",
     "Maximum of 5 authors per paper",
@@ -875,6 +890,17 @@ function Submission() {
                   <FaCheckCircle className="text-yellow-500 mt-1 flex-shrink-0" />
                   {typeof item === "string" ? (
                     <span>{item}</span>
+                  ) : item.action ? (
+                    <span>
+                      {item.text}{" "}
+                      <button
+                        type="button"
+                        onClick={item.action}
+                        className="text-red-700 font-semibold underline hover:text-red-900 transition"
+                      >
+                        {item.linkText}
+                      </button>
+                    </span>
                   ) : (
                     <span>
                       {item.text}{" "}
