@@ -2,127 +2,32 @@ import React, { useState } from "react";
 import { FaUser, FaChevronRight } from "react-icons/fa";
 
 function Committees() {
-  // Main committee sections (titles copied from reference structure)
   const sections = [
     {
-      title: "Chief Patron & Patron",
+      title: "National Advisory Board",
       members: [
-        "Placeholder Name 1, Designation, Institution",
-        "Placeholder Name 2, Designation, Institution",
-        "Placeholder Name 3, Designation, Institution",
-        "Placeholder Name 4, Designation, Institution",
-      ],
-    },
-    {
-      title: "General Chair",
-      members: [
-        "Placeholder Name 1, Institution",
-        "Placeholder Name 2, Institution",
-        "Placeholder Name 3, Institution",
-      ],
-    },
-    {
-      title: "Program Chair",
-      members: [
-        "Placeholder Name 1, Institution",
-        "Placeholder Name 2, Institution",
-        "Placeholder Name 3, Institution",
-      ],
-    },
-    {
-      title: "Steering Committee",
-      members: [
-        "Placeholder Name 1, Institution",
-        "Placeholder Name 2, Institution",
-        "Placeholder Name 3, Institution",
-        "Placeholder Name 4, Institution",
+        "Dr. Subhash Gulabrai Desai, Member, Board of Directors, Aspire Tech Park",
+        "Dr. Sushindra Kumar Gupta, Scientist 'C', National Institute of Hydrology, Roorkee, Uttarakhand",
+        "Dr. Amit P. Ganatra, Director R&D, Dean FET, The CVM University",
+        "Dr. Rupali Atul Mahajan, Associate Professor, Vishwakarma Institute of Technology, Pune",
+        "Dr. Biswadip Basu Mallik, Professor, Institute of Engineering & Management, Kolkata",
+        "Dr. Shubham Mahajan, AP-II, Amity University Haryana",
+        "Padmavathi Ganapathi, Former Dean & Professor - Computer Science, Avinashilingam Institute for Home Science and Higher Education for Women",
       ],
     },
     {
       title: "Technical Program Committee",
       members: [
-        "Placeholder Name 1, Institution",
-        "Placeholder Name 2, Institution",
-        "Placeholder Name 3, Institution",
-        "Placeholder Name 4, Institution",
-      ],
-    },
-    {
-      title: "National Advisory Board",
-      members: [
-        "Placeholder Name 1, Institution",
-        "Placeholder Name 2, Institution",
-        "Placeholder Name 3, Institution",
-      ],
-    },
-    {
-      title: "Organizing Committee",
-      isGrouped: true,
-      groups: [
-        {
-          groupTitle: "Organizing Chairs",
-          members: [
-            "Placeholder Name 1, Institution",
-            "Placeholder Name 2, Institution",
-          ],
-        },
-        {
-          groupTitle: "Publication Committee",
-          members: [
-            "Placeholder Name 1 (Convener), Institution",
-            "Placeholder Name 2, Institution",
-          ],
-        },
-        {
-          groupTitle: "Registration and Invitation Committee",
-          members: [
-            "Placeholder Name 1 (Convener), Institution",
-            "Placeholder Name 2, Institution",
-          ],
-        },
-        {
-          groupTitle: "Website, Publicity and Brochure Committee",
-          members: [
-            "Placeholder Name 1 (Convener), Institution",
-            "Placeholder Name 2, Institution",
-          ],
-        },
-        {
-          groupTitle: "Session Chairs Committee",
-          members: [
-            "Placeholder Name 1 (Convener), Institution",
-            "Placeholder Name 2, Institution",
-          ],
-        },
-        {
-          groupTitle: "Finance Committee",
-          members: [
-            "Placeholder Name 1 (Convener), Institution",
-            "Placeholder Name 2, Institution",
-          ],
-        },
-        {
-          groupTitle: "Logistics Committee",
-          members: [
-            "Placeholder Name 1 (Convener), Institution",
-            "Placeholder Name 2, Institution",
-          ],
-        },
-        {
-          groupTitle: "Food and Hospitality Committee",
-          members: [
-            "Placeholder Name 1 (Convener), Institution",
-            "Placeholder Name 2, Institution",
-          ],
-        },
-        {
-          groupTitle:
-            "Inauguration, Anchoring and Valedictory Session Committee",
-          members: [
-            "Placeholder Name 1 (Convener), Institution",
-            "Placeholder Name 2, Institution",
-          ],
-        },
+        "Dr. Rajdipsinh Vaghela, Associate Professor, MBIT, CVM University",
+        "Dr. Sameer Jain, Faculty, NICMAR Business School, NICMAR University, Pune",
+        "Dr. Sushil Kumar Pradhan, Assistant Professor, Centurion University of Technology and Management, Odisha",
+        "Chintan Patel, Academic Associate, Indian Institute of Management, Ahmedabad",
+        "Ramya Sakthivel, Research Scholar, SRM Institute of Science and Technology",
+        "Dr. Sana Shawl, Assistant Professor, Department of Management Studies, University of Kashmir",
+        "Vipindas Aravindakshan, Cloud Infrastructure Engineer, Brillius Inc.",
+        "Dr. Anwar Basha H, Senior Lecturer, INTI International University, Malaysia",
+        "Dr. Pooja Sarin, Assistant Professor, OP Jindal Global University, Sonipat, Haryana",
+        "Dr. Vishali Sharma, Assistant Professor, NSIT-IFSCS (Affiliated NFSU), Gandhinagar, Gujarat",
       ],
     },
   ];
@@ -167,9 +72,7 @@ function Committees() {
                   <span className="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white">
                     <FaUser className="text-xs" />
                   </span>
-                  <p className="text-gray-700 text-sm break-words">
-                    {member}
-                  </p>
+                  <p className="text-gray-700 text-sm break-words">{member}</p>
                 </div>
               ))}
             </div>
@@ -889,7 +792,9 @@ function Committees() {
           <span className="inline-block text-s font-semibold tracking-widest text-yellow-400 uppercase mb-3">
             ICSISDG 2026
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">Committees</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+            Committees
+          </h1>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-red-100">
             Meet the organizing committees driving ICSISDG 2026
           </p>
@@ -979,14 +884,17 @@ function Committees() {
       {/* International Advisory Board */}
       <section className="py-8 sm:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-red-800 mb-8 sm:mb-10 flex items-center gap-3">
+            <span className="w-2 h-8 bg-yellow-400 rounded-full"></span>
+            International Advisory Board
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
-              "Placeholder Name 1, Institution",
-              "Placeholder Name 2, Institution",
-              "Placeholder Name 3, Institution",
-              "Placeholder Name 4, Institution",
-              "Placeholder Name 5, Institution",
-              "Placeholder Name 6, Institution",
+              "Waiswa Ronald Mirondo, Strategic Coordination Expert, African Union Commission",
+              "Frank Funkeye Sapele, Associate Professor & Head of Department, University of Africa, Toru-Orua, Bayelsa State, Nigeria",
+              "Farah Jemili, Associate Professor, ISITCom, University of Sousse, Tunisia",
+              "Dr. Mueen Uddin, Professor, University of Doha for Science and Technology, Qatar",
+              "Prof. (Dr.) Anand Nayyar, Professor, Scientist & Vice-Chairman (Research), Duy Tan University, Da Nang, Vietnam",
             ].map((member, index) => (
               <div
                 key={index}

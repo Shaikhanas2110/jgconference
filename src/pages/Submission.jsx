@@ -20,7 +20,7 @@ function Submission() {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-      }, index * 600);
+      }, index * 600); // stagger slightly so browsers don't block multiple downloads
     });
   };
 
@@ -896,9 +896,11 @@ function Submission() {
                       <button
                         type="button"
                         onClick={item.action}
-                        className="text-red-700 font-semibold underline hover:text-red-900 transition"
+                        title={item.linkText}
+                        aria-label={item.linkText}
+                        className="inline-flex items-center align-middle text-red-700 hover:text-red-900 transition"
                       >
-                        {item.linkText}
+                        <FaDownload />
                       </button>
                     </span>
                   ) : (
