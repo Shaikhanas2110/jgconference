@@ -166,7 +166,7 @@ function Home() {
               Development Goals
             </p>
             <p className="mt-3 text-lg text-white text-center">
-              Organized In-person and Online (Hybrid Mode) by{" "}
+              Organized In-person and Online (Hybrid Mode){" "}
             </p>
             <p className="font-semibold text-m text-yellow-400 text-center">
               School of Computing
