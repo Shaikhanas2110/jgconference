@@ -4,6 +4,18 @@ import { FaUser, FaChevronRight } from "react-icons/fa";
 function Committees() {
   const sections = [
     {
+      title: "Publication Chair",
+      members: [],
+    },
+    {
+      title: "Keynote Speaker",
+      members: [],
+    },
+    {
+      title: "General Chair",
+      members: [],
+    },
+    {
       title: "National Advisory Board",
       members: [
         "Dr. Subhash Gulabrai Desai, Member, Board of Directors, Aspire Tech Park",
@@ -16,7 +28,7 @@ function Committees() {
       ],
     },
     {
-      title: "Technical Program Committee",
+      title: "TPM",
       members: [
         "Dr. Rajdipsinh Vaghela, Associate Professor, MBIT, CVM University",
         "Dr. Sameer Jain, Faculty, NICMAR Business School, NICMAR University, Pune",
