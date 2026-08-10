@@ -5,15 +5,31 @@ function Committees() {
   const sections = [
     {
       title: "Publication Chair",
-      members: [],
+      members: [
+        "Prof. (Dr.) Sailesh Suryanarayan Iyer, Principal, NSIT-IFSCS",
+        "Prof. (Dr.) Fernando Otriz Rodriguez, Professor, UAT, Mexico",
+        "Dr. Ahmed Elngar, Associate Professor, Beni-Suef University, Egypt",
+        "Prof. (Dr.) Anand Nayyar, Vice Chairman, Duy Tan University, Vietnam",
+        "Prof. (Dr.) Pawan Whig, Dean Research, VIPS, New Delhi",
+      ],
     },
     {
       title: "Keynote Speaker",
-      members: [],
+      members: [
+        "Prof. (Dr.) Anand Nayyar, Vice Chairman, Duy Tan University, Vietnam",
+        "Prof. (Dr.) Fernando Otriz Rodriguez, Professor, UAT, Mexico",
+        "Prof. (Dr.) Sailesh Suryanarayan Iyer, Principal, NSIT-IFSCS",
+        "Dr. Soenil Soebedar, Chairman, SOEBIT Cybersecurity, Netherlands",
+        "Prof. (Dr.) Pawan Whig, Dean Research, VIPS, New Delhi",
+        "Dr. Farah Jemili, Associate Professor, University of Sousse, Tunisia",
+      ],
     },
     {
       title: "General Chair",
-      members: [],
+      members: [
+        "Prof. (Dr.) Sailesh Suryanarayan Iyer",
+        "Prof. (Dr.) S.Pushplatha",
+      ],
     },
     {
       title: "National Advisory Board",
