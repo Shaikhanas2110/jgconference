@@ -9,7 +9,7 @@ import {
 import { MdLocationOn } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
 import image from "../assets/image.jpeg";
-import about from "../assets/about.jpg";
+import about from "public/about.jpg";
 
 function Home() {
   const location = useLocation();
@@ -282,7 +282,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <img
-              src="public\about.jpg"
+              src={about}
               alt="ICSISDG 2026 Conference"
               className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
             />
