@@ -157,7 +157,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-red-900/70 via-transparent to-transparent"></div>
 
         <div className="relative max-w-7xl mx-auto px-6 min-h-[560px] flex items-center">
-          <div className="max-w-2xl py-14 mt-10 flex flex-col items-center">
+          <div className="max-w-2xl flex flex-col items-center">
             <h1 className="text-6xl font-bold leading-tight text-center text-yellow-400">
               ICSISDG 2026
             </h1>
@@ -247,7 +247,7 @@ function Home() {
         </div>
 
         {/* stats strip */}
-        <div className="relative mt-14 border-t border-white/10 bg-black/20">
+        <div className="relative border-t border-white/10 bg-black/20">
           <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x sm:divide-white/10">
             {[
               [FaFileAlt, "500+", "Research Papers"],
@@ -281,21 +281,34 @@ function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <img
-              src="https://placehold.co/600x450/fee2e2/991b1b?text=Conference+Image"
+              src="public\about.jpg"
               alt="ICSISDG 2026 Conference"
               className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
             />
             <div>
               <h2 className="text-4xl font-bold text-red-800 mb-6">
-                About ICSISDG 2026
+                About JG University
               </h2>
               <p className="text-gray-700 leading-8 mb-4">
-                The Conference on Smart Innovation for Sustainable
-                Development Goals (ICSISDG 2026) offers a global platform for
-                academics, researchers, industry professionals, scientists, and
-                scholars to present innovative research, exchange ideas, and
-                explore emerging technologies that support the Sustainable
-                Development Goals (SDGs).
+                At JG University, experiential and immersive learning is at the
+                core. The programmes offered aim to prepare students to solve
+                real-world problems using technology, creativity and innovation.
+                Our pedagogy is co-designed with industry stalwarts; the
+                curriculum is focused on employability, enhancing soft & hard
+                skills and exposure to real-life projects across various
+                industries. The objective is to ensure students are ready for
+                tomorrow's workplace by creating Whole Brain Change Makers -
+                technologically sound professionals, creative thinkers, and
+                socially conscious citizens who will strive to lead changes in
+                the industry and society.
+              </p>
+              {/* <p className="text-gray-700 leading-8 mb-4">
+                The Conference on Smart Innovation for Sustainable Development
+                Goals (ICSISDG 2026) offers a global platform for academics,
+                researchers, industry professionals, scientists, and scholars to
+                present innovative research, exchange ideas, and explore
+                emerging technologies that support the Sustainable Development
+                Goals (SDGs).
               </p>
               <p className="text-gray-700 leading-8 mb-4">
                 The conference emphasizes interdisciplinary research in
@@ -314,8 +327,44 @@ function Home() {
                 workshops, providing an excellent forum for knowledge sharing,
                 networking, and the promotion of research excellence toward a
                 smarter and more sustainable future.
-              </p>
+              </p> */}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-10 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className=" gap-12 items-center">
+            <h2 className="text-4xl font-bold text-red-800 mb-6">
+              About ICSISDG 2026
+            </h2>
+
+            <p className="text-gray-700 leading-8 mb-4">
+              The Conference on Smart Innovation for Sustainable Development
+              Goals (ICSISDG 2026) offers a global platform for academics,
+              researchers, industry professionals, scientists, and scholars to
+              present innovative research, exchange ideas, and explore emerging
+              technologies that support the Sustainable Development Goals
+              (SDGs).
+            </p>
+            <p className="text-gray-700 leading-8 mb-4">
+              The conference emphasizes interdisciplinary research in Artificial
+              Intelligence and Machine Learning for Sustainable Development, the
+              Internet of Things (IoT), Smart Systems, Emerging Technologies,
+              Smart Finance and FinTech, Business Intelligence and Data
+              Analytics, Entrepreneurship, Innovation, and Sustainable Startup
+              Ecosystems. It aims to foster collaboration among academia,
+              industry, and policymakers to develop intelligent, sustainable
+              solutions to real-world challenges.
+            </p>
+            <p className="text-gray-700 leading-8">
+              ICSISDG 2026 will feature keynote lectures, invited talks,
+              technical paper presentations, panel discussions, tutorials, and
+              workshops, providing an excellent forum for knowledge sharing,
+              networking, and the promotion of research excellence toward a
+              smarter and more sustainable future.
+            </p>
           </div>
         </div>
       </section>

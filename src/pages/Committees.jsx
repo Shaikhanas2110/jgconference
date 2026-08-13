@@ -28,7 +28,7 @@ function Committees() {
       title: "General Chair",
       members: [
         "Prof. (Dr.) Sailesh Suryanarayan Iyer",
-        "Prof. (Dr.) S.Pushplatha",
+        "Prof. (Dr.) S.Pushpalatha",
       ],
     },
     {

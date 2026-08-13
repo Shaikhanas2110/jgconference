@@ -19,7 +19,6 @@ function Tracks() {
       label: "TRACK 1",
       subtitle:
         "Artificial Intelligence and Machine Learning for Sustainable Development",
-      icon: <FaRobot />,
       theme: {
         badge: "bg-red-600",
         iconBg: "bg-red-50",
@@ -48,7 +47,6 @@ function Tracks() {
       title: "Track II",
       label: "TRACK 2",
       subtitle: "Internet of Things, Smart Systems, and Emerging Technologies",
-      icon: <FaNetworkWired />,
       theme: {
         badge: "bg-orange-500",
         iconBg: "bg-orange-50",
@@ -76,7 +74,6 @@ function Tracks() {
       title: "Track III",
       label: "TRACK 3",
       subtitle: "Smart Finance, FinTech and Economic Sustainability",
-      icon: <FaCloud />,
       theme: {
         badge: "bg-emerald-600",
         iconBg: "bg-emerald-50",
@@ -101,7 +98,6 @@ function Tracks() {
       label: "TRACK 4",
       subtitle:
         "Business Intelligence and Data Analytics for Responsible Decision-Making",
-      icon: <FaDatabase />,
       theme: {
         badge: "bg-blue-600",
         iconBg: "bg-blue-50",
@@ -129,7 +125,6 @@ function Tracks() {
       label: "TRACK 5",
       subtitle:
         "Entrepreneurship, Innovation, and Sustainable Startup Ecosystems",
-      icon: <FaLeaf />,
       theme: {
         badge: "bg-purple-600",
         iconBg: "bg-purple-50",
@@ -903,12 +898,6 @@ function Tracks() {
                 </span>
 
                 <div className="p-6 pt-8 flex-1 flex flex-col">
-                  <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center ${track.theme.iconBg} ${track.theme.iconText} text-xl mb-4 ring-4 ${track.theme.ring}`}
-                  >
-                    {track.icon}
-                  </div>
-
                   <h2
                     className={`text-base font-bold leading-snug mb-4 ${track.theme.titleText}`}
                   >
