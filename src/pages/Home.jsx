@@ -156,7 +156,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-red-900 via-red-900/85 to-red-900/40"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-red-900/70 via-transparent to-transparent"></div>
 
-        <div className="relative max-w-7xl mx-auto px-6 min-h-[560px] flex items-center">
+        <div className="relative max-w-7xl mx-auto px-6 pb-8 flex items-center">
           <div className="max-w-2xl flex flex-col items-center">
             <h1 className="text-6xl font-bold leading-tight text-center text-yellow-400">
               ICSISDG 2026
