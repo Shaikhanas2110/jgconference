@@ -9,7 +9,7 @@ import {
 import { MdLocationOn } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
 import image from "../assets/image.jpeg";
-import about from "public/about.jpg";
+import about from "../assets/IMG_2306.jpeg";
 
 function Home() {
   const location = useLocation();
