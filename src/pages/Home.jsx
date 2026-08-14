@@ -9,6 +9,7 @@ import {
 import { MdLocationOn } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
 import image from "../assets/image.jpeg";
+import about from "../assets/IMG_2306.jpeg";
 
 function Home() {
   const location = useLocation();
@@ -156,7 +157,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-red-900 via-red-900/85 to-red-900/40"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-red-900/70 via-transparent to-transparent"></div>
 
-        <div className="relative max-w-7xl mx-auto px-6 min-h-[560px] flex items-center">
+        <div className="relative max-w-7xl mx-auto px-6 pb-8 flex items-center">
           <div className="max-w-2xl flex flex-col items-center">
             <h1 className="text-6xl font-bold leading-tight text-center text-yellow-400">
               ICSISDG 2026
@@ -281,7 +282,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <img
-              src="public\about.jpg"
+              src={about}
               alt="ICSISDG 2026 Conference"
               className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
             />
@@ -290,17 +291,13 @@ function Home() {
                 About JG University
               </h2>
               <p className="text-gray-700 leading-8 mb-4">
-                At JG University, experiential and immersive learning is at the
-                core. The programmes offered aim to prepare students to solve
-                real-world problems using technology, creativity and innovation.
-                Our pedagogy is co-designed with industry stalwarts; the
-                curriculum is focused on employability, enhancing soft & hard
-                skills and exposure to real-life projects across various
-                industries. The objective is to ensure students are ready for
-                tomorrow's workplace by creating Whole Brain Change Makers -
-                technologically sound professionals, creative thinkers, and
-                socially conscious citizens who will strive to lead changes in
-                the industry and society.
+                <b>JG University</b> is a new-age, technology-driven university
+                committed to delivering future-focused education aligned with
+                evolving industry needs and global academic standards. It offers
+                undergraduate, postgraduate, doctoral and professional
+                programmes across Engineering, Computer Science, Management,
+                Commerce, Law, Science & Technology, and Investigative & Applied
+                Sciences.
               </p>
               {/* <p className="text-gray-700 leading-8 mb-4">
                 The Conference on Smart Innovation for Sustainable Development
@@ -412,13 +409,17 @@ function Home() {
                 <p className="font-semibold text-red-700">JG University</p>
               </div> */}
               <p className="text-gray-700 leading-8 mb-4">
-                <b>JG University</b> is a new-age, technology-driven university
-                committed to delivering future-focused education aligned with
-                evolving industry needs and global academic standards. It offers
-                undergraduate, postgraduate, doctoral and professional
-                programmes across Engineering, Computer Science, Management,
-                Commerce, Law, Science & Technology, and Investigative & Applied
-                Sciences.
+                At <b>JG University</b>, experiential and immersive learning is
+                at the core. The programmes offered aim to prepare students to
+                solve real-world problems using technology, creativity and
+                innovation. Our pedagogy is co-designed with industry stalwarts;
+                the curriculum is focused on employability, enhancing soft &
+                hard skills and exposure to real-life projects across various
+                industries. The objective is to ensure students are ready for
+                tomorrow's workplace by creating Whole Brain Change Makers -
+                technologically sound professionals, creative thinkers, and
+                socially conscious citizens who will strive to lead changes in
+                the industry and society.
               </p>
               <p className="text-gray-700 leading-8">
                 Sponsored by the ASIA Charitable Trust (established in 1965),
