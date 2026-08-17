@@ -836,148 +836,19 @@ function Contact() {
 
             {/* Right: Self-made illustrative map */}
             <div className="bg-white rounded-2xl shadow-xl p-6">
-              <h3 className="text-xl font-bold text-red-800 mb-4 text-center">
-                Find Us Here
-              </h3>
-              <svg viewBox="0 0 400 320" className="w-full h-auto rounded-xl">
-                <rect width="400" height="320" fill="#eef2f0" />
-                {/* roads */}
-                <path d="M0 100 H400" stroke="#cbd5cf" strokeWidth="12" />
-                <path d="M0 230 H400" stroke="#cbd5cf" strokeWidth="12" />
-                <path d="M100 0 V320" stroke="#cbd5cf" strokeWidth="12" />
-                <path d="M290 0 V320" stroke="#cbd5cf" strokeWidth="12" />
-                <path
-                  d="M0 100 H400"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  strokeDasharray="8 6"
-                />
-                <path
-                  d="M0 230 H400"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  strokeDasharray="8 6"
-                />
-                <path
-                  d="M100 0 V320"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  strokeDasharray="8 6"
-                />
-                <path
-                  d="M290 0 V320"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  strokeDasharray="8 6"
-                />
-
-                {/* green patches */}
-                <circle cx="60" cy="60" r="28" fill="#bbf7d0" />
-                <circle cx="350" cy="280" r="34" fill="#bbf7d0" />
-
-                {/* campus building */}
-                <rect
-                  x="150"
-                  y="120"
-                  width="110"
-                  height="90"
-                  rx="6"
-                  fill="#b91c1c"
-                  opacity="0.9"
-                />
-                <rect
-                  x="168"
-                  y="140"
-                  width="20"
-                  height="18"
-                  fill="#fff"
-                  opacity="0.85"
-                />
-                <rect
-                  x="198"
-                  y="140"
-                  width="20"
-                  height="18"
-                  fill="#fff"
-                  opacity="0.85"
-                />
-                <rect
-                  x="228"
-                  y="140"
-                  width="20"
-                  height="18"
-                  fill="#fff"
-                  opacity="0.85"
-                />
-                <rect
-                  x="168"
-                  y="168"
-                  width="20"
-                  height="18"
-                  fill="#fff"
-                  opacity="0.85"
-                />
-                <rect
-                  x="198"
-                  y="168"
-                  width="20"
-                  height="18"
-                  fill="#fff"
-                  opacity="0.85"
-                />
-                <rect
-                  x="228"
-                  y="168"
-                  width="20"
-                  height="18"
-                  fill="#fff"
-                  opacity="0.85"
-                />
-
-                {/* map pin */}
-                <circle
-                  cx="205"
-                  cy="100"
-                  r="16"
-                  fill="#facc15"
-                  stroke="#b91c1c"
-                  strokeWidth="3"
-                />
-                <path d="M205 116 L205 120" stroke="#b91c1c" strokeWidth="3" />
-                <text
-                  x="205"
-                  y="105"
-                  textAnchor="middle"
-                  fontSize="12"
-                  fontWeight="bold"
-                  fill="#7f1d1d"
-                >
-                  JGU
-                </text>
-
-                <text
-                  x="205"
-                  y="245"
-                  textAnchor="middle"
-                  fontSize="14"
-                  fontWeight="bold"
-                  fill="#374151"
-                >
-                  JG University Campus
-                </text>
-                <text
-                  x="205"
-                  y="265"
-                  textAnchor="middle"
-                  fontSize="12"
-                  fill="#6b7280"
-                >
-                  Ahmedabad, Gujarat, India
-                </text>
-              </svg>
-              <p className="text-center text-gray-400 text-xs mt-3">
-                Illustrative map for reference only — not to scale
-              </p>
+              <div className="flex justify-center">
+                <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg">
+                  <iframe
+                    title="JG University Location"
+                    src="https://www.google.com/maps?q=JG+University+Ahmedabad&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 

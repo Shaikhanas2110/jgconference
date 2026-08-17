@@ -9,7 +9,7 @@ import {
 import { MdLocationOn } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
 import image from "../assets/image.jpeg";
-import about from "../assets/IMG_2306.jpeg";
+import about from "../assets/about2.jpeg";
 
 function Home() {
   const location = useLocation();
@@ -281,11 +281,13 @@ function Home() {
       <section id="about" className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <img
-              src={about}
-              alt="ICSISDG 2026 Conference"
-              className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
-            />
+            <div className="w-full">
+              <img
+                src={about}
+                alt="JG University Building"
+                className="w-150 h-72 sm:h-80 md:h-96 object-cover rounded-2xl shadow-lg"
+              />
+            </div>
             <div>
               <h2 className="text-4xl font-bold text-red-800 mb-6">
                 About JG University
@@ -299,6 +301,19 @@ function Home() {
                 Commerce, Law, Science & Technology, and Investigative & Applied
                 Sciences.
               </p>
+              <p className="text-gray-700 leading-8 mb-4">
+                At <b>JG University</b>, experiential and immersive learning is
+                at the core. The programmes offered aim to prepare students to
+                solve real-world problems using technology, creativity and
+                innovation.
+              </p>
+              <p className="text-gray-700 leading-8 mb-4">
+                Sponsored by the ASIA Charitable Trust (established in 1965),
+                <b> JG University</b> builds on more than six decades of
+                educational excellence, preparing globally competent
+                professionals committed to sustainable development.
+              </p>
+
               {/* <p className="text-gray-700 leading-8 mb-4">
                 The Conference on Smart Innovation for Sustainable Development
                 Goals (ICSISDG 2026) offers a global platform for academics,
