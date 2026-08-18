@@ -785,11 +785,6 @@ function Contact() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left: College info */}
             <div className="bg-white rounded-2xl shadow-xl p-10 text-center">
-              <img
-                src={logo}
-                alt="JG University"
-                className="w-40 mx-auto mb-6"
-              />
               <h2 className="text-3xl font-bold text-red-800">JG University</h2>
               <p className="text-gray-600 mt-2 mb-8">
                 Empowering Innovation Through Research & Technology
@@ -834,7 +829,6 @@ function Contact() {
               </div>
             </div>
 
-            {/* Right: Self-made illustrative map */}
             <div className="bg-white rounded-2xl shadow-xl p-6">
               <div className="flex justify-center">
                 <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg">
