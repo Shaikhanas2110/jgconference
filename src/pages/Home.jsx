@@ -285,7 +285,7 @@ function Home() {
               <img
                 src={about}
                 alt="JG University Building"
-                className="w-150 h-72 sm:h-80 md:h-96 object-cover rounded-2xl shadow-lg"
+                className="w-150 sm:h-80 md:h-96 object-cover rounded-2xl shadow-lg h-auto"
               />
             </div>
             <div>
@@ -345,7 +345,7 @@ function Home() {
         </div>
       </section>
 
-      <section id="about" className="py-10 bg-white">
+      <section id="aboutCon" className="bg-white pb-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className=" gap-12 items-center">
             <h2 className="text-4xl font-bold text-red-800 mb-6">
