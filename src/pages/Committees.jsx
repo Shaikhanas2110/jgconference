@@ -41,6 +41,31 @@ function Committees() {
         "Dr. Biswadip Basu Mallik, Professor, Institute of Engineering & Management, Kolkata",
         "Dr. Shubham Mahajan, AP-II, Amity University Haryana",
         "Padmavathi Ganapathi, Former Dean & Professor - Computer Science, Avinashilingam Institute for Home Science and Higher Education for Women",
+        "Amit Joshi",
+        "Anand Nayyar",
+        "Dr. Shashi Kant Gupta",
+        "Fernando Ortiz Rodriguez",
+        "Jyotika Athavale",
+        "Rajkumar Buyya",
+        "Gram Kumar",
+        "Parikshit Mahalle",
+        "Sai Kiran Oruganti",
+        "Rajat Moona",
+        "Pavan Duggal",
+        "Sunil Sharma",
+        "Abhishek Bansal",
+        "Tirthankar Dutta",
+        "Rama Vedashree",
+        "Dr. Thompho Tshivhase",
+        "Dr. Korhan Cengiz",
+        "Farah Jemili",
+        "Prof. Dr. Prasun Chakrabarti",
+        "Dr. Sanju Tiwari",
+        "Dr. Megha Bhushan",
+        "Rajendrasinh Jadeja",
+        "C. Paunwala",
+        "Maniklal Das",
+        "Sudeep Tanwar",
       ],
     },
     {
@@ -58,29 +83,133 @@ function Committees() {
         "Dr. Vishali Sharma, Assistant Professor, NSIT-IFSCS (Affiliated NFSU), Gandhinagar, Gujarat",
       ],
     },
+    {
+      title: "TPC Members",
+      members: [
+        "Dr. Monika Thakur, Associate Professor, RIMT University, Punjab",
+        "Dr. Kavita Arora, Associate Professor, Manav Rachna, Faridabad",
+        "Dr. Sonia G, Associate Professor, Shoolini University, HP",
+        "Dr. Chiranjeevi, Associate Professor, ACE Engineering College, Hyderabad",
+        "Dr. Tanmay Kasbe, Associate Professor, Shree Vaishnav Vidyapeeth, Indore",
+        "Dr. Rajdipsinh Vaghela, Associate Professor, MBIT, CVM University, Anand",
+        "Dr. Biswadip Basu Malik, Professor, Department of Basic Science & Humanities at the Institute of Engineering & Management, University of Engineering and Management, Kolkata",
+        "Dr. Shashi Kant Gupta, Founder and CEO, Chinmay Research Education and Publication Private Limited",
+        "Dr. Neha Gupta, Associate Professor, Symbiosis University of Applied Sciences",
+        "Dr. Sonali Vyas, Associate Professor, JK Lakshmipat University, Jaipur",
+        "Dr. Sai Sudha Gadde, Assistant Professor, K.L University, Hyderabad",
+        "Dr. Monica Ghalawat, Associate Professor, L J University. Ahmedabad",
+        "Dr. Devarshi, Associate Professor, GLS University, Ahmedabad",
+        "Dr. Shanti Verma, Director, Lokmanya College of Computer Applications, Ahmedabad",
+        "Dr. Abhijitsinh Jadeja, Professor, Shri C.J Patel Insitute of Computer Studies, Sankalchand Patel University, Visnagar",
+        "Dr. Perepi Rajrajeshwari, Associate Professor, VIT, Vellore",
+        "Dr. Anwar Basha, Associate Professor, Rajalakshmi Institute of Technology, Chennai",
+        "Dr. Ashwin Dobariya, Associate Professor, Marwadi University, Rajkot",
+        "Dr. Brijesh Jajal, Professor, iAR, Gandhinagar",
+        "Dr. Madhuri Patil, Assistant Professor, Shah And Anchor Kutchhi Engineering College",
+        "Dr. Poonam Chakravarty, Principal, Diploma, Rai School of Engineering, Rai University",
+        "Dr. Yogeshvari Makawana, Monark University, Ahmedabad",
+        "Dr. S. Pushplatha, Director, J.G. College of Computer Applications, J G University, Ahmedabad",
+        "Dr. Nitish Pathak, Associate Professor, Bhagwan Parshuram Institute Of Technology. New Delhi",
+        "Dr. Ravi Sheth, Senior Assistant Professor, Rashtriya Raksha University, Gandhinagar",
+        "Dr. Manali Brahmbhatt, Assistant Professor, St. Xaviers College, Ahmedabad",
+        "Vaibhav Gandhi, Assistant Professor, MBIT, CVM University, Anand",
+        "Dr. Navtej Bhatt, Assistant Professor, CHARUSAT University, Changa",
+        "Dr. Megha Bhushan, Faculty, Department of Computer Languages and Systems, University of Sevilla, Spain",
+        "Dr. Arti Jain, Assistant Professor (Sr. Grade), Jaypee Institute of Information Technology, Noida",
+        "Dr. Ankit Oza, Assistant Professor, Chandigarh University",
+        "Dr. Panem, Assistant Professor, NFSU, Goa",
+        "Dr. Harish Morwani, Associate Professor, Sardar Vallabhbhai Global University, Ahmedabad",
+        "Dr. Sumegh Tharewal, Associate Professor, DBS Global University, Dehradun",
+        "Dr. Rupali Mahajan, Associate Professor, VIIT, Pune",
+        "Dr. Kamal Malik, Professor, Maharishi Markandeshwar (Deemed to be University), Haryana",
+        "Dr. Rajiv Iyer, Associate Professor, Amity University, Mumbai",
+        "Dr. Sridhar Iyer, Professor",
+        "Dr. Ramesh Prajapati, Professor, SSIT, Gandhinagar",
+        "Dr. Angira Patel, Associate Professor, Gandhinagar University",
+        "Dr. Udit Mamodiya, Associate Professor, Poornima University",
+        "Dr. Meenu Gupta, Professor, Chandigarh University",
+        "Dr. Pushan Kumar Dutta, Associate Professor, Amity University, Kolkatta",
+        "Dr. Shubham Mahajan, Assistant Professor, Amity University, Gurugram",
+        "Dr. Chetan Dhudagara, Assistant Professor, Anand Agricultural University, Anand",
+        "Dr. Saikat, Associate Professor, Symbiosis International University, Pune",
+        "Dr. Kamal Kant Hiran, Associate Professor, SPSU, Udaipur",
+        "Dr. K.C. Roy, Professor, Indus University, Ahmedabad",
+        "Dr. Akash Saxena, Principal, Compucom Institute of Technology and Management (CITM), Jaipur",
+        "Dr. Raviraj Vaghela, Assistant Professor, NFSU, Uganda",
+        "Dr. Mahipal Jadeja, Assistant Professor, NIT, Jaipur",
+        "Dr. Chirag Paunwala, Professor, Sarvajanik University, Surat",
+        "Dr. Adarsh Kumar, Professor, UPC, Catalunya, Spain",
+        "Dr. Gaurav Gupta, Professor, Shoolini University",
+        "Dr. Manju Khari, Professor, JNU, New Delhi",
+        "Dr. Pawan Whig, Professor, VIPS, New Delhi",
+        "Dr. Vinayak Gupta, Assistant Professor, Lovely Professional University",
+        "Dr. Surbhi Mathur, Associate Professor, NFSU, Gandhinagar",
+        "Dr. Qasem Abu, Professor, Jordan University of Science and Technology, Jordan",
+        "Dr. Khadija Slimani, Associate Professor, ESIEA, Paris, France",
+        "Dr. Farah Jemili, Associate Professor, University of Sousse, Tunisia",
+        "Dr. sanju Tiwari, Professor, Sharda University",
+        "Dr. Sudeep Tanwar, Professor & Dean, FOET, Marwadi University",
+        "Dr. Fernando Otriz Rodriguez, Professor, UAT, Mexico",
+        "Dr. Mueen Uddin, Associate Professor, College of Computing and IT, University of Doha for Science and Technology, Qatar",
+        "Dr. Korhan Cengiz, Associate Professor, Biruni University",
+        "Dr. Kusum Yadav, Associate Professor, University of Hail, Saudi Arabia",
+        "Dr. Thittaporn Ganokratnaa, Univeristy Lecturer and Researcher, King Mongkut's University of Technology Thonburi",
+        "Dr. Surbhi Bhatia Khan, Professor, University of Salford, United Kingdom",
+        "Ramesh Kumar Poonia, Professor, Christ University",
+        "Dr. Saurabh Jain, Professor, UPES, Dehradun",
+        "Dr. Jawar Singh, Professor, IIT, Patna",
+        "Dr. Keshav Kaushik, Associate Professor, Sharda University",
+        "Amer El Rahwan, Academic and Research Officer, United Nations",
+        "Dr. Jaiprakash Verma, Associate Professor, Nirma University",
+        "Dr. Zarina Poberezhna, Associate Professor, National Aviation University",
+      ],
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [openMobileIndex, setOpenMobileIndex] = useState(0);
   const active = sections[activeIndex];
 
+  const renderMemberRow = (member, idx) => (
+    <div
+      key={idx}
+      className="flex items-center gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors"
+    >
+      <span className="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white">
+        <FaUser className="text-xs sm:text-sm" />
+      </span>
+      <p className="text-gray-700 text-sm sm:text-base break-words">{member}</p>
+    </div>
+  );
+
   const renderSectionBody = (section) =>
     !section.isGrouped ? (
-      <div className="space-y-3 sm:space-y-4">
-        {section.members.map((member, idx) => (
+      (() => {
+        const total = section.members.length;
+        const columnCount = total > 50 ? 3 : 2;
+        const perColumn = Math.ceil(total / columnCount);
+        const columns = Array.from({ length: columnCount }, (_, i) =>
+          section.members.slice(i * perColumn, i * perColumn + perColumn),
+        );
+        const gridColsClass =
+          columnCount === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
+        return (
           <div
-            key={idx}
-            className="flex items-center gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors"
+            className={`grid grid-cols-1 ${gridColsClass} gap-x-6 lg:gap-x-8 gap-y-3 sm:gap-y-4`}
           >
-            <span className="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white">
-              <FaUser className="text-xs sm:text-sm" />
-            </span>
-            <p className="text-gray-700 text-sm sm:text-base break-words">
-              {member}
-            </p>
+            {columns.map(
+              (column, colIdx) =>
+                column.length > 0 && (
+                  <div key={colIdx} className="space-y-3 sm:space-y-4">
+                    {column.map((member, idx) =>
+                      renderMemberRow(member, colIdx * perColumn + idx),
+                    )}
+                  </div>
+                ),
+            )}
           </div>
-        ))}
-      </div>
+        );
+      })()
     ) : (
       <div className="space-y-6 sm:space-y-8">
         {section.groups.map((group, gIdx) => (
@@ -867,43 +996,37 @@ function Committees() {
             })}
           </div>
 
-          {/* Desktop: Sidebar + Content Layout */}
-          <div className="hidden md:grid md:grid-cols-4 gap-8">
-            {/* Sidebar Navigation */}
-            <div className="md:col-span-1">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden sticky top-6">
-                {sections.map((section, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveIndex(index)}
-                    className={`w-full text-left px-5 py-4 flex items-center justify-between gap-2 border-b border-gray-100 last:border-b-0 transition-colors ${
-                      activeIndex === index
-                        ? "bg-red-800 text-white font-semibold"
-                        : "text-gray-700 hover:bg-red-50"
+          {/* Desktop: Title tabs on top + member list below */}
+          <div className="hidden md:block">
+            {/* Title Navigation Row */}
+            <div className="bg-white rounded-xl shadow-lg p-3 mb-8 flex flex-wrap justify-center gap-3">
+              {sections.map((section, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`px-5 py-3 rounded-lg flex items-center gap-2 transition-colors ${
+                    activeIndex === index
+                      ? "bg-red-800 text-white font-semibold"
+                      : "text-gray-700 hover:bg-red-50"
+                  }`}
+                >
+                  <span
+                    className={`w-1.5 h-5 rounded-full flex-shrink-0 ${
+                      activeIndex === index ? "bg-yellow-400" : "bg-gray-200"
                     }`}
-                  >
-                    <span>{section.title}</span>
-                    <FaChevronRight
-                      className={`text-xs flex-shrink-0 ${
-                        activeIndex === index
-                          ? "text-yellow-400"
-                          : "text-gray-300"
-                      }`}
-                    />
-                  </button>
-                ))}
-              </div>
+                  ></span>
+                  <span>{section.title}</span>
+                </button>
+              ))}
             </div>
 
-            {/* Content Area */}
-            <div className="md:col-span-3">
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-red-800 mb-8 flex items-center gap-3">
-                  <span className="w-2 h-8 bg-yellow-400 rounded-full"></span>
-                  {active.title}
-                </h2>
-                {renderSectionBody(active)}
-              </div>
+            {/* Member List Below */}
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-red-800 mb-8 flex items-center gap-3">
+                <span className="w-2 h-8 bg-yellow-400 rounded-full"></span>
+                {active.title}
+              </h2>
+              {renderSectionBody(active)}
             </div>
           </div>
         </div>
