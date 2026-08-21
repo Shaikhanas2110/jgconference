@@ -41,31 +41,30 @@ function Committees() {
         "Dr. Biswadip Basu Mallik, Professor, Institute of Engineering & Management, Kolkata",
         "Dr. Shubham Mahajan, AP-II, Amity University Haryana",
         "Padmavathi Ganapathi, Former Dean & Professor - Computer Science, Avinashilingam Institute for Home Science and Higher Education for Women",
-        "Amit Joshi",
-        "Anand Nayyar",
-        "Dr. Shashi Kant Gupta",
-        "Fernando Ortiz Rodriguez",
-        "Jyotika Athavale",
-        "Rajkumar Buyya",
-        "Gram Kumar",
-        "Parikshit Mahalle",
-        "Sai Kiran Oruganti",
-        "Rajat Moona",
-        "Pavan Duggal",
-        "Sunil Sharma",
-        "Abhishek Bansal",
-        "Tirthankar Dutta",
-        "Rama Vedashree",
-        "Dr. Thompho Tshivhase",
-        "Dr. Korhan Cengiz",
-        "Farah Jemili",
-        "Prof. Dr. Prasun Chakrabarti",
-        "Dr. Sanju Tiwari",
-        "Dr. Megha Bhushan",
-        "Rajendrasinh Jadeja",
-        "C. Paunwala",
-        "Maniklal Das",
-        "Sudeep Tanwar",
+        "Dr. Amit Joshi, Director @ KCCI Global & India; Independent Director @ Yudiz Solutions, KCCI Global; Yudiz Solutions, Ahmedabad, Gujarat, India",
+        "Prof. (Dr.) Anand Nayyar, Professor, Scientist, Vice-Chairman (Research), Director - IoT and Intelligent Systems Lab, Duy Tan University, Da Nang City, Vietnam",
+        "Prof(Dr.) Fernando Ortiz-Rodríguez, Researcher / Full Professor / IT-AI Advisor @ INDEX / IIA Director, INDEX / IIA, Tamaulipas, Mexico",
+        "Ms. Jyotika (Thapar) Athavale, Leading Silicon Functional Safety, Waymo (an Alphabet company), San Francisco Bay Area, USA",
+        "Dr. Rajkumar Buyya, Researcher, Innovator, Entrepreneur, Author, Keynote Speaker, , Greater Melbourne Area, Australia",
+        "Dr. Ram Kumar G, Ph.D, CISM, PMP, Cyber Security & Risk Leader, , ",
+        "Dr. Parikshit Mahalle, Dean - Academics & Professor, Department of AI&DS, VIT, Pune, Pune, Maharashtra, India",
+        "Mr. Sai Kiran (Sai Sharma) Oruganti, , , Greater Patna Area, India",
+        "Dr. Rajat Moona, Director, IIT Gandhinagar, Gandhinagar, Gujarat, India",
+        "Dr. Pavan Duggal, Senior Advocate; AI & Quantum Law / Cyber Law Expert, , South Delhi, Delhi, India",
+        "Mr. Sunil Sharma, Managing Director & Vice President - Sales (India & SAARC), Sophos, South Delhi, Delhi, India",
+        "Mr. Abhishek Bansal, CISO / Risk & Cybersecurity Leader, , Gurugram, Haryana, India",
+        "Mr. Tirthankar Dutta, Director @ ServiceNow; Global CIO & CISO, ServiceNow, Mumbai, Maharashtra, India",
+        "Mr. Rama Vedashree, Former CEO, Data Security Council of India, Gurgaon, Haryana, India",
+        "Dr. Thompho Tshivhase, Criminologist / Discipline Lead & Lecturer, University of Fort Hare, East London, Eastern Cape, South Africa",
+        "Dr. Korhan Cengiz, Associate Professor, UKF / BU, Istanbul, Türkiye",
+        "Dr. Farah Jemili, Associate Professor (HDR); Internship Director, ISITCOM, Sousse, Tunisia",
+        "Prof. (Dr.) Prasun Chakrabarti, Pro Vice Chancellor (Research & Academics), Sir Padampat Singhania University, Udaipur, Vadodara, Gujarat, India",
+        "Dr. Sanju Tiwari, Senior Researcher, TIB Hannover, Germany & UAT Mexico, India",
+        "Dr. Megha Bhushan, Department of Computer Languages and Systems, University of Sevilla, Spain, Spain",
+        "Dr. Rajendrasinh Jadeja, Provost (Vice-Chancellor), Marwadi University, Rajkot, Gujarat, India",
+        "Prof. (Dr.) Chirag N. Paunwala, Professor, E&C Department; Chair IEEE Gujarat Section, SCET; IEEE Gujarat Section, Greater Surat Area, Gujarat, India",
+        "Dr. Manik Lal Das, Professor and Dean (Faculty), Dhirubhai Ambani Institute of Information and Communication Technology (DA-IICT), Gandhinagar, Gujarat, India",
+        "Dr. Sudeep Tanwar, Professor & Dean - FoET (PG Studies), , Rajkot, Gujarat, India",
       ],
     },
     {
@@ -75,7 +74,7 @@ function Committees() {
         "Dr. Sameer Jain, Faculty, NICMAR Business School, NICMAR University, Pune",
         "Dr. Sushil Kumar Pradhan, Assistant Professor, Centurion University of Technology and Management, Odisha",
         "Chintan Patel, Academic Associate, Indian Institute of Management, Ahmedabad",
-        "Ramya Sakthivel, Research Scholar, SRM Institute of Science and Technology",
+        "Ms. Ramya Sakthivel, Research Scholar, SRM Institute of Science and Technology",
         "Dr. Sana Shawl, Assistant Professor, Department of Management Studies, University of Kashmir",
         "Vipindas Aravindakshan, Cloud Infrastructure Engineer, Brillius Inc.",
         "Dr. Anwar Basha H, Senior Lecturer, INTI International University, Malaysia",
@@ -112,7 +111,7 @@ function Committees() {
         "Dr. Nitish Pathak, Associate Professor, Bhagwan Parshuram Institute Of Technology. New Delhi",
         "Dr. Ravi Sheth, Senior Assistant Professor, Rashtriya Raksha University, Gandhinagar",
         "Dr. Manali Brahmbhatt, Assistant Professor, St. Xaviers College, Ahmedabad",
-        "Vaibhav Gandhi, Assistant Professor, MBIT, CVM University, Anand",
+        "Mr. Vaibhav Gandhi, Assistant Professor, MBIT, CVM University, Anand",
         "Dr. Navtej Bhatt, Assistant Professor, CHARUSAT University, Changa",
         "Dr. Megha Bhushan, Faculty, Department of Computer Languages and Systems, University of Sevilla, Spain",
         "Dr. Arti Jain, Assistant Professor (Sr. Grade), Jaypee Institute of Information Technology, Noida",
@@ -155,11 +154,11 @@ function Committees() {
         "Dr. Kusum Yadav, Associate Professor, University of Hail, Saudi Arabia",
         "Dr. Thittaporn Ganokratnaa, Univeristy Lecturer and Researcher, King Mongkut's University of Technology Thonburi",
         "Dr. Surbhi Bhatia Khan, Professor, University of Salford, United Kingdom",
-        "Ramesh Kumar Poonia, Professor, Christ University",
+        "Mr. Ramesh Kumar Poonia, Professor, Christ University",
         "Dr. Saurabh Jain, Professor, UPES, Dehradun",
         "Dr. Jawar Singh, Professor, IIT, Patna",
         "Dr. Keshav Kaushik, Associate Professor, Sharda University",
-        "Amer El Rahwan, Academic and Research Officer, United Nations",
+        "Mr. Amer El Rahwan, Academic and Research Officer, United Nations",
         "Dr. Jaiprakash Verma, Associate Professor, Nirma University",
         "Dr. Zarina Poberezhna, Associate Professor, National Aviation University",
       ],
@@ -170,46 +169,53 @@ function Committees() {
   const [openMobileIndex, setOpenMobileIndex] = useState(0);
   const active = sections[activeIndex];
 
-  const renderMemberRow = (member, idx) => (
+  const renderMemberRow = (member, idx, fixedHeight = false) => (
     <div
       key={idx}
-      className="flex items-center gap-3 p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors"
+      className={`flex items-center gap-2.5 p-2 sm:p-2.5 bg-gray-50 rounded-lg hover:bg-red-50 transition-colors ${
+        fixedHeight ? "h-[76px] sm:h-[84px] overflow-hidden" : ""
+      }`}
     >
       <span className="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 bg-red-800 rounded-full flex items-center justify-center text-white">
         <FaUser className="text-xs sm:text-sm" />
       </span>
-      <p className="text-gray-700 text-sm sm:text-base break-words">{member}</p>
+      <p
+        className={`text-gray-700 text-sm sm:text-base break-words ${
+          fixedHeight ? "line-clamp-3" : ""
+        }`}
+      >
+        {member}
+      </p>
     </div>
   );
 
-  const renderSectionBody = (section) =>
+  const renderSectionBody = (section, { multiColumn = false } = {}) =>
     !section.isGrouped ? (
-      (() => {
-        const total = section.members.length;
-        const columnCount = total > 50 ? 3 : 2;
-        const perColumn = Math.ceil(total / columnCount);
-        const columns = Array.from({ length: columnCount }, (_, i) =>
-          section.members.slice(i * perColumn, i * perColumn + perColumn),
-        );
-        const gridColsClass =
-          columnCount === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
-        return (
-          <div
-            className={`grid grid-cols-1 ${gridColsClass} gap-x-6 lg:gap-x-8 gap-y-3 sm:gap-y-4`}
-          >
-            {columns.map(
-              (column, colIdx) =>
-                column.length > 0 && (
-                  <div key={colIdx} className="space-y-3 sm:space-y-4">
-                    {column.map((member, idx) =>
-                      renderMemberRow(member, colIdx * perColumn + idx),
-                    )}
-                  </div>
-                ),
-            )}
-          </div>
-        );
-      })()
+      multiColumn ? (
+        (() => {
+          const total = section.members.length;
+          const columnCount = total > 50 ? 3 : 2;
+          const perColumn = Math.ceil(total / columnCount);
+          return (
+            <div
+              className="grid gap-x-4 lg:gap-x-6 gap-y-2 sm:gap-y-2.5"
+              style={{
+                gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
+                gridTemplateRows: `repeat(${perColumn}, auto)`,
+                gridAutoFlow: "column",
+              }}
+            >
+              {section.members.map((member, idx) =>
+                renderMemberRow(member, idx, true),
+              )}
+            </div>
+          );
+        })()
+      ) : (
+        <div className="space-y-2 sm:space-y-2.5">
+          {section.members.map((member, idx) => renderMemberRow(member, idx))}
+        </div>
+      )
     ) : (
       <div className="space-y-6 sm:space-y-8">
         {section.groups.map((group, gIdx) => (
@@ -1021,12 +1027,12 @@ function Committees() {
             </div>
 
             {/* Member List Below */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-red-800 mb-8 flex items-center gap-3">
+            <div className="bg-white rounded-xl shadow-lg p-4">
+              <h2 className="text-2xl font-bold text-red-800 mb-4 flex items-center gap-3">
                 <span className="w-2 h-8 bg-yellow-400 rounded-full"></span>
                 {active.title}
               </h2>
-              {renderSectionBody(active)}
+              {renderSectionBody(active, { multiColumn: true })}
             </div>
           </div>
         </div>
