@@ -14,7 +14,7 @@ import about from "../assets/about2.jpeg";
 function Home() {
   const location = useLocation();
 
-  const CONFERENCE_START_DATE = new Date("2026-11-27T00:00:00");
+  const CONFERENCE_START_DATE = new Date("2026-11-20T00:00:00");
 
   const getTimeLeft = () => {
     const diff = CONFERENCE_START_DATE.getTime() - new Date().getTime();
@@ -252,7 +252,7 @@ function Home() {
           <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x sm:divide-white/10">
             {[
               [FaFileAlt, "200+", "Research Papers"],
-              [FaMicrophoneAlt, "80+", "Speakers"],
+              [FaMicrophoneAlt, "6+", "Speakers"],
               [FaThLarge, "5", "Tracks"],
             ].map(([Icon, num, label], i) => (
               <div

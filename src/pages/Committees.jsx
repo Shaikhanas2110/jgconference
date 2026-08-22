@@ -161,8 +161,7 @@ function Committees() {
         "Mr. Amer El Rahwan, Academic and Research Officer, United Nations",
         "Dr. Jaiprakash Verma, Associate Professor, Nirma University",
         "Dr. Zarina Poberezhna, Associate Professor, National Aviation University",
-        "Dr. A.Stella, Associate Professor",
-        "Mr. S.K Pate;, Department of Computer Studies",
+        "Dr. A.Stella, Associate Professor, S.K Patel Department of Computer Studies",
       ],
     },
   ];
