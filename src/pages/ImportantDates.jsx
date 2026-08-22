@@ -763,7 +763,7 @@ function ImportantDates() {
                 Development Goals
               </span>
               , to be held on{" "}
-              <span className="font-bold text-red-800">27 November 2026</span>.
+              <span className="font-bold text-red-800">20 November 2026</span>.
             </p>
           </div>
 
