@@ -35,7 +35,7 @@ function Submission() {
       linkText: "(Click here)",
       action: downloadTemplates,
     },
-    "Camera-ready papers: 6-8 pages for short papers, 10-12 pages for long papers",
+    "Camera-ready papers: 4-6 pages",
     "Maximum of 5 authors per paper",
     "The manuscript must fall under the scope and allied tracks of the conference; the TPC has full right to determine scope before recommending a paper for review",
     "Simultaneous submission to multiple conferences is discouraged; the TPC's decision will be final in such cases",
