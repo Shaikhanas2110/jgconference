@@ -107,7 +107,7 @@ function Committees() {
         "Dr. Madhuri Patil, Assistant Professor, Shah And Anchor Kutchhi Engineering College",
         "Dr. Poonam Chakravarty, Principal, Diploma, Rai School of Engineering, Rai University",
         "Dr. Yogeshvari Makawana, Monark University, Ahmedabad",
-        "Dr. S. Pushplatha, Director, J.G. College of Computer Applications, J G University, Ahmedabad",
+        "Dr. S. Pushplatha, Director, J.G. College of Computer Application, Ahmedabad",
         "Dr. Nitish Pathak, Associate Professor, Bhagwan Parshuram Institute Of Technology. New Delhi",
         "Dr. Ravi Sheth, Senior Assistant Professor, Rashtriya Raksha University, Gandhinagar",
         "Dr. Manali Brahmbhatt, Assistant Professor, St. Xaviers College, Ahmedabad",
