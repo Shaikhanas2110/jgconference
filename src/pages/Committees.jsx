@@ -40,7 +40,7 @@ function Committees() {
         "Dr. Rupali Atul Mahajan, Associate Professor, Vishwakarma Institute of Technology, Pune",
         "Dr. Biswadip Basu Mallik, Professor, Institute of Engineering & Management, Kolkata",
         "Dr. Shubham Mahajan, AP-II, Amity University Haryana",
-        "Padmavathi Ganapathi, Former Dean & Professor - Computer Science, Avinashilingam Institute for Home Science and Higher Education for Women",
+        "Dr. Padmavathi Ganapathi, Former Dean & Professor - Computer Science, Avinashilingam Institute for Home Science and Higher Education for Women",
         "Dr. Amit Joshi, Director @ KCCI Global & India; Independent Director @ Yudiz Solutions, KCCI Global; Yudiz Solutions, Ahmedabad, Gujarat, India",
         "Prof. (Dr.) Anand Nayyar, Professor, Scientist, Vice-Chairman (Research), Director - IoT and Intelligent Systems Lab, Duy Tan University, Da Nang City, Vietnam",
         "Prof(Dr.) Fernando Ortiz-Rodríguez, Researcher / Full Professor / IT-AI Advisor @ INDEX / IIA Director, INDEX / IIA, Tamaulipas, Mexico",
@@ -52,7 +52,7 @@ function Committees() {
         "Dr. Rajat Moona, Director, IIT Gandhinagar, Gandhinagar, Gujarat, India",
         "Dr. Pavan Duggal, Senior Advocate; AI & Quantum Law / Cyber Law Expert, , South Delhi, Delhi, India",
         "Mr. Sunil Sharma, Managing Director & Vice President - Sales (India & SAARC), Sophos, South Delhi, Delhi, India",
-        "Mr. Abhishek Bansal, CISO / Risk & Cybersecurity Leader, , Gurugram, Haryana, India",
+        "Mr. Abhishek Bansal, CISO / Risk & Cybersecurity Leader, Gurugram, Haryana, India",
         "Mr. Tirthankar Dutta, Director @ ServiceNow; Global CIO & CISO, ServiceNow, Mumbai, Maharashtra, India",
         "Mr. Rama Vedashree, Former CEO, Data Security Council of India, Gurgaon, Haryana, India",
         "Dr. Thompho Tshivhase, Criminologist / Discipline Lead & Lecturer, University of Fort Hare, East London, Eastern Cape, South Africa",
@@ -76,7 +76,7 @@ function Committees() {
         "Chintan Patel, Academic Associate, Indian Institute of Management, Ahmedabad",
         "Ms. Ramya Sakthivel, Research Scholar, SRM Institute of Science and Technology",
         "Dr. Sana Shawl, Assistant Professor, Department of Management Studies, University of Kashmir",
-        "Vipindas Aravindakshan, Cloud Infrastructure Engineer, Brillius Inc.",
+        "Mr. Vipindas Aravindakshan, Cloud Infrastructure Engineer, Brillius Inc.",
         "Dr. Anwar Basha H, Senior Lecturer, INTI International University, Malaysia",
         "Dr. Pooja Sarin, Assistant Professor, OP Jindal Global University, Sonipat, Haryana",
         "Dr. Vishali Sharma, Assistant Professor, NSIT-IFSCS (Affiliated NFSU), Gandhinagar, Gujarat",
@@ -107,7 +107,7 @@ function Committees() {
         "Dr. Madhuri Patil, Assistant Professor, Shah And Anchor Kutchhi Engineering College",
         "Dr. Poonam Chakravarty, Principal, Diploma, Rai School of Engineering, Rai University",
         "Dr. Yogeshvari Makawana, Monark University, Ahmedabad",
-        "Dr. S. Pushplatha, Director, J.G. College of Computer Applications, J G University, Ahmedabad",
+        "Dr. S. Pushpalatha, Director, J.G. College of Computer Applications, Ahmedabad",
         "Dr. Nitish Pathak, Associate Professor, Bhagwan Parshuram Institute Of Technology. New Delhi",
         "Dr. Ravi Sheth, Senior Assistant Professor, Rashtriya Raksha University, Gandhinagar",
         "Dr. Manali Brahmbhatt, Assistant Professor, St. Xaviers College, Ahmedabad",
@@ -146,7 +146,7 @@ function Committees() {
         "Dr. Qasem Abu, Professor, Jordan University of Science and Technology, Jordan",
         "Dr. Khadija Slimani, Associate Professor, ESIEA, Paris, France",
         "Dr. Farah Jemili, Associate Professor, University of Sousse, Tunisia",
-        "Dr. sanju Tiwari, Professor, Sharda University",
+        "Dr. Sanju Tiwari, Professor, Sharda University",
         "Dr. Sudeep Tanwar, Professor & Dean, FOET, Marwadi University",
         "Dr. Fernando Otriz Rodriguez, Professor, UAT, Mexico",
         "Dr. Mueen Uddin, Associate Professor, College of Computing and IT, University of Doha for Science and Technology, Qatar",
@@ -1039,7 +1039,7 @@ function Committees() {
       </section>
 
       {/* International Advisory Board */}
-      <section className="py-8 sm:py-10 bg-white">
+      {/* <section className="py-8 sm:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-red-800 mb-8 sm:mb-10 flex items-center gap-3">
             <span className="w-2 h-8 bg-yellow-400 rounded-full"></span>
@@ -1065,7 +1065,7 @@ function Committees() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

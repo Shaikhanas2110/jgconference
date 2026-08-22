@@ -15,9 +15,9 @@ function Footer() {
             className="w-56 bg-white rounded-lg p-2"
           />
           <p className="mt-6 text-gray-200 leading-7">
-            ICSISDG Conference on Smart Innovation for Sustainable
-            Development Goals (ICSISDG 2026). Bringing together researchers,
-            academicians and industry professionals from around the globe.
+            ICSISDG Conference on Smart Innovation for Sustainable Development
+            Goals (ICSISDG 2026). Bringing together researchers, academicians
+            and industry professionals from around the globe.
           </p>
         </div>
         {/* Quick Links */}
@@ -88,7 +88,9 @@ function Footer() {
             </div>
             <div className="flex gap-3">
               <MdPhone className="text-yellow-400 text-xl" />
-              <p>+91 7567 7567 58/59</p>
+              <p>
+                +91 94090 56589<br></br>+91 79841 14602
+              </p>
             </div>
             <div className="flex gap-3">
               <MdMailOutline className="text-yellow-400 text-xl" />

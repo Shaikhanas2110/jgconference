@@ -805,7 +805,9 @@ function Contact() {
                   <MdPhone className="text-red-700 text-2xl flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-gray-800">Phone</p>
-                    <p className="text-gray-600">+91 9999999999</p>
+                    <p className="text-gray-600">
+                      +91 94090 56589<br></br>+91 79841 14602
+                    </p>
                   </div>
                 </div>
 
