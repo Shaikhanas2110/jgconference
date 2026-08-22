@@ -29,7 +29,7 @@ function ImportantDates() {
       date: "14 November 2026",
       highlight: true,
     },
-    { title: "Conference Dates", date: "27 November 2026", highlight: false },
+    { title: "Conference Dates", date: "20 November 2026", highlight: false },
   ];
 
   return (

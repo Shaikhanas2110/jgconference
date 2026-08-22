@@ -185,7 +185,7 @@ function Home() {
               </div>
               <div className="flex items-center gap-2">
                 <FaCalendar className="text-yellow-400" />
-                <span>19 &ndash; 21 November, 2026</span>
+                <span>20 &ndash; 21 November, 2026</span>
               </div>
             </div>
 
@@ -251,7 +251,7 @@ function Home() {
         <div className="relative border-t border-white/10 bg-black/20">
           <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x sm:divide-white/10">
             {[
-              [FaFileAlt, "500+", "Research Papers"],
+              [FaFileAlt, "200+", "Research Papers"],
               [FaMicrophoneAlt, "80+", "Speakers"],
               [FaThLarge, "5", "Tracks"],
             ].map(([Icon, num, label], i) => (
@@ -398,7 +398,7 @@ function Home() {
                 ["31 October 2026", "Registration Deadline"],
                 ["6 November 2026", "Camera Submission"],
                 ["14 November 2026", "Conference Schedule"],
-                ["27 November 2026", "Conference Starts"],
+                ["20 November 2026", "Conference Starts"],
               ].map((d, i) => (
                 <div key={i} className="flex flex-col items-center">
                   <div className="w-4 h-4 rounded-full bg-yellow-400 shadow-md relative z-10 mb-6"></div>

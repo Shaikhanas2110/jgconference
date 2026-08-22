@@ -1060,7 +1060,7 @@ function Submission() {
       {/* Reviewer Suggestions & Role */}
       <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-xl font-bold text-red-800 mb-6">
                 Reviewer Suggestions
@@ -1082,7 +1082,7 @@ function Submission() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            {/* <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-xl font-bold text-red-800 mb-6">
                 Role of the Reviewers
               </h3>
@@ -1103,7 +1103,7 @@ function Submission() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

@@ -762,7 +762,7 @@ function Publication() {
       </section>
 
       {/* About Conference */}
-      <section className="py-10 bg-white">
+      {/* <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-red-800 mb-6 text-center">
             About Conference
@@ -781,7 +781,7 @@ function Publication() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
