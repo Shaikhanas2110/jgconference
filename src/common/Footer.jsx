@@ -105,43 +105,13 @@ function Footer() {
       <div className="border-t border-red-700"></div>
 
       {/* Bottom Footer */}
-
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
         <p className="text-gray-300 text-center">
           © 2026 JG University | All Rights Reserved.
         </p>
-        {/* Social */}
-        <div className="flex gap-4 mt-5 md:mt-0">
-          <a
-            href="#"
-            className="bg-white p-2 rounded-full text-red-700 hover:bg-yellow-400 duration-300"
-          >
-            <FaGithub size={20} />
-          </a>
-
-          <a
-            href="#"
-            className="bg-white p-2 rounded-full text-red-700 hover:bg-yellow-400 duration-300"
-          >
-            <FaInstagram size={20} />
-          </a>
-
-          <a
-            href="#"
-            className="bg-white p-2 rounded-full text-red-700 hover:bg-yellow-400 duration-300"
-          >
-            <FaLinkedin size={20} />
-          </a>
-
-          <a
-            href="#"
-            className="bg-white p-2 rounded-full text-red-700 hover:bg-yellow-400 duration-300"
-          >
-            <FaYoutube size={20} />
-          </a>
-        </div>
       </div>
     </footer>
   );
 }
+
 export default Footer;
