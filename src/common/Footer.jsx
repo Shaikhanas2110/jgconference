@@ -2,6 +2,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { MdMailOutline, MdPhone, MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+
 function Footer() {
   return (
     <footer className="bg-red-900 text-white">
@@ -30,7 +31,7 @@ function Footer() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/#about">About</Link>
             </li>
             <li>
               <Link to="/committees">Committees</Link>
@@ -58,9 +59,6 @@ function Footer() {
           <ul className="space-y-3">
             <li>
               <Link to="/guidelines">Guidelines</Link>
-            </li>
-            <li>
-              <Link to="/review-process">Review Process</Link>
             </li>
             <li>
               <Link to="/publication">Publication</Link>
