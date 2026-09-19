@@ -837,7 +837,12 @@ function Submission() {
               Paper Submission
             </h2>
             <p className="text-gray-600 leading-8 mb-6">
-              Authors are invited to submit papers through the{" "}
+              High Quality papers will be submitted for publication in the
+              <span className="font-bold text-red-800"> Scopus/WoS</span>{" "}
+              indexed proceedings . All accepted papers will be published in
+              Peer-Reviewed Journals/Proceedings Before the submission deadline.{" "}
+              <br /> authors are invited to submit papers through the Authors
+              are invited to submit papers through the{" "}
               <span className="font-bold text-red-800">
                 icsisdg2026@gmail.com
               </span>{" "}

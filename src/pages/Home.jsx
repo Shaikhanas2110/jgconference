@@ -247,6 +247,33 @@ function Home() {
           </div>
         </div>
 
+        {/* marquee announcement strip */}
+        <div className="relative overflow-hidden bg-yellow-400 py-2">
+          <style>{`
+            @keyframes icsisdgMarqueeScroll {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .icsisdg-marquee-track {
+              display: flex;
+              width: max-content;
+              animation: icsisdgMarqueeScroll 25s linear infinite;
+            }
+          `}</style>
+          <div className="icsisdg-marquee-track">
+            <span className="whitespace-nowrap px-8 text-sm font-semibold text-red-900">
+              High Quality papers will be submitted for publication in the
+              Scopus/WoS -indexed proceedings . All accepted papers will be
+              published in Peer-Reviewed Journals/Proceedings
+            </span>
+            <span className="whitespace-nowrap px-8 text-sm font-semibold text-red-900">
+              High Quality papers will be submitted for publication in the
+              Scopus/WoS -indexed proceedings . All accepted papers will be
+              published in Peer-Reviewed Journals/Proceedings
+            </span>
+          </div>
+        </div>
+
         {/* stats strip */}
         <div className="relative border-t border-white/10 bg-black/20">
           <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x sm:divide-white/10">
