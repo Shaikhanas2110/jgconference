@@ -107,7 +107,7 @@ function CallForPaper() {
   ];
 
   const importantDates = [
-    ["Due date for submission", "30 September 2026"],
+    ["Due date for submission", "31 October 2026"],
     ["Notification of acceptance", "24 October 2026"],
     ["Registration deadline", "31 October 2026"],
     ["Camera-ready paper submission due", "6 November 2026"],

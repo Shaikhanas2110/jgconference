@@ -44,21 +44,21 @@ function Registration() {
       india: "₹ 3,000 /-",
     },
     {
-      category: "Research Scholars",
-      india: "₹ 4,000 /-",
+      category: "Research Scholars / Faculty",
+      india: "₹ 5,000 /-",
     },
     {
-      category: "Regular (Faculty)",
-      india: "₹ 5,000 /-",
+      category: "Industrial Expert",
+      india: "₹ 6,000 /-",
     },
   ];
 
   const indianFees = [
     { category: "UG - PG Students", fee: "INR 3,000" },
-    { category: "Research Scholars", fee: "INR 4,000" },
+    { category: "Research Scholars / Faculty", fee: "INR 5,000" },
     {
-      category: "Regular (Faculty)",
-      fee: "INR 5,000",
+      category: "Industrial Expert",
+      fee: "INR 6,000",
     },
   ];
 

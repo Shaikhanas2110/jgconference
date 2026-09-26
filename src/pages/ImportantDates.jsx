@@ -6,7 +6,7 @@ function ImportantDates() {
   const dates = [
     {
       title: "Due Date For Submission",
-      date: "30 September 2026",
+      date: "31 October 2026",
       highlight: true,
     },
     {

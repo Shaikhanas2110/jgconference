@@ -420,7 +420,7 @@ function Home() {
             ></div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-3">
               {[
-                ["30 September 2026", "Submission Deadline"],
+                ["31 October 2026", "Submission Deadline"],
                 ["24 October 2026", "Acceptance Notification"],
                 ["31 October 2026", "Registration Deadline"],
                 ["6 November 2026", "Camera Submission"],

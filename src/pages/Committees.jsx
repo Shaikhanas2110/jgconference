@@ -22,6 +22,7 @@ function Committees() {
         "Dr. Soenil Soebedar, Chairman, SOEBIT Cybersecurity, Netherlands",
         "Prof. (Dr.) Pawan Whig, Dean Research, VIPS, New Delhi",
         "Dr. Farah Jemili, Associate Professor, University of Sousse, Tunisia",
+        "Dr. Ankit Oza, Department of Technical Sciences, Western Caspian University, Baku, Azerbaijan",
       ],
     },
     {
