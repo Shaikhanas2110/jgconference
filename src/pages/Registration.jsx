@@ -62,7 +62,7 @@ function Registration() {
     },
   ];
 
-  const registrationDeadline = "22 November 2026";
+  const registrationDeadline = "14 November 2026";
 
   const notes = [
     "All registrations include admission to all technical sessions and e-proceedings.",
@@ -942,7 +942,7 @@ function Registration() {
           </span>
           <h1 className="text-5xl font-bold">Registration</h1>
           <p className="mt-4 text-xl text-red-100">
-            Join us for ICSISDG 2026 - 27 November 2026
+            Join us for ICSISDG 2026 - 28 November 2026
           </p>
         </div>
       </section>
@@ -963,7 +963,7 @@ function Registration() {
                 Goals
               </span>
               , to be held on{" "}
-              <span className="font-bold text-red-800">27 November 2026</span>.
+              <span className="font-bold text-red-800">28 November 2026</span>.
             </p>
           </div>
 

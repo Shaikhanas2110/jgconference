@@ -11,25 +11,25 @@ function ImportantDates() {
     },
     {
       title: "Notification of Acceptance",
-      date: "24 October 2026",
+      date: "7 November 2026",
       highlight: false,
     },
     {
       title: "Registration Deadline",
-      date: "31 October 2026",
+      date: "14 November 2026",
       highlight: true,
     },
     {
       title: "Camera-Ready Paper Submission Due",
-      date: "6 November 2026",
+      date: "17 November 2026",
       highlight: false,
     },
     {
       title: "Conference Schedule Release",
-      date: "14 November 2026",
+      date: "18 November 2026",
       highlight: true,
     },
-    { title: "Conference Dates", date: "20 November 2026", highlight: false },
+    { title: "Conference Dates", date: "28 November 2026", highlight: false },
   ];
 
   return (

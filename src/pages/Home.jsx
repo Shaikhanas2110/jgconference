@@ -14,7 +14,7 @@ import about from "../assets/about2.jpeg";
 function Home() {
   const location = useLocation();
 
-  const CONFERENCE_START_DATE = new Date("2026-11-20T00:00:00");
+  const CONFERENCE_START_DATE = new Date("2026-11-28T00:00:00");
 
   const getTimeLeft = () => {
     const diff = CONFERENCE_START_DATE.getTime() - new Date().getTime();
@@ -421,11 +421,11 @@ function Home() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-3">
               {[
                 ["31 October 2026", "Submission Deadline"],
-                ["24 October 2026", "Acceptance Notification"],
-                ["31 October 2026", "Registration Deadline"],
-                ["6 November 2026", "Camera Submission"],
-                ["14 November 2026", "Conference Schedule"],
-                ["20 November 2026", "Conference Starts"],
+                ["7 November 2026", "Acceptance Notification"],
+                ["14 November 2026", "Registration Deadline"],
+                ["17 November 2026", "Camera Submission"],
+                ["18 November 2026", "Conference Schedule"],
+                ["28 November 2026", "Conference Starts"],
               ].map((d, i) => (
                 <div key={i} className="flex flex-col items-center">
                   <div className="w-4 h-4 rounded-full bg-yellow-400 shadow-md relative z-10 mb-6"></div>

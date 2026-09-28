@@ -108,11 +108,11 @@ function CallForPaper() {
 
   const importantDates = [
     ["Due date for submission", "31 October 2026"],
-    ["Notification of acceptance", "24 October 2026"],
-    ["Registration deadline", "31 October 2026"],
-    ["Camera-ready paper submission due", "6 November 2026"],
-    ["Conference schedule", "14 November 2026"],
-    ["Conference starts on", "20 November 2026"],
+    ["Notification of acceptance", "7 November 2026"],
+    ["Registration deadline", "14 November 2026"],
+    ["Camera-ready paper submission due", "17 November 2026"],
+    ["Conference schedule", "18 November 2026"],
+    ["Conference starts on", "28 November 2026"],
   ];
 
   const [openTrack, setOpenTrack] = useState(1);
