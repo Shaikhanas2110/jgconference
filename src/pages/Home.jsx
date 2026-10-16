@@ -14,7 +14,7 @@ import about from "../assets/about2.jpeg";
 function Home() {
   const location = useLocation();
 
-  const CONFERENCE_START_DATE = new Date("2026-11-28T00:00:00");
+  const CONFERENCE_START_DATE = new Date("2026-12-23T00:00:00");
 
   const getTimeLeft = () => {
     const diff = CONFERENCE_START_DATE.getTime() - new Date().getTime();
@@ -185,7 +185,7 @@ function Home() {
               </div>
               <div className="flex items-center gap-2">
                 <FaCalendar className="text-yellow-400" />
-                <span>20 &ndash; 21 November, 2026</span>
+                <span>23 &ndash; 24 December, 2026</span>
               </div>
             </div>
 
@@ -308,11 +308,18 @@ function Home() {
       <section id="about" className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="w-full">
+            {/* <div className="w-full">
               <img
                 src={about}
                 alt="JG University Building"
                 className="w-150 sm:h-80 md:h-96 object-cover rounded-2xl shadow-lg h-auto"
+              />
+            </div> */}
+            <div class="w-full h-80 md:h-96 rounded-xl overflow-hidden shadow-md relative">
+              <img
+                src={about}
+                alt="Section preview"
+                class="w-full h-full object-cover object-center"
               />
             </div>
             <div>
@@ -420,12 +427,12 @@ function Home() {
             ></div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-3">
               {[
-                ["31 October 2026", "Submission Deadline"],
-                ["7 November 2026", "Acceptance Notification"],
-                ["14 November 2026", "Registration Deadline"],
-                ["17 November 2026", "Camera Submission"],
-                ["18 November 2026", "Conference Schedule"],
-                ["28 November 2026", "Conference Starts"],
+                ["7 November 2026", "Submission Deadline"],
+                ["21 November 2026", "Acceptance Notification"],
+                ["28 November 2026", "Registration Deadline"],
+                ["5 December 2026", "Camera Submission"],
+                ["16 December 2026", "Conference Schedule"],
+                ["23 December 2026", "Conference Starts"],
               ].map((d, i) => (
                 <div key={i} className="flex flex-col items-center">
                   <div className="w-4 h-4 rounded-full bg-yellow-400 shadow-md relative z-10 mb-6"></div>

@@ -6,30 +6,30 @@ function ImportantDates() {
   const dates = [
     {
       title: "Due Date For Submission",
-      date: "31 October 2026",
+      date: "7 November 2026",
       highlight: true,
     },
     {
       title: "Notification of Acceptance",
-      date: "7 November 2026",
+      date: "21 November 2026",
       highlight: false,
     },
     {
       title: "Registration Deadline",
-      date: "14 November 2026",
+      date: "28 November 2026",
       highlight: true,
     },
     {
       title: "Camera-Ready Paper Submission Due",
-      date: "17 November 2026",
+      date: "5 December 2026",
       highlight: false,
     },
     {
       title: "Conference Schedule Release",
-      date: "18 November 2026",
+      date: "16 December 2026",
       highlight: true,
     },
-    { title: "Conference Dates", date: "28 November 2026", highlight: false },
+    { title: "Conference Dates", date: "23 December 2026", highlight: false },
   ];
 
   return (
