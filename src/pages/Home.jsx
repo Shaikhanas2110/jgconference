@@ -427,12 +427,12 @@ function Home() {
             ></div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-3">
               {[
-                ["7 November 2026", "Submission Deadline"],
-                ["21 November 2026", "Acceptance Notification"],
-                ["28 November 2026", "Registration Deadline"],
-                ["5 December 2026", "Camera Submission"],
-                ["16 December 2026", "Conference Schedule"],
-                ["23 December 2026", "Conference Starts"],
+                ["7 Nov 2026", "Submission Deadline"],
+                ["21 Nov 2026", "Acceptance Notification"],
+                ["28 Nov 2026", "Registration Deadline"],
+                ["5 Nov 2026", "Camera Submission"],
+                ["16 Dec 2026", "Conference Schedule"],
+                ["23-24 Dec 2026", "Conference Starts"],
               ].map((d, i) => (
                 <div key={i} className="flex flex-col items-center">
                   <div className="w-4 h-4 rounded-full bg-yellow-400 shadow-md relative z-10 mb-6"></div>

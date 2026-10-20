@@ -963,7 +963,7 @@ function Registration() {
                 Goals
               </span>
               , to be held on{" "}
-              <span className="font-bold text-red-800">23 December 2026</span>.
+              <span className="font-bold text-red-800">23-24 December 2026</span>.
             </p>
           </div>
 
