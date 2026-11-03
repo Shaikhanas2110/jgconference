@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBook, FaCheckCircle } from "react-icons/fa";
+import image from "../assets/link.png";
 
 function Publication() {
   return (
@@ -732,13 +733,36 @@ function Publication() {
                 Publication & Indexing
               </h2>
               <p className="text-gray-600 leading-8">
-                All accepted & presented papers will be published in a{" "}
-                <span className="font-bold text-red-800">
-                  Scopus indexed Springer Series
-                </span>
-                , Advances in Science, Technology & Innovation (ASTI)
-                <span className="text-gray-500"> (Approved)</span>.
+                All submitted conference papers will undergo a rigorous blind
+                peer review process conducted by Technical Program Committee.
+                The assessment of these papers will be based on multiple
+                criteria, including their alignment with the conference theme,
+                originality, clarity, comprehensiveness, and their significant
+                contribution to the respective discipline.
               </p>
+
+              <p className="mt-4 text-gray-800 font-bold leading-8">
+                Selected manuscripts will be published in the conference
+                proceedings of{" "}
+                <span className="text-red-800 underline decoration-yellow-400 decoration-2 underline-offset-4">
+                  Advances in Economics, Business, and Management Research
+                </span>{" "}
+                (Atlantis Press, part of Springer Nature) after the peer review
+                process.
+              </p>
+
+              <a
+                href="https://www.atlantis-press.com/proceedings/series/aisr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 flex justify-center"
+              >
+                <img
+                  src={image}
+                  alt="Advances in Intelligent Systems Research"
+                  width="230"
+                />
+              </a>
             </div>
           </div>
 

@@ -10,6 +10,9 @@ import { MdLocationOn } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
 import image from "../assets/image.jpeg";
 import about from "../assets/about2.jpeg";
+import banner1 from "../assets/banner1.png";
+import banner2 from "../assets/b2.jpg";
+import banner3 from "../assets/b3.jpg";
 
 function Home() {
   const location = useLocation();
@@ -204,6 +207,25 @@ function Home() {
             </div>
           </div>
 
+          {/* partner logos, top-right of the banner */}
+          <div className="hidden md:flex absolute top-6 right-6 flex-row items-center gap-8">
+            <img
+              src={banner1}
+              alt="Atlantis Press"
+              className="h-[4.5rem] w-auto object-contain"
+            />
+            <img
+              src={banner2}
+              alt="Department of Science & Technology"
+              className="h-[4.5rem] w-auto object-contain"
+            />
+            <img
+              src={banner3}
+              alt="Gujarat Council on Science and Technology"
+              className="h-20 w-20 object-contain"
+            />
+          </div>
+
           {/* countdown card, floating on the right side of the banner */}
           <div className="hidden md:block absolute bottom-8 right-6 w-[420px] bg-red-900/80 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4 shadow-xl">
             <span className="block text-sm font-medium text-gray-200 mb-3">
@@ -244,6 +266,25 @@ function Home() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* partner logos, mobile */}
+          <div className="mt-4 flex items-center justify-around gap-3">
+            <img
+              src={banner1}
+              alt="Atlantis Press"
+              className="h-11 w-auto object-contain"
+            />
+            <img
+              src={banner2}
+              alt="Department of Science & Technology"
+              className="h-11 w-auto object-contain"
+            />
+            <img
+              src={banner3}
+              alt="Gujarat Council on Science and Technology"
+              className="h-12 w-12 object-contain"
+            />
           </div>
         </div>
 
