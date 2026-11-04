@@ -207,7 +207,6 @@ function Home() {
             </div>
           </div>
 
-          {/* partner logos, top-right of the banner */}
           <div className="hidden md:flex absolute top-6 right-6 flex-row items-center gap-8">
             <img
               src={banner1}
