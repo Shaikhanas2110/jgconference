@@ -883,7 +883,6 @@ function PaperStatus() {
               </div>
             </div>
 
-            {/* Status Definitions */}
             <div className="mt-12">
               <h3 className="text-2xl font-bold text-red-800 mb-6">
                 Understanding Status
