@@ -61,7 +61,6 @@ function Home() {
         }, 100);
       }
     } else {
-      // No hash means we're on Home, so scroll to the top
       window.scrollTo({
         top: 0,
         behavior: "smooth",
