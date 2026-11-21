@@ -13,6 +13,8 @@ import about from "../assets/about2.jpeg";
 import banner1 from "../assets/banner1.png";
 import banner2 from "../assets/b2.jpg";
 import banner3 from "../assets/b3.jpg";
+import banner4 from "../assets/banner4.png";
+// import banner4 from "../assets/b4.jpeg";
 
 function Home() {
   const location = useLocation();
@@ -206,22 +208,36 @@ function Home() {
             </div>
           </div>
 
-          <div className="hidden md:flex absolute top-6 right-6 flex-row items-center gap-8">
-            <img
-              src={banner1}
-              alt="Atlantis Press"
-              className="h-[4.5rem] w-auto object-contain"
-            />
-            <img
-              src={banner2}
-              alt="Department of Science & Technology"
-              className="h-[4.5rem] w-auto object-contain"
-            />
-            <img
-              src={banner3}
-              alt="Gujarat Council on Science and Technology"
-              className="h-20 w-20 object-contain"
-            />
+          <div className="hidden md:flex absolute top-6 right-6 flex-col items-center gap-3">
+            {/* First three logos in a straight horizontal row */}
+            <div className="flex flex-row items-center gap-8">
+              <img
+                src={banner1}
+                alt="Atlantis Press"
+                className="h-[4.5rem] w-auto object-contain"
+              />
+
+              <img
+                src={banner2}
+                alt="Department of Science & Technology"
+                className="h-[4.5rem] w-auto object-contain"
+              />
+
+              <img
+                src={banner3}
+                alt="Gujarat Council on Science and Technology"
+                className="h-20 w-20 object-contain"
+              />
+            </div>
+
+            {/* Springer Nature centered below DST logo */}
+            <div className="flex justify-center w-full">
+              <img
+                src={banner4}
+                alt="Springer Nature"
+                className="h-14 w-auto object-contain"
+              />
+            </div>
           </div>
 
           {/* countdown card, floating on the right side of the banner */}
@@ -267,17 +283,27 @@ function Home() {
           </div>
 
           {/* partner logos, mobile */}
+
           <div className="mt-4 flex items-center justify-around gap-3">
             <img
               src={banner1}
               alt="Atlantis Press"
               className="h-11 w-auto object-contain"
             />
-            <img
-              src={banner2}
-              alt="Department of Science & Technology"
-              className="h-11 w-auto object-contain"
-            />
+
+            <div className="flex flex-col items-center gap-2">
+              <img
+                src={banner2}
+                alt="Department of Science & Technology"
+                className="h-11 w-auto object-contain"
+              />
+              <img
+                src={banner4}
+                alt="Springer Nature"
+                className="h-7 w-auto object-contain"
+              />
+            </div>
+
             <img
               src={banner3}
               alt="Gujarat Council on Science and Technology"

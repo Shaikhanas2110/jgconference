@@ -31,8 +31,10 @@ function Submission() {
       url: "https://www.springer.com/gp/authors-editors/book-authors-editors/your-publication-journey/manuscript-preparation",
     },
     {
-      text: "To download Springer templates (LaTeX + Word)",
-      linkText: "(Click here)",
+      // "download" is now the red + bold clickable word inside the sentence
+      prefix: "To ",
+      linkText: "download",
+      suffix: " Springer templates (LaTeX + Word)",
       action: downloadTemplates,
     },
     "Camera-ready papers: 4-6 pages",
@@ -897,16 +899,16 @@ function Submission() {
                     <span>{item}</span>
                   ) : item.action ? (
                     <span>
-                      {item.text}{" "}
+                      {item.prefix}
                       <button
                         type="button"
                         onClick={item.action}
-                        title={item.linkText}
-                        aria-label={item.linkText}
-                        className="inline-flex items-center align-middle text-red-700 hover:text-red-900 transition"
+                        title="Download Springer templates"
+                        className="font-bold text-red-700 hover:text-red-900 hover:underline cursor-pointer transition"
                       >
-                        <FaDownload />
+                        {item.linkText}
                       </button>
+                      {item.suffix}{" "}
                     </span>
                   ) : (
                     <span>
