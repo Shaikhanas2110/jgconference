@@ -20,11 +20,13 @@ import Contact from "./pages/Contact";
 import ImportantDates from "./pages/ImportantDates";
 import Submission from "./pages/Submission";
 import ScrollToTop from "./pages/ScrollToTop";
+import DeadlinePopup from "./common/deadline";
 
 function App() {
   return (
     <BrowserRouter>
       <>
+        <DeadlinePopup />
         <ScrollToTop />
         <Navbar />
         <Routes>

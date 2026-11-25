@@ -43,6 +43,12 @@ function Home() {
     return () => clearInterval(timer);
   }, []);
 
+  const SUBMISSION_DEADLINE = new Date("2026-12-05T23:59:59");
+  const submissionDaysLeft = Math.ceil(
+    (SUBMISSION_DEADLINE.getTime() - new Date().getTime()) /
+      (1000 * 60 * 60 * 24)
+  );
+
   const countdownItems = [
     [String(timeLeft.days), "Days"],
     [String(timeLeft.hours).padStart(2, "0"), "Hours"],
@@ -193,6 +199,21 @@ function Home() {
               </div>
             </div>
 
+            {/* Extended deadline badge */}
+            {submissionDaysLeft > 0 && (
+              <div className="mt-6 flex items-center gap-3 rounded-full border border-yellow-400/60 bg-white/10 px-5 py-2 backdrop-blur-sm">
+                <span className="relative flex h-3 w-3 shrink-0">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-400 opacity-75"></span>
+                  <span className="relative inline-flex h-3 w-3 rounded-full bg-yellow-400"></span>
+                </span>
+                <span className="text-sm text-white">
+                  <b className="text-yellow-400">Submission deadline extended</b>{" "}
+                  to 5 Dec 2026 &middot; {submissionDaysLeft}{" "}
+                  {submissionDaysLeft === 1 ? "day" : "days"} left
+                </span>
+              </div>
+            )}
+
             {/* Buttons container */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <NavLink to="/submission">
@@ -327,14 +348,24 @@ function Home() {
           `}</style>
           <div className="icsisdg-marquee-track">
             <span className="whitespace-nowrap px-8 text-sm font-semibold text-red-900">
-              High Quality papers will be submitted for publication in the
-              Scopus/WoS -indexed proceedings . All accepted papers will be
-              published in Peer-Reviewed Journals/Proceedings
+              <span className="mr-3 rounded-full bg-red-800 px-3 py-0.5 text-white">
+                📢 DEADLINE EXTENDED
+              </span>
+              Paper submission is now open until 5th December 2026 &mdash;
+              submit your research today! &nbsp;&bull;&nbsp; High Quality
+              papers will be submitted for publication in the Scopus/WoS
+              -indexed proceedings . All accepted papers will be published in
+              Peer-Reviewed Journals/Proceedings
             </span>
             <span className="whitespace-nowrap px-8 text-sm font-semibold text-red-900">
-              High Quality papers will be submitted for publication in the
-              Scopus/WoS -indexed proceedings . All accepted papers will be
-              published in Peer-Reviewed Journals/Proceedings
+              <span className="mr-3 rounded-full bg-red-800 px-3 py-0.5 text-white">
+                📢 DEADLINE EXTENDED
+              </span>
+              Paper submission is now open until 5th December 2026 &mdash;
+              submit your research today! &nbsp;&bull;&nbsp; High Quality
+              papers will be submitted for publication in the Scopus/WoS
+              -indexed proceedings . All accepted papers will be published in
+              Peer-Reviewed Journals/Proceedings
             </span>
           </div>
         </div>
@@ -481,29 +512,60 @@ function Home() {
       </section>
 
       <section className="py-10" style={{ backgroundColor: "#FBF3E7" }}>
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-screen-2xl mx-auto px-6">
           <h2 className="text-center text-4xl font-bold text-red-800 mb-16">
             Important Dates
           </h2>
+          <style>{`
+            @keyframes icsisdgDeadlineGlow {
+              0%   { box-shadow: 0 0 0 0 rgba(153, 27, 27, 0.55); }
+              70%  { box-shadow: 0 0 0 16px rgba(153, 27, 27, 0); }
+              100% { box-shadow: 0 0 0 0 rgba(153, 27, 27, 0); }
+            }
+            .icsisdg-deadline-glow {
+              animation: icsisdgDeadlineGlow 2s ease-out infinite;
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .icsisdg-deadline-glow { animation: none; }
+            }
+          `}</style>
           <div className="relative">
             <div
               className="absolute left-0 right-0 h-1 bg-yellow-400"
               style={{ top: "8px" }}
             ></div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 lg:gap-3">
               {[
                 ["7 Nov 2026", "Submission Deadline"],
                 ["21 Nov 2026", "Acceptance Notification"],
                 ["28 Nov 2026", "Registration Deadline"],
                 ["5 Nov 2026", "Camera Submission"],
+                ["5 Dec 2026", "New Submission Deadline", true],
                 ["16 Dec 2026", "Conference Schedule"],
                 ["23-24 Dec 2026", "Conference Starts"],
               ].map((d, i) => (
-                <div key={i} className="flex flex-col items-center">
-                  <div className="w-4 h-4 rounded-full bg-yellow-400 shadow-md relative z-10 mb-6"></div>
-                  <div className="bg-white rounded-2xl shadow-lg px-4 py-6 text-center w-full">
-                    <p className="font-bold text-yellow-500">{d[0]}</p>
-                    <p className="text-gray-700 mt-3 text-sm">{d[1]}</p>
+                <div key={i} className="flex flex-col items-center h-full">
+                  <div
+                    className={`w-4 h-4 rounded-full shadow-md relative z-10 mb-6 ${
+                      d[2] ? "bg-white border-2 border-yellow-400" : "bg-yellow-400"
+                    }`}
+                  ></div>
+                  <div
+                    className={`relative rounded-2xl shadow-lg px-2 py-6 text-center w-full flex-1 flex flex-col justify-center ${
+                      d[2] ? "bg-red-800 icsisdg-deadline-glow" : "bg-white"
+                    }`}
+                  >
+                    {d[2] && (
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-yellow-400 px-3 py-0.5 text-[10px] font-bold tracking-wide text-white">
+                        EXTENDED
+                      </span>
+                    )}
+                    <p className={`font-bold text-yellow-500`}>
+                      {d[0]}
+                    </p>
+                    <p className={`mt-3 text-sm lg:text-[13px] xl:text-sm lg:whitespace-nowrap ${d[2] ? "text-white font-semibold" : "text-gray-700"}`}>
+                      {d[1]}
+                    </p>
                   </div>
                 </div>
               ))}
