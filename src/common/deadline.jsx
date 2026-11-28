@@ -19,6 +19,7 @@ function DeadlinePopup() {
 
   if (!open) return null;
 
+  
   return (
     <div className="dp-overlay" onClick={() => setOpen(false)}>
       <div
